@@ -15,6 +15,36 @@
   {% block head %} {% endblock %}
 </head>
 <body>
-  {% block body %} {% endblock %}
+  <div class="container-fluid" align="center">
+    <div class="row">
+		<div class="col-md-12">
+			<div class="logo">
+				<img src="/static/images/logo.png">
+			</div>
+		</div>
+	</div>
+    <div class="row">
+		<div class="col-md-12">
+			<div class="navbar justify-content-center">
+				<span class="badge badge-default">Übersicht</span>
+				<span class="badge badge-default">Jetzt planen</span>
+				<span class="badge badge-default">Statistiken</span>
+				<span class="badge badge-default">Profil</span>
+			</div>
+		</div>
+	</div>
+   {% block body %} {% endblock %}
+    <div class="row">
+      <div class="col-md-12">
+          <hr class="hr_style w-25">
+          <div class="footer">
+              <a href=" {{ url_for('about') }}">Info</a>
+              <a href=" ">Kontakt</a>
+              <a href="https://github.com/HackerBurscht/PROG22"target="_blank">Github</a>
+              <a href="https://www.figma.com/file/rUYAYdZe2L1UsIpoqSTICG/PROG2?node-id=0%3A1"target="_blank">Figma</a>
+          </div>
+      </div>
+    </div>
+  </div>
 </body>
 </html>

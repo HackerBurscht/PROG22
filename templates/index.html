@@ -1,29 +1,11 @@
 {% extends "base.html" %}
 
 {% block head %}
-
+<title>Plan erstellen</title>
 {% endblock %}
 
 {% block body %}
 
-<div class="container-fluid" align="center">
-	<div class="row">
-		<div class="col-md-12">
-			<div class="logo">
-				<img src="../images/logo.png" alt="Mealy_Logo" height="71" width="159" class="mx-auto d-block">
-			</div>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div class="navbar justify-content-center">
-				<span class="badge badge-default">Übersicht</span>
-				<span class="badge badge-default">Jetzt planen</span>
-				<span class="badge badge-default">Statistiken</span>
-				<span class="badge badge-default">Profil</span>
-			</div>
-		</div>
-	</div>
 	<div class="row">
 		<div class="col-md-12">
 			<hr class="hr_style w-25">
@@ -32,50 +14,67 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="week_selecter">
-				Week Selecter
+				Week Selector
 			</div>
 			<div class="item-area">
 				<div class="item-group">
-					<div class="Day">Mo</div>
-					<div class="Meal">. . . . . . . . </div>
+					<div class="blob_one"></div>
+					<div class="day">Mo</div>
+					<div class="form">
+						<form action="/" method="POST">
+							<input type="text" class="content_input" name="form_mo" id="content_input_mo" placeholder=". . . . . . . . ">
+						</form>
+					</div>
 				</div>
 				<div class="item-group">
-					<div class="Day">Di</div>
-					<div class="Meal">. . . . . . . . </div>
+					<div class="blob_two"></div>
+					<div class="day">Di</div>
+					<form>
+						<input type="text" class="content_input" id="content_input_di" placeholder=". . . . . . . . ">
+					</form>
 				</div>
 				<div class="item-group">
-					<div class="Day">Mi</div>
-					<div class="Meal">. . . . . . . . </div>
+					<div class="blob_three"></div>
+					<div class="day">Mi</div>
+					<form>
+						<input type="text" class="content_input" id="content_input_mi" placeholder=". . . . . . . . ">
+					</form>
 				</div>
 				<div class="item-group">
-					<div class="Day">Do</div>
-					<div class="Meal">. . . . . . . . </div>
+					<div class="blob_one"></div>
+					<div class="day">Do</div>
+					<form>
+						<input type="text" class="content_input" id="content_input_do" placeholder=". . . . . . . . ">
+					</form>
 				</div>
 				<div class="item-group">
-					<div class="Day">Fr</div>
-					<div class="Meal">. . . . . . . . </div>
+					<div class="blob_two"></div>
+					<div class="day">Fr</div>
+					<form>
+						<input type="text" class="content_input" id="content_input_fr" placeholder=". . . . . . . . ">
+					</form>
 				</div>
 				<div class="item-group">
-					<div class="Day">Sa</div>
-					<div class="Meal">. . . . . . . . </div>
+					<div class="blob_three"></div>
+					<div class="day">Sa</div>
+					<form>
+						<input type="text" class="content_input" id="content_input_sa" placeholder=". . . . . . . . ">
+					</form>
 				</div>
 				<div class="item-group">
-					<div class="Day">So</div>
-					<div class="Meal">. . . . . . . . </div>
+					<div class="blob_one"></div>
+					<div class="day">So</div>
+					<form>
+						<input type="text" class="content_input" id="content_input_so" placeholder=". . . . . . . . ">
+					</form>
 				</div>
+				<!--<form action="/" method="POST">
+				<input type="submit" value="Hinzufügen" id="save_button">
+				</form>-->
 			</div>
 		</div>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<hr class="hr_style w-25">
-			<div class="footer">
-				<span class="badge badge-default">About</span>
-				<span class="badge badge-default">Kontakt</span>
-				<span class="badge badge-default">Github</span>
-			</div>
-		</div>
-	</div>
-</div>
+
+
 {% endblock %}
 

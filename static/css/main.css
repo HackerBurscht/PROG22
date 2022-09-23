@@ -5,10 +5,14 @@ body {
     color: rgb(56, 63, 80),
 }
 
-.logo {
-padding-top: 5em;
-padding-bottom: 2.5em;
+::selection {
+  color: white;
+  background: #3D8DFD;
+}
 
+.logo {
+    padding-top: 3em;
+    padding-bottom: 2.5em;
 }
 
 .hr_style{
@@ -18,9 +22,14 @@ padding-bottom: 2.5em;
 }
 
 .navbar {
-    font-size: 0.8em;
+    font-size: 1em;
     padding-bottom: 2.5em;
     font-weight: 550;
+}
+
+.navbar > span.badge.badge-default:hover {
+    font-weight: 900;
+    color: #3D8DFD;
 }
 
 .week_selecter{
@@ -46,30 +55,82 @@ padding-bottom: 2.5em;
     border-color: #EFF0F6;
 }
 
-/*.card{
+.day{
+    padding-right:4em;
+}
+
+.meal{
+    padding-right:8em;
+}
+
+input[type=text]{
+    outline: none;
+    border: 0px;
+}
+
+.content_input{
+    outline:none;
+    border: 0px;
+    margin: 0;
+}
+
+.content_input:hover, focus, textarea:focus{
+    border: 1px solid #3D8DFD;
+}
+
+.form-group{
+    margin-bottom:0;
+}
+
+
+.blob_one{
+    display: block;
+    height: 0.5em;
+    width: 1.25em;
+    background: #E6CFFF;
+    border-radius: 1em;
+}
+.blob_two{
+    display: block;
+    height: 0.5em;
+    width: 1.25em;
+    background: #CDE7FB;
+    border-radius: 1em;
+}
+.blob_three{
+    display: block;
+    height: 0.5em;
+    width: 1.25em;
+    background: #3D8DFD;
+    border-radius: 1em;
+}
+
+
+#save_button{
+    margin-bottom: 0.5em;
+    border: 0px;
+    background: #FFFFFF;
+    font-size: 0.6em;
+    color: #383F50;
+}
+#save_button:hover{
+    font-weight: 900;
+    color: #3D8DFD;
+}
+
+.footer{
     width: 25%;
-    border-radius: 5px;
-    border-color: #EFF0F6;
+    display:flex;
 }
 
-/*.table {
-    background-color: #FFFFFF;
-    margin-bottom: 0;
-}
-
-/*table-responsive card
-/*Footer*/
-
-.footer {
-    padding-right: 15em;
-    font-size: 0.8em;
-}
-
-.footer > span.badge.badge-default{
+.footer > a{
     margin-right: 2em;
+    text-align: left;
+    font-size: 0.6em;
+    color: #383F50;
 }
 
-.footer > span.badge.badge-default:hover {
+.footer > a:hover {
     font-weight: 900;
     color: #3D8DFD;
 }
