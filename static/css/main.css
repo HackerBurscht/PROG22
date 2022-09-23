@@ -1,4 +1,75 @@
 body {
+    background-color: #F4F6FA;
     margin: 0;
-    font-family: sans serif;
+    font-family: Poppins;
+    color: rgb(56, 63, 80),
+}
+
+.logo {
+padding-top: 5em;
+padding-bottom: 2.5em;
+
+}
+
+.hr_style{
+    border: 0;
+    border-top: 1px solid;
+    color: #EFF0F6
+}
+
+.navbar {
+    font-size: 0.8em;
+    padding-bottom: 2.5em;
+    font-weight: 550;
+}
+
+.week_selecter{
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+.item-area{
+    width:25%;
+    background-color: #FFFFFF;
+    border: 1px solid;
+    border-radius: 5px;
+    border-color: #EFF0F6;
+}
+
+.item-group{
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 4em;
+    border-bottom: 1px solid;
+    border-color: #EFF0F6;
+}
+
+/*.card{
+    width: 25%;
+    border-radius: 5px;
+    border-color: #EFF0F6;
+}
+
+/*.table {
+    background-color: #FFFFFF;
+    margin-bottom: 0;
+}
+
+/*table-responsive card
+/*Footer*/
+
+.footer {
+    padding-right: 15em;
+    font-size: 0.8em;
+}
+
+.footer > span.badge.badge-default{
+    margin-right: 2em;
+}
+
+.footer > span.badge.badge-default:hover {
+    font-weight: 900;
+    color: #3D8DFD;
 }
