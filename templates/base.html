@@ -9,7 +9,7 @@
   <meta name="keywords" content="Essensplaner, Mahlzeitenplaner, Wochenplaner, Tool, Ernährung, Diet, ">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <title>Mealy - Deine Mahlzeiten im Griff</title>
+  <title>Mealy {% block title %} {% endblock %}</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
   {% block head %} {% endblock %}
@@ -29,6 +29,7 @@
 				<span class="badge badge-default">Übersicht</span>
 				<span class="badge badge-default">Jetzt planen</span>
 				<span class="badge badge-default">Statistiken</span>
+              <!--  <a href="{{ url_for('about') }}">Statistiken</a>-->
 				<span class="badge badge-default">Profil</span>
 			</div>
 		</div>
@@ -38,8 +39,8 @@
       <div class="col-md-12">
           <hr class="hr_style w-25">
           <div class="footer">
-              <a href=" {{ url_for('about') }}">Info</a>
-              <a href=" ">Kontakt</a>
+              <a href="{{ url_for('about') }}">Info</a>
+              <a href="{{ url_for('contact') }}">Kontakt</a>
               <a href="https://github.com/HackerBurscht/PROG22"target="_blank">Github</a>
               <a href="https://www.figma.com/file/rUYAYdZe2L1UsIpoqSTICG/PROG2?node-id=0%3A1"target="_blank">Figma</a>
           </div>

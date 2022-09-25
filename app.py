@@ -26,6 +26,8 @@ def index():
     week_end = week_end.strftime("%d.%m.%Y")
     week_start = week_start.strftime("%d.%m. bis ")
 
+    # Post to Database
+    ################################################################
     if request.method == "POST":
         content = request.form.get("form_mo")
         if content == "":
@@ -48,6 +50,10 @@ def index():
 @app.route("/About")
 def about():
     return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
