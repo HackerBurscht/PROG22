@@ -1,6 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
-from datetime import datetime
+from datetime import datetime, timedelta
 
 app = Flask(__name__, static_url_path="/static")  # Fick mein Leben. 5 Stunden für ein IMG.
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
@@ -20,6 +20,12 @@ class Meal(db.Model):
 
 @app.route("/", methods=["POST", "GET"])
 def index():
+    #Das Datum des ersten und des letzten Tages, der aktuellen Woche, wird berechnet und als String formatiert.
+    week_start = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
+    week_end = week_start + timedelta(days=7)
+    week_end = week_end.strftime("%d.%m.%Y")
+    week_start = week_start.strftime("%d.%m. bis ")
+
     if request.method == "POST":
         content = request.form.get("form_mo")
         if content == "":
@@ -36,7 +42,7 @@ def index():
 
     else:
         all_content = Meal.query.order_by(Meal.date_created).all()
-        return render_template("index.html")
+        return render_template("index.html", pass_week_start=week_start, pass_week_end=week_end)
 
 
 @app.route("/About")

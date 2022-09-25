@@ -2,7 +2,7 @@ body {
     background-color: #F4F6FA;
     margin: 0;
     font-family: Poppins;
-    color: rgb(56, 63, 80),
+    color: rgb(56, 63, 80);
 }
 
 ::selection {
@@ -32,9 +32,57 @@ body {
     color: #3D8DFD;
 }
 
+.slogan{
+    font-weight: 650;
+    font-size: 0.8em;
+}
+
 .week_selecter{
+    width: 25%;
+    display:flex;
+    justify-content: space-evenly;
     padding-top: 1em;
     padding-bottom: 1em;
+}
+
+.left{
+    margin-top: 1em;
+	height: 12px; width: 12px;
+	border: 1px solid #757575;
+	border-width: 2px 2px 0 0;
+	border-radius: 0 2px 0 0;
+	transform: rotate(-135deg);
+}
+
+.left:hover{
+	border: 1px solid #3D8DFD;
+	border-width: 2px 2px 0 0;
+	border-radius: 0 2px 0 0;
+}
+
+.right{
+    margin-top: 1em;
+	height: 12px; width: 12px;
+	border: 1px solid #757575;
+	border-width: 2px 2px 0 0;
+	border-radius: 0 2px 0 0;
+	transform: rotate(45deg);
+}
+
+.right:hover{
+	border: 1px solid #3D8DFD;
+	border-width: 2px 2px 0 0;
+	border-radius: 0 2px 0 0;
+}
+
+.week_selector_header{
+    font-weight: 650;
+}
+
+.week_selector_display{
+    font-weight: 400;
+    font-size: 0.8em;
+    padding-bottom: 1.5em;
 }
 
 .item-area{
