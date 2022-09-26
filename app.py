@@ -28,12 +28,19 @@ def index():
     week_end = week_end.strftime("%d.%m.%Y")
     week_start = week_start.strftime("%d.%m. bis ")
 
+
+    item_mo = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
+    item_mo = item_mo.strftime("%d.%m.%Y")
+    ph_mo = Meal.query.filter_by(planned_date=item_mo)
+    print(ph_mo)
+
+
     if request.method == "POST":
         pass
 
     else:
         all_content = Meal.query.order_by(Meal.date_created).all()
-        return render_template("index.html", pass_week_start=week_start, pass_week_end=week_end)
+        return render_template("index.html", pass_week_start=week_start, pass_week_end=week_end, ph_mo=ph_mo)
 
 
 def savedb(week_key, planned_date_key):
@@ -41,23 +48,76 @@ def savedb(week_key, planned_date_key):
     if content == "":
         return redirect("/")
     elif content != "":
-        new_content = Meal(content=content, weekday="Mo", planned_date=planned_date_key)
+        new_content = Meal(content=content, weekday=week_key, planned_date=planned_date_key)
 
     try:
         db.session.add(new_content)
         db.session.commit()
-        return redirect("/")
     except:
         return "Gab nen Fehler"
 
 
-@app.route("/mo", methods=["POST"])
-def save():
+@app.route("/mo", methods=["POST", "GET"])
+def save_mo():
     week_key = "mo"
     planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
+    planned_date_key = planned_date_key.strftime("%d.%m.%Y")
     savedb(week_key, planned_date_key)
     return redirect("/")
 
+
+@app.route("/di", methods=["POST"])
+def save_di():
+    week_key = "di"
+    planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=1)
+    planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+    savedb(week_key, planned_date_key)
+    return redirect("/")
+
+
+@app.route("/mi", methods=["POST"])
+def save_mi():
+    week_key = "mi"
+    planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=2)
+    planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+    savedb(week_key, planned_date_key)
+    return redirect("/")
+
+
+@app.route("/do", methods=["POST"])
+def save_do():
+    week_key = "do"
+    planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=3)
+    planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+    savedb(week_key, planned_date_key)
+    return redirect("/")
+
+
+@app.route("/fr", methods=["POST"])
+def save_fr():
+    week_key = "fr"
+    planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=4)
+    planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+    savedb(week_key, planned_date_key)
+    return redirect("/")
+
+
+@app.route("/sa", methods=["POST"])
+def save_sa():
+    week_key = "sa"
+    planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=5)
+    planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+    savedb(week_key, planned_date_key)
+    return redirect("/")
+
+
+@app.route("/so", methods=["POST"])
+def save_so():
+    week_key = "so"
+    planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=6)
+    planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+    savedb(week_key, planned_date_key)
+    return redirect("/")
 
 @app.route("/About")
 def about():
