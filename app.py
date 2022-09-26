@@ -13,6 +13,7 @@ class Meal(db.Model):
     content = db.Column(db.String(100), nullable=False)
     weekday = db.Column(db.String(2), nullable=False)
     date_created = db.Column(db.DateTime, default=datetime.utcnow)
+    planned_date = db.Column(db.String(12), nullable=False)
 
     def __repr__(self):
         return "<Task %r>" % self.id
@@ -20,7 +21,7 @@ class Meal(db.Model):
 
 @app.route("/", methods=["POST", "GET"])
 def index():
-    #Das Datum des ersten und des letzten Tages, der aktuellen Woche, wird berechnet und als String formatiert.
+    # Das Datum des ersten und des letzten Tages, der aktuellen Woche, wird berechnet und als String formatiert.
     week_start = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
     week_end = week_start + timedelta(days=7)
     week_end = week_end.strftime("%d.%m.%Y")
@@ -50,6 +51,7 @@ def index():
 @app.route("/About")
 def about():
     return render_template("about.html")
+
 
 @app.route("/contact")
 def contact():
