@@ -2,7 +2,7 @@ from flask import Flask, render_template, url_for, request, redirect
 from datetime import datetime, timedelta
 import json
 
-app = Flask(__name__, static_url_path="/static")  # Fick mein Leben. 5 Stunden für ein IMG.
+app = Flask(__name__, static_url_path="/static")
 week_key = ""
 
 
@@ -14,13 +14,27 @@ def index():
     week_end = week_end.strftime("%d.%m.%Y")
     week_start = week_start.strftime("%d.%m. bis ")
 
-    read_jason()
+    i = week_start
+    while i <= week_end:
+        with open('content.json', "r+") as f:
+            d = json.load(f)
+            f.close()
+        x = str(d["content-file"][0][i]["content"])
+        print(x)
+        i += datetime.timedelta(days=1)
+
+    with open('content.json', "r+") as f:
+        d = json.load(f)
+        f.close()
+        item_mo = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
+        item_mo = item_mo.strftime("%d.%m.%Y")
+        return_mo = str(d["content-file"][0][item_mo]["content"])
 
     if request.method == "POST":
         pass
 
     else:
-        return render_template("index.html", pass_week_start=week_start, pass_week_end=week_end)
+        return render_template("index.html", pass_week_start=week_start, pass_week_end=week_end, pass_mo=return_mo)
 
 
 def save_info(week_key, planned_date_key):
@@ -43,17 +57,6 @@ def write_json(temp_dic):
         f.seek(0)
         json.dump(file_data, f, indent=4)
     return redirect("/")
-
-
-def read_jason():
-    with open('content.json', "r+") as f:
-        d = json.load(f)
-        f.close()
-        item_mo = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
-        item_mo = item_mo.strftime("%d.%m.%Y")
-        return_mo = str(d["content-file"][0][item_mo]["content"])
-        print(return_mo)
-        return render_template("index.html", pass_mo=return_mo)
 
 
 @app.route("/mo", methods=["POST", "GET"])
