@@ -1,0 +1,46 @@
+{
+    "content-file": [
+        {
+            "26.09.2022": {
+                "content": "Ravioli",
+                "weekday": "mo"
+            }
+        },
+        {
+            "27.09.2022": {
+                "content": "Pizza",
+                "weekday": "di"
+            }
+        },
+        {
+            "28.09.2022": {
+                "content": "Brot",
+                "weekday": "mi"
+            }
+        },
+        {
+            "29.09.2022": {
+                "content": "FOndue",
+                "weekday": "do"
+            }
+        },
+        {
+            "30.09.2022": {
+                "content": "Kebab",
+                "weekday": "fr"
+            }
+        },
+        {
+            "01.10.2022": {
+                "content": "Pilze",
+                "weekday": "sa"
+            }
+        },
+        {
+            "02.10.2022": {
+                "content": "ok",
+                "weekday": "so"
+            }
+        }
+    ]
+}
