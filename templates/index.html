@@ -20,7 +20,7 @@
 				<a href="#" class="left"></a>
 				<div class="selector_middle">
 					<div class="week_selector_header">Wochenplan</div>
-					<div class="week_selector_display">{{ pass_week_start }}{{ pass_week_end }}</div>
+					<div class="week_selector_display">{{ week_start }}{{ week_end }}</div>
 					</div>
 				<a href="#" class="right"></a>
 			</div>
@@ -30,7 +30,7 @@
 					<div class="day">Mo</div>
 					<div class="form">
 						<form action="/mo" method="POST">
-							<input type="text" class="content_input" name="mo" placeholder="{{ pass_mo }}">
+							<input type="text" class="content_input" name="mo" placeholder="{{ return_mo }}">
 						</form>
 					</div>
 				</div>
@@ -39,7 +39,7 @@
 					<div class="day">Di</div>
 					<div class="form">
 						<form action="/di" method="POST">
-							<input type="text" class="content_input" name="di" placeholder=". . . . . . . . ">
+							<input type="text" class="content_input" name="di" placeholder="{{ return_di }}">
 						</form>
 					</div>
 				</div>
@@ -48,7 +48,7 @@
 					<div class="day">Mi</div>
 					<div class="form">
 						<form action="/mi" method="POST">
-							<input type="text" class="content_input"  name="mi" placeholder=". . . . . . . . ">
+							<input type="text" class="content_input"  name="mi" placeholder="{{ return_mi }}">
 						</form>
 					</div>
 				</div>
@@ -57,7 +57,7 @@
 					<div class="day">Do</div>
 					<div class="form">
 						<form action="/do" method="POST">
-							<input type="text" class="content_input" name="do" placeholder=". . . . . . . . ">
+							<input type="text" class="content_input" name="do" placeholder="{{ return_do }}">
 						</form>
 					</div>
 				</div>
@@ -66,7 +66,7 @@
 					<div class="day">Fr</div>
 					<div class="form">
 						<form action="/fr" method="POST">
-							<input type="text" class="content_input" name="fr" placeholder=". . . . . . . . ">
+							<input type="text" class="content_input" name="fr" placeholder="{{ return_fr }}">
 						</form>
 					</div>
 				</div>
@@ -75,7 +75,7 @@
 					<div class="day">Sa</div>
 					<div class="form">
 						<form action="/sa" method="POST">
-							<input type="text" class="content_input" name="sa" placeholder=". . . . . . . . ">
+							<input type="text" class="content_input" name="sa" placeholder="{{ return_sa }}">
 						</form>
 					</div>
 				</div>
@@ -84,7 +84,7 @@
 					<div class="day">So</div>
 					<div class="form">
 						<form action="/so" method="POST">
-							<input type="text" class="content_input" name="so" placeholder=". . . . . . . . ">
+							<input type="text" class="content_input" name="so" placeholder="{{ return_so }}">
 						</form>
 					</div>
 				</div>
