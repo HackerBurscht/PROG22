@@ -17,12 +17,12 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="week_selecter">
-				<a href="#" class="left"></a>
+				<a href="/prev" class="left"></a>
 				<div class="selector_middle">
 					<div class="week_selector_header">Wochenplan</div>
-					<div class="week_selector_display">{{ week_start }}{{ week_end }}</div>
+					<div class="week_selector_display">{{ week_start_display }} bis {{ week_end_display }}</div>
 					</div>
-				<a href="#" class="right"></a>
+				<a href="/next" class="right"></a>
 			</div>
 			<div class="item-area">
 				<div class="item-group">
@@ -88,9 +88,6 @@
 						</form>
 					</div>
 				</div>
-				<!--<form action="/" method="POST">
-				<input type="submit" value="Hinzufügen" id="save_button">
-				</form>-->
 			</div>
 		</div>
 	</div>
