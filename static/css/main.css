@@ -27,10 +27,19 @@ body {
     font-weight: 550;
 }
 
-.navbar > span.badge.badge-default:hover {
+.navbar > a {
+    text-decoration: none;
+    margin-right:1em;
+    color: rgb(56, 63, 80);
+    font-size: 0.8em;
+    font-weight: 750;
+}
+
+.navbar > a:hover {
     font-weight: 900;
     color: #3D8DFD;
 }
+
 
 .slogan{
     font-weight: 650;
