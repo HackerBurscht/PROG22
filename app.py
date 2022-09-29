@@ -1,5 +1,6 @@
 from flask import Flask, render_template, url_for, request, redirect
 from datetime import datetime, timedelta
+from collections import Counter
 import json
 
 app = Flask(__name__, static_url_path="/static")
@@ -9,6 +10,19 @@ display_week = 0
 
 @app.route("/", methods=["POST", "GET"])
 def index():
+    with open('content.json', "r+") as f, open("meals.json", "r+") as f2:
+        d = json.load(f)
+        f.close()
+        d2 = json.load(f2)
+        f2.close()
+
+    max_meals = len([d][0]["content-file"])
+    div_meals = len(Counter(d2).keys())
+    most_meal, most_meal_amount = Counter(d2).most_common(1)[0]
+    # Counter inspired by https://datagy.io/python-count-unique-values-list/
+    # most_common()-How-To from https://www.delftstack.com/howto/python/python-counter-most-common/
+    # delivers a tuple inside a dict
+
     if display_week == 0:
         week_start = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
         week_end = week_start + timedelta(days=7)
@@ -16,7 +30,6 @@ def index():
         week_i2 = week_end
         week_end_display = week_end.strftime("%d.%m.%Y")
         week_start_display = week_start.strftime("%d.%m.")
-        reset_button = ""
 
     else:
         week_start = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(
@@ -26,13 +39,13 @@ def index():
         week_i2 = week_end
         week_end_display = week_end.strftime("%d.%m.%Y")
         week_start_display = week_start.strftime("%d.%m.")
-        reset_button = "Zurück"
     with open('content.json', "r+") as f:
         d = json.load(f)
         f.close()
         i = week_i1
         n = 0 + display_week * 7
         x_list = []
+
         while i < week_i2:
             j = i.strftime("%d.%m.%Y")
             try:
@@ -42,6 +55,7 @@ def index():
             x_list.append(x)
             i += timedelta(days=1)
             n += 1
+
     return_mo = x_list[0]
     return_di = x_list[1]
     return_mi = x_list[2]
@@ -52,7 +66,8 @@ def index():
 
     return render_template("index.html", week_start_display=week_start_display, week_end_display=week_end_display,
                            return_mo=return_mo, return_di=return_di, return_mi=return_mi, return_do=return_do,
-                           return_fr=return_fr, return_sa=return_sa, return_so=return_so, reset_button=reset_button)
+                           return_fr=return_fr, return_sa=return_sa, return_so=return_so, max_meals=max_meals,
+                           div_meals=div_meals, most_meal=most_meal, most_meal_amount=most_meal_amount)
 
 
 def save_info(week_key, planned_date_key):
@@ -65,7 +80,8 @@ def save_info(week_key, planned_date_key):
         temp_dic[date] = {}
         temp_dic[date]["content"] = content
         temp_dic[date]["weekday"] = week_key
-        with open('content.json', 'r+') as f:
+
+        with open("content.json", "r+") as f:
             file_data = json.load(f)
             max = (len([file_data][0]["content-file"]))
             i = 0
@@ -79,6 +95,13 @@ def save_info(week_key, planned_date_key):
                 file_data["content-file"].append(temp_dic)
                 f.seek(0)
                 json.dump(file_data, f, indent=4)
+        f.close()
+        with open("meals.json", "r+") as f2:
+            load = json.load(f2)
+            load.append(content)
+            f2.seek(0)
+            json.dump(load, f2)
+        f2.close()
         return redirect("/")
 
 
