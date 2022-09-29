@@ -41,6 +41,90 @@
                 "content": "Kuchen",
                 "weekday": "so"
             }
+        },
+        {
+            "03.10.2022": {
+                "content": "Nudeln mit Tomatensauce",
+                "weekday": "mo"
+            }
+        },
+        {
+            "04.10.2022": {
+                "content": "Brot",
+                "weekday": "di"
+            }
+        },
+        {
+            "05.10.2022": {
+                "content": "Schnipo",
+                "weekday": "mi"
+            }
+        },
+        {
+            "06.10.2022": {
+                "content": "Grill",
+                "weekday": "do"
+            }
+        },
+        {
+            "07.10.2022": {
+                "content": "Pizza",
+                "weekday": "fr"
+            }
+        },
+        {
+            "08.10.2022": {
+                "content": "R\u00f6sti",
+                "weekday": "sa"
+            }
+        },
+        {
+            "09.10.2022": {
+                "content": "Pizza",
+                "weekday": "so"
+            }
+        },
+        {
+            "10.10.2022": {
+                "content": "Grill",
+                "weekday": "mo"
+            }
+        },
+        {
+            "11.10.2022": {
+                "content": "Curry",
+                "weekday": "di"
+            }
+        },
+        {
+            "12.10.2022": {
+                "content": "Salat",
+                "weekday": "mi"
+            }
+        },
+        {
+            "13.10.2022": {
+                "content": "Gem\u00fcse",
+                "weekday": "do"
+            }
+        },
+        {
+            "14.10.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "15.10.2022": {
+                "content": "Pizza",
+                "weekday": "sa"
+            }
+        },
+        {
+            "16.10.2022": {
+                "content": "Salat",
+                "weekday": "so"
+            }
         }
     ]
 }

@@ -10,7 +10,7 @@ display_week = 0
 
 @app.route("/", methods=["POST", "GET"])
 def index():
-    with open('content.json', "r+") as f, open("meals.json", "r+") as f2:
+    with open('content.json', "r") as f, open("meals.json", "r") as f2:
         d = json.load(f)
         f.close()
         d2 = json.load(f2)
@@ -39,34 +39,23 @@ def index():
         week_i2 = week_end
         week_end_display = week_end.strftime("%d.%m.%Y")
         week_start_display = week_start.strftime("%d.%m.")
-    with open('content.json', "r+") as f:
-        d = json.load(f)
-        f.close()
-        i = week_i1
-        n = 0 + display_week * 7
-        x_list = []
 
-        while i < week_i2:
-            j = i.strftime("%d.%m.%Y")
-            try:
-                x = str(d["content-file"][n][j]["content"])
-            except:
-                x = ". . . . . . . . . . . "
-            x_list.append(x)
-            i += timedelta(days=1)
-            n += 1
+    i = week_i1
+    n = 0 + display_week * 7
+    x_list = []
 
-    return_mo = x_list[0]
-    return_di = x_list[1]
-    return_mi = x_list[2]
-    return_do = x_list[3]
-    return_fr = x_list[4]
-    return_sa = x_list[5]
-    return_so = x_list[6]
+    while i < week_i2:
+        j = i.strftime("%d.%m.%Y")
+        try:
+            x_list.append(str(d["content-file"][n][j]["content"]))
+        except:
+            x_list.append(". . . . . . . . . . . ")
+        i += timedelta(days=1)
+        n += 1
 
     return render_template("index.html", week_start_display=week_start_display, week_end_display=week_end_display,
-                           return_mo=return_mo, return_di=return_di, return_mi=return_mi, return_do=return_do,
-                           return_fr=return_fr, return_sa=return_sa, return_so=return_so, max_meals=max_meals,
+                           return_mo=x_list[0], return_di=x_list[1], return_mi=x_list[2], return_do=x_list[3],
+                           return_fr=x_list[4], return_sa=x_list[5], return_so=x_list[6], max_meals=max_meals,
                            div_meals=div_meals, most_meal=most_meal, most_meal_amount=most_meal_amount)
 
 
