@@ -1,7 +1,10 @@
 Todo:
-- warum zum Fick ladets nit alli Data? Update: Ladet alli, aber nu wenn Bock druf. U2: Evtl. glöst do nit immer f.close() noch open file
-- Delete Entries when updating in meals.json
 - Wochen in der Vergangenheit?
+- Rewrite Load-Algo; Bei jedem index jedes Datum checken.
+- Stats; Layout, Function
+- ReadMe
+- Comments
+- RNG deaktivieren, wenn Set nicht gross genug ist
 
 
 Problembeschreibung/Motivation

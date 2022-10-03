@@ -1,3 +1,5 @@
+/* Styling for base.html*/
+/****************************************************************************/
 body {
     background-color: #F4F6FA;
     margin: 0;
@@ -27,7 +29,7 @@ body {
     margin-right:1em;
     color: rgb(56, 63, 80);
     font-size: 0.8em;
-    font-weight: 750;
+    font-weight: 550;
 }
 
 .navbar > a:hover {
@@ -39,6 +41,7 @@ body {
 .slogan{
     font-weight: 650;
     font-size: 0.8em;
+    margin-bottom: 2em;
 }
 
 .main_stats{
@@ -67,11 +70,16 @@ body {
 
 }
 
+/* Styling for index.html*/
+/****************************************************************************/
+
 .week_selecter{
-    width: 25%;
     display:flex;
     justify-content: space-evenly;
     padding-top: 1em;
+    width:100%;
+    margin: 0 auto;
+    max-width: 30em;
 }
 
 .left{
@@ -119,7 +127,9 @@ body {
     font-size: 0.8em;
 }
 .item-area{
-    width:25%;
+    width:100%;
+    margin: 0 auto;
+    max-width: 30em;
     background-color: #FFFFFF;
     border: 1px solid;
     border-radius: 5px;
@@ -186,22 +196,10 @@ input[type=text]{
     border-radius: 1em;
 }
 
-
-#save_button{
-    margin-bottom: 0.5em;
-    border: 0px;
-    background: #FFFFFF;
-    font-size: 0.6em;
-    color: #383F50;
-}
-#save_button:hover{
-    font-weight: 900;
-    color: #3D8DFD;
-}
-
 .footer{
     width: 25%;
     display:flex;
+    justify-content: center;
 }
 
 .footer > a{
@@ -214,4 +212,114 @@ input[type=text]{
 .footer > a:hover {
     font-weight: 900;
     color: #3D8DFD;
+}
+
+.func{
+    margin-top: 1em;
+    display: flex;
+    justify-content: flex-start;
+    width: 30em;
+}
+
+.func_link{
+    margin-right: 2em;
+    text-align: left;
+    font-size: 0.8em;
+    color: #383F50;
+}
+
+.func_link:hover {
+    font-weight: 900;
+    color: #3D8DFD;
+}
+
+/* Styling for stats.html*/
+/****************************************************************************/
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.item_area_header{
+    padding-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid;
+    border-color: #EFF0F6;
+    font-weight: 650;
+    font-size: 1em;
+}
+
+.item_content{
+    min-height:30em;
+    min-width: 30em;
+}
+
+.clst{
+    max-height: 0;
+    padding-top: 1em;
+    list-style: none;
+    text-align: left;
+}
+
+#enable_scroll {
+  margin-right: 5em;
+  overflow-y: auto;
+}
+
+/*Scrollbar code adapted from digitalocean.com and customised/*
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: white;
+}
+
+/* Works on Chrome, Edge, and Safari */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    visibility: hidden;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #C1C1C1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #383F50;
+}
+
+.item_area_title {
+    margin-top: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding-bottom: 1em;
+    font-size: 0.8em;
+    text-align: left;
+}
+
+.items_to_remember {
+    margin-top: 1em;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid;
+    border-color: #EFF0F6;
+}
+
+.remember_item {
+    margin-right: 2.5em;
+    margin-left: 3em;
+    margin-bottom: 1em;
+}
+
+.remember_item::before{
+    content: "";
+    display: inline-block;
+    margin-right: 0.5em;
+    height: 0.5em;
+    width: 0.5em;
+    background: #3D8DFD;
+    border-radius: 0.5em;
 }

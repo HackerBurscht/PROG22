@@ -3,5 +3,78 @@
 {% block title %} - Dein Mampfverhalten {% endblock %}
 
 {% block body %}
-<h1>Ich mach noch gar nix. Du blöder Matrose.</h1>
+
+	<div class="row">
+		<div class="col-md-12">
+			<div class="header">
+				<div class="slogan">
+					{{ slogan }} Such du Inspiration für deine Planung oder möchtest du bloss den Überblick behalten?
+				</div>
+				<div class="main_stats">
+					<div class="stat_header">
+						<div class="title_header">
+						<div class="blob_one"></div>
+						<div class="max_value_title">{{ max_meals }}</div>
+						<div class="blob_one"></div>
+						</div>
+						<div class="max_value_text">Mahlzeiten geplant</div>
+					</div>
+					<div class="stat_header">
+						<div class="title_header">
+						<div class="blob_two"></div>
+						<div class="max_value_title">{{ div_meals }}</div>
+						<div class="blob_two"></div>
+						</div>
+						<div class="max_value_text">verschiedene Gerichte</div>
+					</div>
+					<div class="stat_header">
+						<div class="title_header">
+						<div class="blob_three"></div>
+						<div class="max_value_title">{{ most_meal_amount }}</div>
+						<div class="blob_three"></div>
+						</div>
+						<div class="max_value_text">mal {{ most_meal }}</div>
+					</div>
+				</div>
+			</div>
+			<hr class="hr_style w-25">
+		</div>
+	</div>
+<div class="main">
+    <div class="row">
+		<div class="col-md-4">
+            <div class="item-area">
+                <div class="item_area_header">Stöbere durch deine Gerichte</div>
+				<div class="item_content" id="enable_scroll">
+					<ul class="clst">
+						{% for meal in meal_data %}
+							<li> {{ meal }} </li>
+						{% endfor%}
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+            <div class="item-area">
+                <div class="item_area_header">Deine Lieblingsgerichte?</div>
+				<div class="item_content">
+
+				</div>
+			</div>
+		</div>
+		<div class="col-md-4">
+			<div class="item-area">
+                <div class="item_area_header">Erfahre noch mehr</div>
+				<div class="item_content">
+				<div class="item_area_title">Schon vergessen? Diese Gerichte waren schon seit längerem nicht mehr auf deinem Radar:</div>
+					<div class="items_to_remember">
+						<div class="remember_item">Test</div>
+						<div class="remember_item">Test</div>
+						<div class="remember_item">Test</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
 {% endblock %}

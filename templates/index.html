@@ -55,7 +55,7 @@
 					<div class="blob_one"></div>
 					<div class="day">Mo</div>
 					<div class="form">
-						<form action="/mo" method="POST">
+						<form action="/save" method="POST">
 							<input type="text" class="content_input" name="mo" placeholder="{{ return_mo }}">
 						</form>
 					</div>
@@ -64,7 +64,7 @@
 					<div class="blob_two"></div>
 					<div class="day">Di</div>
 					<div class="form">
-						<form action="/di" method="POST">
+						<form action="/save" method="POST">
 							<input type="text" class="content_input" name="di" placeholder="{{ return_di }}">
 						</form>
 					</div>
@@ -73,7 +73,7 @@
 					<div class="blob_three"></div>
 					<div class="day">Mi</div>
 					<div class="form">
-						<form action="/mi" method="POST">
+						<form action="/save" method="POST">
 							<input type="text" class="content_input"  name="mi" placeholder="{{ return_mi }}">
 						</form>
 					</div>
@@ -82,7 +82,7 @@
 					<div class="blob_one"></div>
 					<div class="day">Do</div>
 					<div class="form">
-						<form action="/do" method="POST">
+						<form action="/save" method="POST">
 							<input type="text" class="content_input" name="do" placeholder="{{ return_do }}">
 						</form>
 					</div>
@@ -91,7 +91,7 @@
 					<div class="blob_two"></div>
 					<div class="day">Fr</div>
 					<div class="form">
-						<form action="/fr" method="POST">
+						<form action="/save" method="POST">
 							<input type="text" class="content_input" name="fr" placeholder="{{ return_fr }}">
 						</form>
 					</div>
@@ -100,7 +100,7 @@
 					<div class="blob_three"></div>
 					<div class="day">Sa</div>
 					<div class="form">
-						<form action="/sa" method="POST">
+						<form action="/save" method="POST">
 							<input type="text" class="content_input" name="sa" placeholder="{{ return_sa }}">
 						</form>
 					</div>
@@ -109,13 +109,17 @@
 					<div class="blob_one"></div>
 					<div class="day">So</div>
 					<div class="form">
-						<form action="/so" method="POST">
+						<form action="/save" method="POST">
 							<input type="text" class="content_input" name="so" placeholder="{{ return_so }}">
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="func">
+		<a href="{{ url_for('rng_plan') }}" class="func_link">Zufällig</a>
+		<a href="" class="func_link">Schon lange her</a>
 	</div>
 
 
