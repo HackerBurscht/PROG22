@@ -1,11 +1,13 @@
 Todo:
-- Wochen in der Vergangenheit?
-- Rewrite Load-Algo; Bei jedem index jedes Datum checken.
-- Stats; Layout, Function
+
 - ReadMe
 - Comments
-- RNG deaktivieren, wenn Set nicht gross genug ist
-- Error in RNG-Func wenn Woche nicht leer
+- Bugs/Features:
+- Aktuell werden bei "Schon-lange-her-Items" auch Dinge ausgegeben,
+  welche in der Zukunft liegen aber nicht, in den letzten 30 Tagen
+  gekocht wurden. Wer die Zeit nicht linear betrachtet ist hier klar
+  im Vorteil.
+- Schon-lange-her-Items scheint noch nicht ganz korrekt. lol
 
 
 Problembeschreibung/Motivation

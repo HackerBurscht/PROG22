@@ -120,8 +120,10 @@
 	<div class="func">
 		<a href="{{ url_for('rng_plan') }}" class="func_link">Zufällig</a>
 		<a href="{{ url_for('forgot') }}" class="func_link">Schon lange her</a>
+		{% if visible %}
+		<a href="{{ url_for('current_week') }}" class="func_link" id="current_week_button">Springe zurück</a>
+		{% endif %}
 	</div>
-
 
 {% endblock %}
 

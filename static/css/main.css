@@ -233,6 +233,10 @@ input[type=text]{
     color: #3D8DFD;
 }
 
+#current_week_button {
+    margin-left: auto;
+}
+
 /* Styling for stats.html*/
 /****************************************************************************/
 .main{
@@ -292,7 +296,7 @@ input[type=text]{
 }
 
 .item_area_title {
-    margin-top: 1em;
+    padding-top: 1em;
     margin-left: 2em;
     margin-right: 2em;
     padding-bottom: 1em;

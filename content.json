@@ -2,43 +2,43 @@
     "content-file": [
         {
             "03.10.2022": {
-                "content": "Ravioli",
+                "content": "Mujadara",
                 "weekday": "mo"
             }
         },
         {
             "04.10.2022": {
-                "content": "Maluns",
+                "content": "Fried Rice",
                 "weekday": "di"
             }
         },
         {
             "05.10.2022": {
-                "content": "Mayo",
+                "content": "Pasta",
                 "weekday": "mi"
             }
         },
         {
             "06.10.2022": {
-                "content": "BBQ",
+                "content": "Test des Samos",
                 "weekday": "do"
             }
         },
         {
             "07.10.2022": {
-                "content": "Test des Sonos",
+                "content": "Pad Thay",
                 "weekday": "fr"
             }
         },
         {
             "08.10.2022": {
-                "content": "Test des Monos",
+                "content": "S\u00fcss Sauer",
                 "weekday": "sa"
             }
         },
         {
             "09.10.2022": {
-                "content": "Test des Samos",
+                "content": "Gr\u00fcnes Curry",
                 "weekday": "so"
             }
         },
@@ -375,6 +375,174 @@
         {
             "04.09.2022": {
                 "content": "Rojas Tacos",
+                "weekday": "so"
+            }
+        },
+        {
+            "31.10.2022": {
+                "content": "R\u00f6sti",
+                "weekday": "mo"
+            }
+        },
+        {
+            "01.11.2022": {
+                "content": "Vogel",
+                "weekday": "di"
+            }
+        },
+        {
+            "02.11.2022": {
+                "content": "Zopf",
+                "weekday": "mi"
+            }
+        },
+        {
+            "03.11.2022": {
+                "content": "Pizza",
+                "weekday": "do"
+            }
+        },
+        {
+            "04.11.2022": {
+                "content": "Rojas Tacos",
+                "weekday": "fr"
+            }
+        },
+        {
+            "05.11.2022": {
+                "content": "Tacos",
+                "weekday": "sa"
+            }
+        },
+        {
+            "06.11.2022": {
+                "content": "Gipfeli",
+                "weekday": "so"
+            }
+        },
+        {
+            "07.11.2022": {
+                "content": "Ente",
+                "weekday": "mo"
+            }
+        },
+        {
+            "08.11.2022": {
+                "content": "Pad Thay",
+                "weekday": "di"
+            }
+        },
+        {
+            "09.11.2022": {
+                "content": "S\u00fcss Sauer",
+                "weekday": "mi"
+            }
+        },
+        {
+            "10.11.2022": {
+                "content": "Rotes Curry",
+                "weekday": "do"
+            }
+        },
+        {
+            "11.11.2022": {
+                "content": "Gr\u00fcnes Curry",
+                "weekday": "fr"
+            }
+        },
+        {
+            "12.11.2022": {
+                "content": "Riz Casimir",
+                "weekday": "sa"
+            }
+        },
+        {
+            "13.11.2022": {
+                "content": "Fried Rice",
+                "weekday": "so"
+            }
+        },
+        {
+            "14.11.2022": {
+                "content": "Fleisch",
+                "weekday": "mo"
+            }
+        },
+        {
+            "15.11.2022": {
+                "content": "Fried Rice",
+                "weekday": "di"
+            }
+        },
+        {
+            "16.11.2022": {
+                "content": "Pad Thay",
+                "weekday": "mi"
+            }
+        },
+        {
+            "17.11.2022": {
+                "content": "Mujadara",
+                "weekday": "do"
+            }
+        },
+        {
+            "18.11.2022": {
+                "content": "Riz Casimir",
+                "weekday": "fr"
+            }
+        },
+        {
+            "19.11.2022": {
+                "content": "Vogel",
+                "weekday": "sa"
+            }
+        },
+        {
+            "20.11.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "so"
+            }
+        },
+        {
+            "21.11.2022": {
+                "content": "Gipfeli",
+                "weekday": "mo"
+            }
+        },
+        {
+            "22.11.2022": {
+                "content": "Fried Rice",
+                "weekday": "di"
+            }
+        },
+        {
+            "23.11.2022": {
+                "content": "Ente vom Grill",
+                "weekday": "mi"
+            }
+        },
+        {
+            "24.11.2022": {
+                "content": "Pad Thay",
+                "weekday": "do"
+            }
+        },
+        {
+            "25.11.2022": {
+                "content": "Test des Samos",
+                "weekday": "fr"
+            }
+        },
+        {
+            "26.11.2022": {
+                "content": "Test des Sonos",
+                "weekday": "sa"
+            }
+        },
+        {
+            "27.11.2022": {
+                "content": "BBQ",
                 "weekday": "so"
             }
         }

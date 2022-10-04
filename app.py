@@ -1,13 +1,20 @@
+# Python libraries
+####################################################################################################################
+# general
 from flask import Flask, render_template, url_for, request, redirect
+import json
+
+# numbers and time
 from datetime import datetime, timedelta
 from collections import Counter
 from random import sample
-import json
 
+
+# init and necessary global values
+####################################################################################################################
 app = Flask(__name__, static_url_path="/static")
-week_key = ""
+
 display_week = 0
-rng_toggle = 0
 weekday = {
     "0": "mo",
     "1": "di",
@@ -36,7 +43,7 @@ def index():
     # delivers a tuple inside a dict
 
     # Set the current or selected week and create values to return on the index page:
-    ###################################################################################################################
+    ####################################################################################################################
     if display_week == 0:
         week_start = datetime.today() - timedelta(days=datetime.today().weekday() % 7)
         week_end = week_start + timedelta(days=7)
@@ -45,6 +52,7 @@ def index():
         week_start_display = week_start.strftime("%d.%m.")
         week_end_display = week_start + timedelta(days=6)
         week_end_display = week_end_display.strftime("%d.%m.%Y")
+        visible = False
     else:
         week_start = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(
             days=display_week * 7)
@@ -54,6 +62,7 @@ def index():
         week_start_display = week_start.strftime("%d.%m.")
         week_end_display = week_start + timedelta(days=6)
         week_end_display = week_end_display.strftime("%d.%m.%Y")
+        visible = True
 
     # Read the json files and extract the correct values:
     ####################################################################################################################
@@ -80,7 +89,7 @@ def index():
     return render_template("index.html", week_start_display=week_start_display, week_end_display=week_end_display,
                            return_mo=x_list[0], return_di=x_list[1], return_mi=x_list[2], return_do=x_list[3],
                            return_fr=x_list[4], return_sa=x_list[5], return_so=x_list[6], max_meals=max_meals,
-                           div_meals=div_meals, most_meal=most_meal, most_meal_amount=most_meal_amount)
+                           div_meals=div_meals, most_meal=most_meal, most_meal_amount=most_meal_amount, visible=visible)
 
 
 def save_info(week_key, planned_date_key, content):
@@ -96,9 +105,9 @@ def save_info(week_key, planned_date_key, content):
 
         with open("content.json", "r+") as f:
             file_data = json.load(f)
-            max = (len([file_data][0]["content-file"]))
+            len_content_in_file_data = (len([file_data][0]["content-file"]))
             i = 0
-            while i < max:
+            while i < len_content_in_file_data:
                 if date in [file_data][0]["content-file"][i]:
                     for key, value in file_data["content-file"][i].items():
                         found_date = key
@@ -153,46 +162,55 @@ def save():
             else:
                 print("Content is Null")
         except:
-            print("Working on it...")
+            print("Working on some problems...")
         i += 1
     return redirect("/")
 
 
-@app.route("/next")
 # Adds 1 to the "display_week" variable. Which is used to determine the week to show on the index page
-####################################################################################################################
+########################################################################################################################
+@app.route("/next")
 def next_week():
     global display_week
     display_week += 1
     return redirect("/")
 
 
-@app.route("/prev")
 # Subtracts 1 to the "display_week" variable. Which is used to determine the week to show on the index page
-####################################################################################################################
+########################################################################################################################
+@app.route("/prev")
 def prev_week():
     global display_week
     display_week -= 1
     return redirect("/")
 
 
-@app.route("/About")
+# Sets "display_week" back to "0". Changes the shown week back to the current week.
+########################################################################################################################
+@app.route("/current_week")
+def current_week():
+    global display_week
+    display_week = 0
+    return redirect("/")
+
+
 # Loads about page
-####################################################################################################################
+########################################################################################################################
+@app.route("/About")
 def about():
     return render_template("about.html")
 
 
+# Loads contact page
+########################################################################################################################
 @app.route("/contact")
-# Load contact page
-####################################################################################################################
 def contact():
     return render_template("contact.html")
 
 
-@app.route("/stats")
 # Opens stats page.
-####################################################################################################################
+########################################################################################################################
+@app.route("/stats")
 def stats():
     # Loads data from both json files and prepares them to be used in this function.
     ####################################################################################################################
@@ -220,8 +238,7 @@ def stats():
         all_meals.append(key)
 
     max_len = len([d][0]["content-file"])
-    print(max_len)
-    if max_len > 45:
+    if max_len >= 45:
         start = 0
         for x in range(0, 30):
             past_str = past.strftime("%d.%m.%Y")
@@ -256,10 +273,10 @@ def stats():
                            most_meal_amount=most_meal_amount, meal_data=meal_data, remember_items=remember_items)
 
 
+# Chooses random meals from "meals.json" and delivers them to the save-function.
+########################################################################################################################
 @app.route("/rng_plan")
 def rng_plan():
-    # Chooses random meals from "meals.json" and delivers them to the save-function.
-    ####################################################################################################################
     with open("meals.json", "r") as f:
         d = json.load(f)
     f.close()
@@ -280,9 +297,70 @@ def rng_plan():
     return redirect("/")
 
 
+# Chooses meals which haven't been prepared in the last 30 days and delivers them to the save-function.
+# Function is only possible, when there are more than 45 meals planned and when there are enough
+# different meals in the past.
+########################################################################################################################
 @app.route("/forgot")
 def forgot():
-    pass
+    with open('content.json', "r") as f, open("meals.json", "r") as f2:
+        d = json.load(f)
+        f.close()
+        d2 = json.load(f2)
+    f2.close()
+
+    # Get Values to display the meals which haven't been prepared in the last 30 days.
+    # Works only if there are more than 45 meals planned in the "content.json"-file
+    ####################################################################################################################
+    today = datetime.today()
+    past = today - timedelta(days=30)
+    recently = []
+    all_meals = []
+    not_used = []
+
+    for key in Counter(d2).keys():
+        all_meals.append(key)
+
+    max_len = len([d][0]["content-file"])
+    if max_len >= 45:
+        start = 0
+        for x in range(0, 30):
+            past_str = past.strftime("%d.%m.%Y")
+            while start < max_len:
+                if past_str in d["content-file"][start]:
+                    found_past_meal = str(d["content-file"][start][past_str]["content"])
+                    recently.append(found_past_meal)
+                start += 1
+            start = 0
+            past += timedelta(days=1)
+
+        for element in all_meals:
+            if element not in recently:
+                not_used.append(element)
+
+        try:
+            subset = sample(not_used, 7)
+            temp_lst = []
+            for item in subset:
+                temp_lst.append(item)
+            print(temp_lst)
+
+            i = 0
+            while i <= 6:
+                week_key = weekday.get(str(i))
+                content = subset[i]
+                planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=i)
+                planned_date_key = planned_date_key + timedelta(days=display_week * 7)
+                planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+                save_info(week_key, planned_date_key, content)
+                i += 1
+
+        except:
+            print("Du hast noch nicht genügend unterschiedliche Gerichte gekocht.")
+
+    elif max_len < 45:
+        print("Not enough data")
+
     return redirect("/")
 
 
