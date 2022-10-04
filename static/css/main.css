@@ -303,6 +303,8 @@ input[type=text]{
 .items_to_remember {
     margin-top: 1em;
     display: flex;
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
     border-bottom: 1px solid;
     border-color: #EFF0F6;

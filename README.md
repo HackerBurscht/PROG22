@@ -5,6 +5,7 @@ Todo:
 - ReadMe
 - Comments
 - RNG deaktivieren, wenn Set nicht gross genug ist
+- Error in RNG-Func wenn Woche nicht leer
 
 
 Problembeschreibung/Motivation

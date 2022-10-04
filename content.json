@@ -2,13 +2,13 @@
     "content-file": [
         {
             "03.10.2022": {
-                "content": "Test des Samos",
+                "content": "Ravioli",
                 "weekday": "mo"
             }
         },
         {
             "04.10.2022": {
-                "content": "Testdi",
+                "content": "Maluns",
                 "weekday": "di"
             }
         },
@@ -20,452 +20,194 @@
         },
         {
             "06.10.2022": {
-                "content": "Tacos",
+                "content": "BBQ",
                 "weekday": "do"
             }
         },
         {
             "07.10.2022": {
-                "content": "Capuns",
-                "weekday": "Fr"
+                "content": "Test des Sonos",
+                "weekday": "fr"
             }
         },
         {
             "08.10.2022": {
-                "content": "Mayo",
-                "weekday": "Sa"
+                "content": "Test des Monos",
+                "weekday": "sa"
             }
         },
         {
             "09.10.2022": {
-                "content": "Maluns",
-                "weekday": "So"
+                "content": "Test des Samos",
+                "weekday": "so"
             }
         },
         {
             "10.10.2022": {
-                "content": "Capuns",
+                "content": "Test des Sonos",
                 "weekday": "mo"
             }
         },
         {
             "11.10.2022": {
-                "content": "Maluns",
+                "content": "BBQ",
                 "weekday": "di"
             }
         },
         {
             "12.10.2022": {
-                "content": "Kuchen",
+                "content": "Maluns",
                 "weekday": "mi"
             }
         },
         {
             "13.10.2022": {
-                "content": "BBQ",
+                "content": "Kuchen",
                 "weekday": "do"
             }
         },
         {
             "14.10.2022": {
-                "content": "Mayo",
+                "content": "Zopf",
                 "weekday": "fr"
             }
         },
         {
             "15.10.2022": {
-                "content": "Ketchup",
+                "content": "Mayo",
                 "weekday": "sa"
             }
         },
         {
             "16.10.2022": {
-                "content": "Lauch",
+                "content": "Test W3",
                 "weekday": "so"
             }
         },
         {
             "17.10.2022": {
-                "content": "Test des Monos",
+                "content": "Test W3",
                 "weekday": "mo"
             }
         },
         {
             "18.10.2022": {
-                "content": "Testdi",
+                "content": "Test des Sonos",
                 "weekday": "di"
             }
         },
         {
             "19.10.2022": {
-                "content": "Test W3",
+                "content": "Mayo",
                 "weekday": "mi"
             }
         },
         {
             "20.10.2022": {
-                "content": "Tacos",
+                "content": "Test des Samos",
                 "weekday": "do"
             }
         },
         {
             "21.10.2022": {
-                "content": "Pizza",
+                "content": "Maluns",
                 "weekday": "fr"
             }
         },
         {
             "22.10.2022": {
-                "content": "Test des Samos",
+                "content": "Suppe",
                 "weekday": "sa"
             }
         },
         {
             "23.10.2022": {
-                "content": "Test des Sonos",
-                "weekday": "so"
-            }
-        },
-        {
-            "24.10.2022": {
-                "content": "Test des Monos",
-                "weekday": "mo"
-            }
-        },
-        {
-            "25.10.2022": {
-                "content": "BBQ",
-                "weekday": "di"
-            }
-        },
-        {
-            "26.10.2022": {
-                "content": "Test des Sonos",
-                "weekday": "mi"
-            }
-        },
-        {
-            "27.10.2022": {
-                "content": "Mayo",
-                "weekday": "do"
-            }
-        },
-        {
-            "28.10.2022": {
-                "content": "Pizza",
-                "weekday": "fr"
-            }
-        },
-        {
-            "29.10.2022": {
-                "content": "Capuns",
-                "weekday": "sa"
-            }
-        },
-        {
-            "30.10.2022": {
-                "content": "Testdi",
-                "weekday": "so"
-            }
-        },
-        {
-            "31.10.2022": {
-                "content": "BBQ",
-                "weekday": "mo"
-            }
-        },
-        {
-            "01.11.2022": {
-                "content": "Tacos",
-                "weekday": "di"
-            }
-        },
-        {
-            "02.11.2022": {
-                "content": "Capuns",
-                "weekday": "mi"
-            }
-        },
-        {
-            "03.11.2022": {
-                "content": "Maluns",
-                "weekday": "do"
-            }
-        },
-        {
-            "04.11.2022": {
-                "content": "Test des Samos",
-                "weekday": "fr"
-            }
-        },
-        {
-            "05.11.2022": {
-                "content": "Kuchen",
-                "weekday": "sa"
-            }
-        },
-        {
-            "06.11.2022": {
-                "content": "Test W3",
-                "weekday": "so"
-            }
-        },
-        {
-            "07.11.2022": {
-                "content": "Test W3",
-                "weekday": "mo"
-            }
-        },
-        {
-            "08.11.2022": {
-                "content": "Testdi",
-                "weekday": "di"
-            }
-        },
-        {
-            "09.11.2022": {
-                "content": "Maluns",
-                "weekday": "mi"
-            }
-        },
-        {
-            "10.11.2022": {
-                "content": "Test des Samos",
-                "weekday": "do"
-            }
-        },
-        {
-            "11.11.2022": {
-                "content": "BBQ",
-                "weekday": "fr"
-            }
-        },
-        {
-            "12.11.2022": {
-                "content": "Pizza",
-                "weekday": "sa"
-            }
-        },
-        {
-            "13.11.2022": {
-                "content": "Test des Monos",
-                "weekday": "so"
-            }
-        },
-        {
-            "14.11.2022": {
-                "content": "Mayo",
-                "weekday": "mo"
-            }
-        },
-        {
-            "15.11.2022": {
-                "content": "Testdi",
-                "weekday": "di"
-            }
-        },
-        {
-            "16.11.2022": {
-                "content": "BBQ",
-                "weekday": "mi"
-            }
-        },
-        {
-            "17.11.2022": {
-                "content": "Mayo",
-                "weekday": "do"
-            }
-        },
-        {
-            "18.11.2022": {
-                "content": "Tacos",
-                "weekday": "fr"
-            }
-        },
-        {
-            "19.11.2022": {
-                "content": "Test W3",
-                "weekday": "sa"
-            }
-        },
-        {
-            "20.11.2022": {
-                "content": "Pizza",
-                "weekday": "so"
-            }
-        },
-        {
-            "21.11.2022": {
-                "content": "Test W3",
-                "weekday": "mo"
-            }
-        },
-        {
-            "22.11.2022": {
-                "content": "BBQ",
-                "weekday": "di"
-            }
-        },
-        {
-            "23.11.2022": {
-                "content": "Maluns",
-                "weekday": "mi"
-            }
-        },
-        {
-            "24.11.2022": {
-                "content": "Test des Sonos",
-                "weekday": "do"
-            }
-        },
-        {
-            "25.11.2022": {
-                "content": "Test des Monos",
-                "weekday": "fr"
-            }
-        },
-        {
-            "26.11.2022": {
-                "content": "Kuchen",
-                "weekday": "sa"
-            }
-        },
-        {
-            "27.11.2022": {
-                "content": "Capuns",
-                "weekday": "so"
-            }
-        },
-        {
-            "28.11.2022": {
-                "content": "Test des Sonos",
-                "weekday": "mo"
-            }
-        },
-        {
-            "29.11.2022": {
-                "content": "Test des Samos",
-                "weekday": "di"
-            }
-        },
-        {
-            "30.11.2022": {
-                "content": "Test W3",
-                "weekday": "mi"
-            }
-        },
-        {
-            "01.12.2022": {
-                "content": "Capuns",
-                "weekday": "do"
-            }
-        },
-        {
-            "02.12.2022": {
-                "content": "BBQ",
-                "weekday": "fr"
-            }
-        },
-        {
-            "03.12.2022": {
-                "content": "Mayo",
-                "weekday": "sa"
-            }
-        },
-        {
-            "04.12.2022": {
                 "content": "Tacos",
                 "weekday": "so"
             }
         },
         {
             "26.09.2022": {
-                "content": "Ravioli",
+                "content": "Tacos",
                 "weekday": "mo"
             }
         },
         {
             "27.09.2022": {
-                "content": "Brot",
+                "content": "Mayo",
                 "weekday": "di"
             }
         },
         {
             "28.09.2022": {
-                "content": "Test des Minos",
+                "content": "Test des Samos",
                 "weekday": "mi"
             }
         },
         {
             "29.09.2022": {
-                "content": "Gipfeli",
+                "content": "Ravioli",
                 "weekday": "do"
             }
         },
         {
             "30.09.2022": {
-                "content": "Pizza",
+                "content": "Test W3",
                 "weekday": "fr"
             }
         },
         {
             "01.10.2022": {
-                "content": "Brot",
+                "content": "Maluns",
                 "weekday": "sa"
             }
         },
         {
             "02.10.2022": {
-                "content": "Salat",
+                "content": "Test des Sonos",
                 "weekday": "so"
             }
         },
         {
-            "21.09.2022": {
-                "content": "Rojas Tacos",
-                "weekday": "mi"
+            "24.10.2022": {
+                "content": "Suppe",
+                "weekday": "mo"
             }
         },
         {
-            "22.09.2022": {
-                "content": "Gipfeli",
-                "weekday": "do"
-            }
-        },
-        {
-            "25.09.2022": {
-                "content": "Salat",
-                "weekday": "so"
-            }
-        },
-        {
-            "20.09.2022": {
-                "content": "Zopf",
+            "25.10.2022": {
+                "content": "Test W3",
                 "weekday": "di"
             }
         },
         {
-            "23.09.2022": {
-                "content": "Pizza",
+            "26.10.2022": {
+                "content": "Tacos",
+                "weekday": "mi"
+            }
+        },
+        {
+            "27.10.2022": {
+                "content": "Maluns",
+                "weekday": "do"
+            }
+        },
+        {
+            "28.10.2022": {
+                "content": "Test des Monos",
                 "weekday": "fr"
             }
         },
         {
-            "24.09.2022": {
-                "content": "testsa",
+            "29.10.2022": {
+                "content": "BBQ",
                 "weekday": "sa"
             }
         },
         {
-            "19.09.2022": {
-                "content": "tacos",
-                "weekday": "mo"
-            }
-        },
-        {
-            "12.09.2022": {
-                "content": "Ravioli",
-                "weekday": "mo"
+            "30.10.2022": {
+                "content": "Test des Samos",
+                "weekday": "so"
             }
         }
     ]

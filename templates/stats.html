@@ -58,7 +58,6 @@
             <div class="item-area">
                 <div class="item_area_header">Deine Lieblingsgerichte?</div>
 				<div class="item_content">
-
 				</div>
 			</div>
 		</div>
@@ -68,9 +67,9 @@
 				<div class="item_content">
 				<div class="item_area_title">Schon vergessen? Diese Gerichte waren schon seit längerem nicht mehr auf deinem Radar:</div>
 					<div class="items_to_remember">
-						<div class="remember_item">Test</div>
-						<div class="remember_item">Test</div>
-						<div class="remember_item">Test</div>
+						{% for item in remember_items %}
+							<div class="remember_item">{{item}}</div>
+						{% endfor%}
 					</div>
 				</div>
 			</div>
