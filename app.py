@@ -220,7 +220,7 @@ def stats():
         all_meals.append(key)
 
     max_len = len([d][0]["content-file"])
-
+    print(max_len)
     if max_len > 45:
         start = 0
         for x in range(0, 30):
@@ -238,13 +238,15 @@ def stats():
                 not_used.append(element)
         # Thanks to www.geeksforgeeks.org/python-difference-two-lists/
 
-        subset = sample(not_used, 3)
-        temp_lst = []
-
-        for item in subset:
-            temp_lst.append(item)
-
-        remember_items = temp_lst
+        try:
+            subset = sample(not_used, 3)
+            temp_lst = []
+            for item in subset:
+                temp_lst.append(item)
+            remember_items = temp_lst
+        except:
+            temp_lst = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht."]
+            remember_items = temp_lst
 
     elif max_len < 45:
         temp_lst = ["Plane noch ein paar Mahlzeiten, um diese Funktion zu nutzen."]

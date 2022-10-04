@@ -128,43 +128,43 @@
         },
         {
             "26.09.2022": {
-                "content": "Tacos",
+                "content": "Testdi",
                 "weekday": "mo"
             }
         },
         {
             "27.09.2022": {
-                "content": "Mayo",
+                "content": "Katze",
                 "weekday": "di"
             }
         },
         {
             "28.09.2022": {
-                "content": "Test des Samos",
+                "content": "Test des Monos",
                 "weekday": "mi"
             }
         },
         {
             "29.09.2022": {
-                "content": "Ravioli",
+                "content": "Senfsuppe",
                 "weekday": "do"
             }
         },
         {
             "30.09.2022": {
-                "content": "Test W3",
+                "content": "Vogel",
                 "weekday": "fr"
             }
         },
         {
             "01.10.2022": {
-                "content": "Maluns",
+                "content": "Bratwurst mit Zwiebelsauce",
                 "weekday": "sa"
             }
         },
         {
             "02.10.2022": {
-                "content": "Test des Sonos",
+                "content": "Ravioli",
                 "weekday": "so"
             }
         },
@@ -207,6 +207,174 @@
         {
             "30.10.2022": {
                 "content": "Test des Samos",
+                "weekday": "so"
+            }
+        },
+        {
+            "19.09.2022": {
+                "content": "Ravioli",
+                "weekday": "mo"
+            }
+        },
+        {
+            "20.09.2022": {
+                "content": "Zopf",
+                "weekday": "di"
+            }
+        },
+        {
+            "21.09.2022": {
+                "content": "Rojas Tacos",
+                "weekday": "mi"
+            }
+        },
+        {
+            "22.09.2022": {
+                "content": "Suppe",
+                "weekday": "do"
+            }
+        },
+        {
+            "23.09.2022": {
+                "content": "Senfsuppe",
+                "weekday": "fr"
+            }
+        },
+        {
+            "24.09.2022": {
+                "content": "R\u00f6sti",
+                "weekday": "sa"
+            }
+        },
+        {
+            "25.09.2022": {
+                "content": "Vogel",
+                "weekday": "so"
+            }
+        },
+        {
+            "12.09.2022": {
+                "content": "Tacos",
+                "weekday": "mo"
+            }
+        },
+        {
+            "13.09.2022": {
+                "content": "Test des Sonos",
+                "weekday": "di"
+            }
+        },
+        {
+            "14.09.2022": {
+                "content": "Test W3",
+                "weekday": "mi"
+            }
+        },
+        {
+            "15.09.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "16.09.2022": {
+                "content": "R\u00f6sti",
+                "weekday": "fr"
+            }
+        },
+        {
+            "17.09.2022": {
+                "content": "Hundesalami",
+                "weekday": "sa"
+            }
+        },
+        {
+            "18.09.2022": {
+                "content": "Rojas Tacos",
+                "weekday": "so"
+            }
+        },
+        {
+            "05.09.2022": {
+                "content": "BBQ",
+                "weekday": "mo"
+            }
+        },
+        {
+            "06.09.2022": {
+                "content": "Gipfeli",
+                "weekday": "di"
+            }
+        },
+        {
+            "07.09.2022": {
+                "content": "Salat",
+                "weekday": "mi"
+            }
+        },
+        {
+            "08.09.2022": {
+                "content": "Testdi",
+                "weekday": "do"
+            }
+        },
+        {
+            "09.09.2022": {
+                "content": "Tacos",
+                "weekday": "fr"
+            }
+        },
+        {
+            "10.09.2022": {
+                "content": "Suppe",
+                "weekday": "sa"
+            }
+        },
+        {
+            "11.09.2022": {
+                "content": "Capuns",
+                "weekday": "so"
+            }
+        },
+        {
+            "29.08.2022": {
+                "content": "Capuns",
+                "weekday": "mo"
+            }
+        },
+        {
+            "30.08.2022": {
+                "content": "Zopf",
+                "weekday": "di"
+            }
+        },
+        {
+            "31.08.2022": {
+                "content": "Maluns",
+                "weekday": "mi"
+            }
+        },
+        {
+            "01.09.2022": {
+                "content": "Pasta",
+                "weekday": "do"
+            }
+        },
+        {
+            "02.09.2022": {
+                "content": "Test des Sonos",
+                "weekday": "fr"
+            }
+        },
+        {
+            "03.09.2022": {
+                "content": "Fleisch",
+                "weekday": "sa"
+            }
+        },
+        {
+            "04.09.2022": {
+                "content": "Rojas Tacos",
                 "weekday": "so"
             }
         }
