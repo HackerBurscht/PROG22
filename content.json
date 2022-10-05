@@ -2,25 +2,25 @@
     "content-file": [
         {
             "03.10.2022": {
-                "content": "Mujadara",
+                "content": "Fleisch",
                 "weekday": "mo"
             }
         },
         {
             "04.10.2022": {
-                "content": "Fried Rice",
+                "content": "Gr\u00fcnes Curry",
                 "weekday": "di"
             }
         },
         {
             "05.10.2022": {
-                "content": "Pasta",
+                "content": "Test des Samos",
                 "weekday": "mi"
             }
         },
         {
             "06.10.2022": {
-                "content": "Test des Samos",
+                "content": "Pizza",
                 "weekday": "do"
             }
         },
@@ -32,13 +32,13 @@
         },
         {
             "08.10.2022": {
-                "content": "S\u00fcss Sauer",
+                "content": "Mayo",
                 "weekday": "sa"
             }
         },
         {
             "09.10.2022": {
-                "content": "Gr\u00fcnes Curry",
+                "content": "S\u00fcss Sauer",
                 "weekday": "so"
             }
         },
