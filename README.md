@@ -11,7 +11,9 @@
   welche in der Zukunft liegen aber nicht, in den letzten 30 Tagen
   gekocht wurden. Wer die Zeit nicht linear betrachtet ist hier klar
   im Vorteil.
-- Anzeigefehler mit zu wenig Input
+- Anzeigefehler mit zu wenig Input. Tage müssen der Reihe nach geplant werden. Kein Tag darf ausgelassen werden.
+- -Affinity analysis
+- 
 ## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 
 and to deliver in-depth information about your daily dinners.
@@ -55,3 +57,32 @@ Benutzung
 ### Current issues and possible features
  - Was wurde nicht gelöst
  - Welche Verbesserungen könnten noch gemacht werden.
+
+
+### Special input: affinity analysis
+Since I wanted from the beginning to somehow show, if the user always eats a specific meal on a specific day,
+I spent quite some time thinking about a way to calculate exactly that.
+After some clueless googling I found on the website https://www.python-exemplarisch.ch/ some information about,
+affinity analysis. Now with some more precise searches I found the following pages:
+
+- https://towardsdatascience.com/affinity-analysis-market-basket-analysis-c8e7fcc61a21
+- https://www.heise.de/ratgeber/Data-Science-Warenkorbanalyse-in-30-Minuten-4425737.html
+
+Those two website include alot of background knowledge and coding examples in python.
+
+As mentioned I was looking for a way to show if a weekday and a meal correlate. The affinity analyse is mostly used,
+to check if two things are often bought together. But in our context it is used to see if they simply "appear" together.
+
+
+"The main idea behind this analysis is to achieve valuable insights by identifying which items are
+frequently purchased together." (Saygın, 2022)
+
+
+Of course, as the amount of data increases, the analysis becomes more accurate.
+At the moment, the "support" value is particularly important. As it shows whether, for example, 
+"pasta" is always eaten on Mondays.
+
+
+### Sources
+Saygın, E. (2022, 31. Mai). Affinity Analysis (Market Basket Analysis) - Towards Data Science. Medium. 
+Abgerufen am 6. Oktober 2022, von https://towardsdatascience.com/affinity-analysis-market-basket-analysis-c8e7fcc61a21

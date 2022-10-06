@@ -237,6 +237,8 @@ def stats():
     except:
         remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
 
+    affinity_analysis()
+
     return render_template("stats.html", max_meals=max_meals, div_meals=div_meals, most_meal=most_meal,
                            most_meal_amount=most_meal_amount, meal_data=meal_data, remember_items=remember_items)
 
@@ -339,6 +341,60 @@ def get_lost_meals():
         print("Not enough data available.")
 
 
+def affinity_analysis():
+
+    # Step 1:
+    # Get all meals and related weekdays and save that info as a list inside a list.
+    ####################################################################################################################
+    with open('content.json', "r") as f:
+        dirty_data = json.load(f)
+        f.close()
+
+    clean_data = []
+    start = 0
+    end = len([dirty_data][0]["content-file"])
+    while start < end:
+        temp_lst = []
+        for key, value in dirty_data["content-file"][start].items():
+            n_con = dirty_data["content-file"][start][key]["content"]
+            n_day = dirty_data["content-file"][start][key]["weekday"]
+            temp_lst.append(n_con)
+            temp_lst.append(n_day)
+            clean_data.append(temp_lst)
+        start += 1
+
+    print(clean_data)
+
+    # Step 2:
+    # Calculate the total amount of each meal, weekday, and meal/weekday-combination.
+    ####################################################################################################################
+
+    # Test example
+    x = "Test 3"
+    y = "mo"
+
+    sum_x = sum([x in i for i in clean_data])  # Sum of x in clean_data
+    sum_y = sum([y in i for i in clean_data])  # Sum of y in clean_data
+    sum_xy = sum([all(z in i for z in [x, y]) for i in clean_data])  # Sum of the x and y combination
+    sum_clean_data = len(clean_data)
+
+    print("Gesamtmenge von Items in clean_data: ", sum_clean_data)
+    print(sum_x, "mal", x)
+    print(sum_y, "mal", y)
+    print("Kombi von", x, "und", y, ": ", sum_xy)
+
+    support = sum_xy / sum_clean_data
+    confidence = support / (sum_x / sum_clean_data)
+    lift = confidence / (sum_y / sum_clean_data)
+    if confidence == 1:
+        conviction = 0
+    else:
+        conviction = (1 - (sum_y / len(clean_data))) / (1 - confidence)
+
+    print("Support = {}".format(round(support, 2)))
+    print("Confidence = {}".format(round(confidence, 2)))
+    print("Lift= {}".format(round(lift, 2)))
+    print("Conviction={}".format(round(conviction, 2)))
 
 
 if __name__ == "__main__":
