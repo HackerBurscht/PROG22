@@ -9,12 +9,12 @@ from datetime import datetime, timedelta
 from collections import Counter
 from random import sample
 
-
 # init and necessary global values
 ####################################################################################################################
 app = Flask(__name__, static_url_path="/static")
 
 display_week = 0
+forgotten_meals = []
 weekday = {
     "0": "mo",
     "1": "di",
@@ -226,51 +226,16 @@ def stats():
     most_meal, most_meal_amount = Counter(d2).most_common(1)[0]
     meal_data = Counter(d2).keys()
     # Get Values to display the meals which haven't been prepared in the last 30 days.
-    # Works only if there are more than 45 meals planned in the "content.json"-file
+    # By calling the "get_lost_meals" function and trying to display those. If not possible return a msg to the user.
     ####################################################################################################################
-    today_plus7 = datetime.today() + timedelta(days=7)
-    past = today_plus7 - timedelta(days=37)
-    recently = []
-    all_meals = []
-    not_used = []
-
-    for key in Counter(d2).keys():
-        all_meals.append(key)
-
-    max_len = len([d][0]["content-file"])
-    if max_len >= 45:
-        start = 0
-        for x in range(0, 37):
-            past_str = past.strftime("%d.%m.%Y")
-            while start < max_len:
-                if past_str in d["content-file"][start]:
-                    found_past_meal = str(d["content-file"][start][past_str]["content"])
-                    recently.append(found_past_meal)
-                start += 1
-            start = 0
-            past += timedelta(days=1)
-
-        print(recently)
-        print(all_meals)
-        for element in all_meals:
-            if element not in recently:
-                not_used.append(element)
-        print(not_used)
-        # Thanks to www.geeksforgeeks.org/python-difference-two-lists/
-
-        try:
-            subset = sample(not_used, 3)
-            temp_lst = []
-            for item in subset:
-                temp_lst.append(item)
-            remember_items = temp_lst
-        except:
-            temp_lst = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht."]
-            remember_items = temp_lst
-
-    elif max_len < 45:
-        temp_lst = ["Plane noch ein paar Mahlzeiten, um diese Funktion zu nutzen."]
-        remember_items = temp_lst
+    forgotten_meals.clear()
+    get_lost_meals()
+    try:
+        remember_items = []
+        for n in range(0, 3):
+            remember_items.append(forgotten_meals[n])
+    except:
+        remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
 
     return render_template("stats.html", max_meals=max_meals, div_meals=div_meals, most_meal=most_meal,
                            most_meal_amount=most_meal_amount, meal_data=meal_data, remember_items=remember_items)
@@ -306,15 +271,35 @@ def rng_plan():
 ########################################################################################################################
 @app.route("/forgot")
 def forgot():
+    get_lost_meals()
+
+    try:
+        i = 0
+        while i <= 6:
+            week_key = weekday.get(str(i))
+            content = forgotten_meals[i]
+            planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=i)
+            planned_date_key = planned_date_key + timedelta(days=display_week * 7)
+            planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+            save_info(week_key, planned_date_key, content)
+            i += 1
+
+    except:
+        print("Error while delivering the forgotten meals to the save function.")
+
+    return redirect("/")
+
+
+# Get Values to display the meals which haven't been prepared in the last 30 days.
+# Works only if there are more than 45 meals planned in the "content.json"-file
+########################################################################################################################
+def get_lost_meals():
     with open('content.json', "r") as f, open("meals.json", "r") as f2:
         d = json.load(f)
         f.close()
         d2 = json.load(f2)
     f2.close()
 
-    # Get Values to display the meals which haven't been prepared in the last 30 days.
-    # Works only if there are more than 45 meals planned in the "content.json"-file
-    ####################################################################################################################
     today_plus7 = datetime.today() + timedelta(days=7)
     past = today_plus7 - timedelta(days=37)
     recently = []
@@ -337,36 +322,23 @@ def forgot():
             start = 0
             past += timedelta(days=1)
 
-        print(recently)
-        print(all_meals)
         for element in all_meals:
             if element not in recently:
                 not_used.append(element)
-        print(not_used)
+        # Thanks to www.geeksforgeeks.org/python-difference-two-lists/
 
         try:
             subset = sample(not_used, 7)
-            temp_lst = []
             for item in subset:
-                temp_lst.append(item)
-
-            i = 0
-            while i <= 6:
-                week_key = weekday.get(str(i))
-                content = subset[i]
-                planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=i)
-                planned_date_key = planned_date_key + timedelta(days=display_week * 7)
-                planned_date_key = planned_date_key.strftime("%d.%m.%Y")
-                save_info(week_key, planned_date_key, content)
-                i += 1
-
+                forgotten_meals.append(item)
         except:
-            print("Du hast noch nicht genügend unterschiedliche Gerichte gekocht.")
+            print("Error creating a subset with the forgotten meals. Possible cause: 'Amount of items < than 7' "
+                  "Fix: Add more different meals.")
 
-    elif max_len < 45:
-        print("Not enough data")
+    if max_len < 45:
+        print("Not enough data available.")
 
-    return redirect("/")
+
 
 
 if __name__ == "__main__":

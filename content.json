@@ -2,43 +2,43 @@
     "content-file": [
         {
             "03.10.2022": {
-                "content": "ShowZ",
+                "content": "Test 3",
                 "weekday": "mo"
             }
         },
         {
             "04.10.2022": {
-                "content": "Show2",
+                "content": "Test1",
                 "weekday": "di"
             }
         },
         {
             "05.10.2022": {
-                "content": "Show1",
+                "content": "ShowY",
                 "weekday": "mi"
             }
         },
         {
             "06.10.2022": {
-                "content": "TheShow",
+                "content": "ShowX",
                 "weekday": "do"
             }
         },
         {
             "08.10.2022": {
-                "content": "ShowY",
+                "content": "ShowZ",
                 "weekday": "sa"
             }
         },
         {
             "09.10.2022": {
-                "content": "ShowX",
+                "content": "Show1",
                 "weekday": "so"
             }
         },
         {
             "07.10.2022": {
-                "content": "Test 3",
+                "content": "TheShow",
                 "weekday": "fr"
             }
         },
