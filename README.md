@@ -12,7 +12,7 @@
   gekocht wurden. Wer die Zeit nicht linear betrachtet ist hier klar
   im Vorteil.
 - Schon-lange-her-Items scheint noch nicht ganz korrekt. lol
-
+- Anzeigefehler mit zu wenig Input
 ## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 
 and to deliver in-depth information about your daily dinners.

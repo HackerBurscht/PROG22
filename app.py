@@ -228,8 +228,8 @@ def stats():
     # Get Values to display the meals which haven't been prepared in the last 30 days.
     # Works only if there are more than 45 meals planned in the "content.json"-file
     ####################################################################################################################
-    today = datetime.today()
-    past = today - timedelta(days=30)
+    today_plus7 = datetime.today() + timedelta(days=7)
+    past = today_plus7 - timedelta(days=37)
     recently = []
     all_meals = []
     not_used = []
@@ -240,7 +240,7 @@ def stats():
     max_len = len([d][0]["content-file"])
     if max_len >= 45:
         start = 0
-        for x in range(0, 30):
+        for x in range(0, 37):
             past_str = past.strftime("%d.%m.%Y")
             while start < max_len:
                 if past_str in d["content-file"][start]:
@@ -250,9 +250,12 @@ def stats():
             start = 0
             past += timedelta(days=1)
 
+        print(recently)
+        print(all_meals)
         for element in all_meals:
             if element not in recently:
                 not_used.append(element)
+        print(not_used)
         # Thanks to www.geeksforgeeks.org/python-difference-two-lists/
 
         try:
@@ -312,8 +315,8 @@ def forgot():
     # Get Values to display the meals which haven't been prepared in the last 30 days.
     # Works only if there are more than 45 meals planned in the "content.json"-file
     ####################################################################################################################
-    today = datetime.today()
-    past = today - timedelta(days=30)
+    today_plus7 = datetime.today() + timedelta(days=7)
+    past = today_plus7 - timedelta(days=37)
     recently = []
     all_meals = []
     not_used = []
@@ -324,7 +327,7 @@ def forgot():
     max_len = len([d][0]["content-file"])
     if max_len >= 45:
         start = 0
-        for x in range(0, 30):
+        for x in range(0, 37):
             past_str = past.strftime("%d.%m.%Y")
             while start < max_len:
                 if past_str in d["content-file"][start]:
@@ -334,16 +337,18 @@ def forgot():
             start = 0
             past += timedelta(days=1)
 
+        print(recently)
+        print(all_meals)
         for element in all_meals:
             if element not in recently:
                 not_used.append(element)
+        print(not_used)
 
         try:
             subset = sample(not_used, 7)
             temp_lst = []
             for item in subset:
                 temp_lst.append(item)
-            print(temp_lst)
 
             i = 0
             while i <= 6:
