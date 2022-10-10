@@ -13,15 +13,21 @@
   im Vorteil.
 - Anzeigefehler mit zu wenig Input. Tage müssen der Reihe nach geplant werden. Kein Tag darf ausgelassen werden.
 - -Affinity analysis
-- 
+
 ## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 
 and to deliver in-depth information about your daily dinners.
 To be more precise, the tool can do the following:
 - Take data, store and organise it. The only data needed are the different meals. Eg: "Pasta" or "Pizza".
-- Automatically assigns each input the corresponding date and weekday. Eg: I type "Pizza" and it gets saved like "Pizza, Monday, 15.042022".
+- Automatically assigns each input the corresponding date and weekday. Eg: I type "Pizza" and it gets saved as "Pizza, Monday, 15.04.2022".
 - Shows that information in a user-friendly and oversee-able way.
-- 
+- Allows the user to change data in the past and plan way in to the future. 
+- Analyses the data and returns insightful feedback to the user:
+  - Shows all the different meals.
+  - Shows how often they have been prepared.
+  - Shows which meals the user hasn't prepared in a long time.
+  - Shows whether certain meals are only cooked on certain days.
+- Allows the user to plan his weeks according to the analyses.
 
 ### But why?
 The inspiration behind the project comes from an old Excel file on my personal computer.
@@ -31,7 +37,7 @@ didn't know what to buy or eat for the following week. But it had a problem, it 
 which I put in. 
 
 With this project I tried to reorganize my data and my tedious process into a more user-friendly experience, advance my 
-programming skills and get to try the craft of developing web apps.
+programming skills and hopefully create a piece of code, which can take work away from me personally.
 
 Problembeschreibung/Motivation
  - Warum dieses Projekt
@@ -60,6 +66,8 @@ Benutzung
 
 
 ### Special input: affinity analysis
+"The main idea behind this analysis is to achieve valuable insights by identifying which items are
+frequently purchased together." (Saygın, 2022)Tr
 Since I wanted from the beginning to somehow show, if the user always eats a specific meal on a specific day,
 I spent quite some time thinking about a way to calculate exactly that.
 After some clueless googling I found on the website https://www.python-exemplarisch.ch/ some information about,
@@ -72,10 +80,6 @@ Those two website include alot of background knowledge and coding examples in py
 
 As mentioned I was looking for a way to show if a weekday and a meal correlate. The affinity analyse is mostly used,
 to check if two things are often bought together. But in our context it is used to see if they simply "appear" together.
-
-
-"The main idea behind this analysis is to achieve valuable insights by identifying which items are
-frequently purchased together." (Saygın, 2022)
 
 
 Of course, as the amount of data increases, the analysis becomes more accurate.

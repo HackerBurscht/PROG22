@@ -159,8 +159,7 @@ def save():
             planned_date_key = planned_date_key.strftime("%d.%m.%Y")
             if content is not None:
                 save_info(week_key, planned_date_key, content)
-            else:
-                print("Content is Null")
+
         except:
             print("Working on some problems...")
         i += 1
@@ -342,15 +341,17 @@ def get_lost_meals():
 
 
 def affinity_analysis():
-
     # Step 1:
     # Get all meals and related weekdays and save that info as a list inside a list.
+    # And creates a new list containing only the different meals without duplicates.
     ####################################################################################################################
     with open('content.json', "r") as f:
         dirty_data = json.load(f)
         f.close()
 
     clean_data = []
+    meals_only = []
+
     start = 0
     end = len([dirty_data][0]["content-file"])
     while start < end:
@@ -361,22 +362,28 @@ def affinity_analysis():
             temp_lst.append(n_con)
             temp_lst.append(n_day)
             clean_data.append(temp_lst)
+            meals_only.append(n_con)
         start += 1
 
+    meals_only = [*set(meals_only)]
+    # It first removes the duplicates and returns a dictionary which has to be converted to list
+    # From www.geeksforgeeks.org/python-ways-to-remove-duplicates-from-list/
+
     print(clean_data)
+    print(meals_only)
 
     # Step 2:
     # Calculate the total amount of each meal, weekday, and meal/weekday-combination.
     ####################################################################################################################
 
     # Test example
-    x = "Test 3"
+    x = "Ravioli"
     y = "mo"
 
     sum_x = sum([x in i for i in clean_data])  # Sum of x in clean_data
     sum_y = sum([y in i for i in clean_data])  # Sum of y in clean_data
     sum_xy = sum([all(z in i for z in [x, y]) for i in clean_data])  # Sum of the x and y combination
-    sum_clean_data = len(clean_data)
+    sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
 
     print("Gesamtmenge von Items in clean_data: ", sum_clean_data)
     print(sum_x, "mal", x)
@@ -395,6 +402,29 @@ def affinity_analysis():
     print("Confidence = {}".format(round(confidence, 2)))
     print("Lift= {}".format(round(lift, 2)))
     print("Conviction={}".format(round(conviction, 2)))
+
+    max_lst = []
+    for i in range(7):
+        max_kombi = 0
+        max_kombi_meal = ""
+        y = weekday.get(str(i))
+        for j in range(len(meals_only)):
+            x = meals_only[j]
+            test_sum = sum([all(z in i for z in [x, y]) for i in clean_data])
+            if test_sum > max_kombi:
+                max_kombi = test_sum
+                max_kombi_meal = x
+        print(y, "häufigste Kombi mit:", max_kombi_meal, "erscheint: ", max_kombi, "mal")
+
+        temp = [y]
+        temp.append(max_kombi_meal)
+        temp.append(max_kombi)
+        max_lst.append(temp)
+    print(max_lst)
+
+    s1 = round(max_lst[0][2] / sum_clean_data, 2)
+
+    print(s1)
 
 
 if __name__ == "__main__":
