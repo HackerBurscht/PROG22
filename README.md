@@ -57,6 +57,12 @@ Benutzung
 - Wie wird das Projekt benutzt
 - Welche Optionen oder auch Spezialitäten existieren
 
+#### User commands
+The following commands  can be used in the web app. They just have to be entered as "meals" on the planning page.
+"r" :   changes the day to a random meal
+"f" :   changes the day to a forgotten meal
+"-" :   keeps the day unplanned.
+
 ### Architecture
 - Hier bei Bedarf eine kurze Beschreibung des Ablaufs des Programms auf Code Ebene z.B. als Ablaufdiagramm.
 
