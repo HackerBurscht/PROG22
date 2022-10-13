@@ -1,5 +1,4 @@
-# Mealy 
-
+# Mealy
 ## Todo:
 
 - ReadMe
@@ -17,6 +16,7 @@
 ## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 
 and to deliver in-depth information about your daily dinners.
+
 To be more precise, the tool can do the following:
 - Take data, store and organise it. The only data needed are the different meals. Eg: "Pasta" or "Pizza".
 - Automatically assigns each input the corresponding date and weekday. Eg: I type "Pizza" and it gets saved as "Pizza, Monday, 15.04.2022".
@@ -43,6 +43,7 @@ Problembeschreibung/Motivation
  - Warum dieses Projekt
  - Welches Problem löst das Projekt
  - Was macht das Projekt
+
 Lückenfüller wie: "Dieses Projekt wurde im Rahmen des Programmieren2 Modules an der FHGR gemacht" oder ähnlich sind unnötig. Auch sollten keine Klarnamen, oder Orte genannt werden.
 
 
@@ -58,10 +59,10 @@ Benutzung
 - Welche Optionen oder auch Spezialitäten existieren
 
 #### User commands
-The following commands  can be used in the web app. They just have to be entered as "meals" on the planning page.
-"r" :   changes the day to a random meal
-"f" :   changes the day to a forgotten meal
-"-" :   keeps the day unplanned.
+The following commands  can be used in the web app. They simply have to be entered as "meals" on the planning page.
+- "r" :   changes the day to a random meal
+- "f" :   changes the day to a forgotten meal
+- "-" :   keeps the day unplanned.
 
 ### Architecture
 - Hier bei Bedarf eine kurze Beschreibung des Ablaufs des Programms auf Code Ebene z.B. als Ablaufdiagramm.
@@ -73,7 +74,7 @@ The following commands  can be used in the web app. They just have to be entered
 
 ### Special input: affinity analysis
 "The main idea behind this analysis is to achieve valuable insights by identifying which items are
-frequently purchased together." (Saygın, 2022)Tr
+frequently purchased together." (Saygin, 2022)
 Since I wanted from the beginning to somehow show, if the user always eats a specific meal on a specific day,
 I spent quite some time thinking about a way to calculate exactly that.
 After some clueless googling I found on the website https://www.python-exemplarisch.ch/ some information about,

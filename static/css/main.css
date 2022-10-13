@@ -165,6 +165,10 @@ input[type=text]{
     margin: 0;
 }
 
+.content_input{
+    width: 15em;
+}
+
 .content_input:hover, focus, textarea:focus{
     border: 1px solid #3D8DFD;
 }

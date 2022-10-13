@@ -41,7 +41,7 @@ weekday = {             # Is used in different functions to get easy access to t
 
 # user commands
 ########################################################################################################################
-# The following commands  can be used in the web app. They just have to be entered as "meals" on the planning page.
+# The following commands  can be used in the web app. They simply have to be entered as "meals" on the planning page.
 # "r" :   changes the day to a random meal
 # "f" :   changes the day to a forgotten meal
 # "-" :   keeps the day unplanned.
@@ -125,8 +125,28 @@ def index():
 
 
 def save_info(week_key, planned_date_key, content):
+    # Checks whether something is stored in the "content" variable.
+    # If its emtpy nothing happens, and the user is redirected.
+    # If the value is "r" a random meal from "meals_only_without_duplicates" gets generated
+    # and used as a value for "content".
+    # If the value is "f" the "get_lost_meals" function gets called and
+    # the first value of "forgotten_meals" used as a value for "content".
     if content == "":
         return redirect("/")
+    if content == "r":
+        max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+        try:
+            rng_content = sample(Counter(meals_only_without_duplicates).keys(), 1)
+            content = rng_content[0]
+        except:
+            print("Dataset is too small, missing or corrupted.")
+    if content == "f":
+        forgotten_meals.clear()  # Clears the list and creates a new one. In case some forgotten meals have been planned.
+        get_lost_meals()
+        try:
+            content = forgotten_meals[0]
+        except:
+            print("Dataset is too small, missing or corrupted.")
     if content is not None:
         date = planned_date_key
         temp_dic = {}
@@ -175,10 +195,8 @@ def save():
             planned_date_key = planned_date_key + timedelta(days=display_week * 7)
             planned_date_key = planned_date_key.strftime("%d.%m.%Y")
             save_info(week_key, planned_date_key, content)
-            print(week_key)
         except:
             print("Func: save() - Error")
-        i += 1
     return redirect("/")
 
 
@@ -256,7 +274,7 @@ def rng_plan():
     max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
 
     try:
-        subset = sample(Counter(meals_only).keys(), 7)
+        subset = sample(Counter(meals_only_without_duplicates).keys(), 7)
         # How-Two from machinelearningmastery.com/how-to-generate-random-numbers-in-python/
         for i in range(0, 7):
             week_key = weekday.get(str(i))
