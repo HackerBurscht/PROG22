@@ -15,6 +15,7 @@ app = Flask(__name__, static_url_path="/static")
 display_week = 0  # Changes the shown week on the index page. Set to 0 at the beginning to show the current week.
 display_day = 0  # Changes the shown day on the stats page. Set to 0 at the beginning to show the current day.
 forgotten_meals = []  # Contains all the meals, which haven't been prepared in a while
+max_lst = []
 weekday = {  # Is used in different functions to get easy access to the weekdays inside the lists or dict.
     "0": "mo",
     "1": "di",
@@ -280,6 +281,7 @@ def contact():
 @app.route("/refresh_f_meals")
 def refresh_f_meals():
     get_lost_meals()
+    max_combo_weekly()
     return redirect("/stats")
 
 
@@ -309,8 +311,10 @@ def stats():
         except:
             remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
 
+    if not max_lst:
+        max_combo_weekly()
+
     try:
-        max_lst = max_combo_weekly()
         day_c = weekday_long.get(str(display_day))
         meal_c = max_lst[display_day][1]
         if max_lst[display_day][3] > 6:
@@ -321,11 +325,11 @@ def stats():
             quote_c = "Es scheint einen schwachen Zusammenhang zu geben."
         else:
             quote_c = "Dies scheint mir aber ein Zufall zu sein."
-
         if display_day > 0:
             visible_l = True
         if display_day < 6:
             visible_r = True
+
     except:
         day_c = "Es kann noch keine Analyse gemacht werden. Mehr unterschiedliche Daten sollten hinzugefügt werden."
         meal_c, quote_c = "", ""
@@ -539,7 +543,6 @@ def max_combo_weekly():
             clean_data.append(temp_lst_2)
 
     sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
-    max_lst = []
     for i in range(7):
         max_kombi = 0
         max_kombi_meal = ""
@@ -557,7 +560,7 @@ def max_combo_weekly():
         temp = [y, max_kombi_meal, max_kombi, meal_lift]
         max_lst.append(temp)
 
-    return max_lst
+    # return max_lst
 
 
 if __name__ == "__main__":
