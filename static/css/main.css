@@ -256,6 +256,7 @@ input[type=text]{
     border-color: #EFF0F6;
     font-weight: 650;
     font-size: 1em;
+    width: 100%
 }
 
 .item_content{
@@ -307,6 +308,22 @@ input[type=text]{
     padding-bottom: 1em;
     font-size: 0.8em;
     text-align: left;
+}
+
+#box{
+    display:flex;
+    align-items: center;
+}
+
+#ico{
+    position: absolute;
+    margin-left: -9em;
+    margin-top: 0.25em;
+    color: black;
+}
+
+#ico:hover{
+    color: #3D8DFD;
 }
 
 .items_to_remember {

@@ -63,9 +63,14 @@
 		</div>
 		<div class="col-md-4">
 			<div class="item-area">
-                <div class="item_area_header">Erfahre noch mehr</div>
+				<div id="box">
+
+					<div class="item_area_header">
+						<a href="/refresh_f_meals"><i class="fi fi-rr-refresh" id="ico"></i></a>Erfahre noch mehr
+					</div>
+				</div>
 				<div class="item_content">
-				<div class="item_area_title">Schon vergessen? Diese Gerichte waren schon seit längerem nicht mehr auf deinem Radar:</div>
+					<div class="item_area_title">Schon vergessen? Diese Gerichte waren schon seit längerem nicht mehr auf deinem Radar:</div>
 					<div class="items_to_remember">
 						{% for item in remember_items %}
 							<div class="remember_item">{{item}}</div>

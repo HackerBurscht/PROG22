@@ -275,6 +275,14 @@ def contact():
     return render_template("contact.html")
 
 
+# ------------------
+########################################################################################################################
+@app.route("/refresh_f_meals")
+def refresh_f_meals():
+    get_lost_meals()
+    return redirect("/stats")
+
+
 # Opens stats page.
 ########################################################################################################################
 @app.route("/stats")
@@ -287,14 +295,19 @@ def stats():
     # Get Values to display the meals which haven't been prepared in the last 30 days.
     # By calling the "get_lost_meals" function and trying to display those. If not possible return a msg to the user.
     ####################################################################################################################
-    forgotten_meals.clear()  # Clears the list and creates a new one. In case some forgotten meals have been planned.
+
     try:
-        get_lost_meals()
         remember_items = []
         for n in range(0, 3):
             remember_items.append(forgotten_meals[n])
     except:
-        remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
+        try:
+            get_lost_meals()
+            remember_items = []
+            for n in range(0, 3):
+                remember_items.append(forgotten_meals[n])
+        except:
+            remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
 
     try:
         max_lst = max_combo_weekly()
@@ -471,7 +484,7 @@ def affinity_analysis():
     # sum_x = sum([x in i for i in clean_data])  # Sum of x in clean_data
     # sum_y = sum([y in i for i in clean_data])  # Sum of y in clean_data
     # sum_xy = sum([all(z in i for z in [x, y]) for i in clean_data])  # Sum of the x and y combination
-    #sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
+    # sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
 
     # support = sum_xy / sum_clean_data
     # confidence = support / (sum_x / sum_clean_data)
