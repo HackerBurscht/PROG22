@@ -4,9 +4,12 @@
 - ReadMe
 - Comments
 - Muster-Erkennung
-- Bugs/Features:
 - Anzeigefehler mit zu wenig Input. Tage müssen der Reihe nach geplant werden. Kein Tag darf ausgelassen werden.
 - -Affinity analysis
+- Responsive design and interface rework
+- favourite meals graph
+- Einstellungen?
+- -Auto-Planer
 
 ## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 
@@ -28,19 +31,11 @@ To be more precise, the tool can do the following:
 The inspiration behind the project comes from an old Excel file on my personal computer.
 Today it is quite a long list, which I used every week before going out tu buy groceries or each day, to see
 what I planned to cook that evening. Quite often I checked the file for inspiration to get some ideas, because I simply
-didn't know what to buy or eat for the following week. But it had a problem, it simply could only return me information,
-which I put in. 
+didn't know what to buy or plan for the following week. But it had a problem, it simply could only return me information,
+which I put in and could not plan for me. 
 
 With this project I tried to reorganize my data and my tedious process into a more user-friendly experience, advance my 
 programming skills and hopefully create a piece of code, which can take work away from me personally.
-
-Problembeschreibung/Motivation
- - Warum dieses Projekt
- - Welches Problem löst das Projekt
- - Was macht das Projekt
-
-Lückenfüller wie: "Dieses Projekt wurde im Rahmen des Programmieren2 Modules an der FHGR gemacht" oder ähnlich sind unnötig. Auch sollten keine Klarnamen, oder Orte genannt werden.
-
 
 ### How two use?
 

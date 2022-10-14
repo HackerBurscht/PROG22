@@ -249,7 +249,7 @@ input[type=text]{
     justify-content: center;
 }
 
-.item_area_header{
+.item_area_header, .item_area_subtitle{
     padding-top: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid;
@@ -333,4 +333,34 @@ input[type=text]{
     width: 0.5em;
     background: #3D8DFD;
     border-radius: 0.5em;
+}
+
+.best_combos{
+    display: flex;
+    width: 80%;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.left_combo, .right_combo{
+    margin-top: 1em;
+    min-width: 10px;
+	height: 10px; width: auto;
+	border: 1px solid #757575;
+	border-width: 2px 2px 0 0;
+	border-radius: 0 2px 0 0;
+}
+
+.left_combo{
+	transform: rotate(-135deg);
+}
+
+.right_combo{
+	transform: rotate(45deg);
+}
+
+.left_combo:hover, .right_combo:hover{
+	border: 1px solid #3D8DFD;
+	border-width: 2px 2px 0 0;
+	border-radius: 0 2px 0 0;
 }

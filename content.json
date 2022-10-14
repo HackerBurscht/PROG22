@@ -2966,7 +2966,7 @@
         },
         {
             "27.08.2022": {
-                "content": "!!!!!!!!!!!!!!!!!!!!!!",
+                "content": "-",
                 "weekday": "sa"
             }
         },
@@ -3248,13 +3248,13 @@
         },
         {
             "13.10.2022": {
-                "content": "Fischst\u00e4bli",
+                "content": "Wienerli im Teig",
                 "weekday": "do"
             }
         },
         {
             "14.10.2022": {
-                "content": "Aglio nero",
+                "content": "Fischst\u00e4bli",
                 "weekday": "fr"
             }
         },
@@ -3266,19 +3266,19 @@
         },
         {
             "17.10.2022": {
-                "content": "Verd\u00e4mpfti",
+                "content": "Ratatouille\u00a0",
                 "weekday": "mo"
             }
         },
         {
             "18.10.2022": {
-                "content": "Dal",
+                "content": "Spaghetti al Tonno",
                 "weekday": "di"
             }
         },
         {
             "19.10.2022": {
-                "content": "Appenzell",
+                "content": "Hot-Dogs",
                 "weekday": "mi"
             }
         },
@@ -3296,13 +3296,13 @@
         },
         {
             "22.10.2022": {
-                "content": "Burritos",
+                "content": "-",
                 "weekday": "sa"
             }
         },
         {
             "23.10.2022": {
-                "content": "Couscous",
+                "content": "Fischst\u00e4bli",
                 "weekday": "so"
             }
         },
@@ -3314,7 +3314,7 @@
         },
         {
             "24.10.2022": {
-                "content": "????????????????",
+                "content": "-",
                 "weekday": "mo"
             }
         },
@@ -3340,12 +3340,6 @@
             "28.10.2022": {
                 "content": "-",
                 "weekday": "fr"
-            }
-        },
-        {
-            "29.10.2022": {
-                "content": "-",
-                "weekday": "sa"
             }
         }
     ]

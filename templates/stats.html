@@ -71,8 +71,19 @@
 							<div class="remember_item">{{item}}</div>
 						{% endfor %}
 					</div>
+					<div class="item_area_subtitle">Gewusst?</div>
+					<div class="best_combos">
+						{% if visible_l %}
+						<a href="/prev_combo" class="left_combo"></a>
+						{% endif %}
+						<div class="item_area_title">{{ day_c }}s isst du am häufigsten {{ meal_c }}. {{ quote_c }}</div>
+						{% if visible_r %}
+						<a href="/next_combo" class="right_combo"></a>
+						{% endif %}
+					</div>
 				</div>
 			</div>
+
 		</div>
 	</div>
 </div>
