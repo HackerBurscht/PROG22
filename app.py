@@ -27,6 +27,7 @@ weekday = {             # Is used in different functions to get easy access to t
 # The most common used variables in this file
 ########################################################################################################################
 # meals_only = []                Contains al meals as strings. With duplicates
+# past_meals_only = []           Contains al meals as strings which are in the past. Without duplicates.
 # meals_lst_as_int = []          Contains all meals, sorted by date and stored as an integer.
 # days_lst_as_int = []           Contains all weekdays, sorted by date and stored as an integer.
 # weekly_meals = []              Contains all meals, from a calendar week saved as a string but without dates.
@@ -254,6 +255,7 @@ def stats():
     ####################################################################################################################
     forgotten_meals.clear()     # Clears the list and creates a new one. In case some forgotten meals have been planned.
     get_lost_meals()
+    print(forgotten_meals)
     try:
         remember_items = []
         for n in range(0, 3):
@@ -316,29 +318,38 @@ def get_lost_meals():
     max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
 
     forgotten_meals.clear()     # Clears the list and creates a new one. In case some forgotten meals have been planned.
-    today_plus7 = datetime.today() + timedelta(days=7)
-    past = today_plus7 - timedelta(days=37)
-    recently = []
-    not_used = []
+    week_end = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=6) # Last day of week.
+    past = week_end - timedelta(days=37)
+    recently = []               # Contains all meals which have been prepared in the last 37 days.
+    not_used = []               # Contains al meals which have not been used in the last 37 days.
+    past_meals_only = []        # Contains al meals as strings which are in the past. Without duplicates.
 
     max_len = len([d][0]["content-file"])
-    if max_len >= 45:
-        start = 0
-        for x in range(0, 37):
-            past_str = past.strftime("%d.%m.%Y")
-            while start < max_len:
-                if past_str in d["content-file"][start]:
-                    found_past_meal = str(d["content-file"][start][past_str]["content"])
-                    recently.append(found_past_meal)
-                start += 1
-            start = 0
-            past += timedelta(days=1)
 
-        for element in meals_only:
+    if max_len >= 45:
+        # Gets all meals.
+        # If the date is in the past, appends it to the "past_meals_only" list.
+        # If the date is between the past and the current weeks last day, appends it to the "recently" list.
+        for i in range(0, max_len):
+            for date, meal in d["content-file"][i].items():
+                n_con = d["content-file"][i][date]["content"]
+                date_checked = datetime.strptime(date, "%d.%m.%Y")
+                if date_checked <= week_end:
+                    past_meals_only.append(n_con)
+                if past <= date_checked <= week_end:
+                    recently.append(n_con)
+
+        # Removes duplicates from the "past_meals_only" list.
+        past_meals_only = [*set(past_meals_only)]
+
+        # Adds all elements from the past, which are not in the "recently-list", to a new list.
+        for element in past_meals_only:
             if element not in recently:
                 not_used.append(element)
         # Thanks to www.geeksforgeeks.org/python-difference-two-lists/
 
+        # Takes 7 random values from the not used meals and adds them to a new list, which is used to return
+        # the meals to the user.
         try:
             subset = sample(not_used, 7)
             for item in subset:

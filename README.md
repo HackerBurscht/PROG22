@@ -3,13 +3,8 @@
 
 - ReadMe
 - Comments
-- RND Button Small > syntax for inputs?
 - Muster-Erkennung
 - Bugs/Features:
-- Aktuell werden bei "Schon-lange-her-Items" auch Dinge ausgegeben,
-  welche in der Zukunft liegen aber nicht, in den letzten 30 Tagen
-  gekocht wurden. Wer die Zeit nicht linear betrachtet ist hier klar
-  im Vorteil.
 - Anzeigefehler mit zu wenig Input. Tage müssen der Reihe nach geplant werden. Kein Tag darf ausgelassen werden.
 - -Affinity analysis
 
