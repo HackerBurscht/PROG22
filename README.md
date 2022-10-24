@@ -3,13 +3,11 @@
 
 - ReadMe
 - Comments
-- Muster-Erkennung
+- Muster-Erkennung, Auto-Planer, Affinity analysis
 - Anzeigefehler mit zu wenig Input. Tage müssen der Reihe nach geplant werden. Kein Tag darf ausgelassen werden.
-- -Affinity analysis
 - Responsive design and interface rework
-- favourite meals graph
 - Einstellungen?
-- -Auto-Planer
+
 
 ## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 

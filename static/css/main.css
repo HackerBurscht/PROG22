@@ -271,10 +271,37 @@ input[type=text]{
     text-align: left;
 }
 
+/* Styling for the graph*/
+
 #enable_scroll {
-  margin-right: 5em;
-  overflow-y: auto;
+     overflow-y: auto;
 }
+
+#enable_scroll_middle {
+    overflow-y: auto;
+}
+
+#bars {
+    padding: 0 1em 0 1em;
+    font-size: 0.7em;
+    --color: #3D8DFD;
+    --labels-size: 14em;
+}
+
+th{
+    font-weight: 400;
+}
+
+#bars td {
+    border-radius: 0 0.25em 0.25em 0;
+    transform-origin: left;
+    animation: revealing-bars 4s linear;
+}
+@keyframes revealing-bars {
+    0%  { transform: scaleX( 0 ); }
+    15% { transform: scaleX( 1 ); }
+}
+
 
 /*Scrollbar code adapted from digitalocean.com and customised/*
 /* Works on Firefox */

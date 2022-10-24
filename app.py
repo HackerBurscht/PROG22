@@ -9,6 +9,11 @@ from datetime import datetime, timedelta
 from collections import Counter
 from random import sample
 
+# graphs
+import plotly
+import plotly.express as px
+import matplotlib.pyplot as plt
+
 # init and necessary global values
 ####################################################################################################################
 app = Flask(__name__, static_url_path="/static")
@@ -311,6 +316,9 @@ def stats():
         except:
             remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
 
+    # Get Values to display the meals which haven't been prepared in the last 30 days.
+    # By calling the "get_lost_meals" function and trying to display those. If not possible return a msg to the user.
+    ####################################################################################################################
     if not max_lst:
         max_combo_weekly()
 
@@ -335,9 +343,22 @@ def stats():
         meal_c, quote_c = "", ""
         visible_l, visible_r = False, False
 
+    # Tries to create values for the graph on the stats-page, by calling the "graph_data"-function.
+    # Returns "graph_visible = False" if not possible.
+    ####################################################################################################################
+    try:
+        top15, not15 = graph_data()
+        graph_visible = True
+
+    except:
+        graph_visible = False
+        top15 = []
+        not15 = []
+
     return render_template("stats.html", max_meals=max_meals, div_meals=div_meals, most_meal=most_meal,
                            most_meal_amount=most_meal_amount, meal_data=meal_data, remember_items=remember_items,
-                           day_c=day_c, meal_c=meal_c, quote_c=quote_c, visible_l=visible_l, visible_r=visible_r)
+                           day_c=day_c, meal_c=meal_c, quote_c=quote_c, visible_l=visible_l, visible_r=visible_r,
+                           top15=top15, not15=not15, graph_visible=graph_visible)
 
 
 # Chooses 7 random meals from "content.json" and delivers them to the save-function.
@@ -561,6 +582,34 @@ def max_combo_weekly():
         max_lst.append(temp)
 
     # return max_lst
+
+
+def graph_data():
+    max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+
+    data_x = []
+    data_y = []
+    result_complete = []
+
+    for meal, amount in Counter(meals_only).most_common():
+        data_x.append(meal)
+        data_y.append(amount)
+
+    max = data_y[0]
+    min = data_y[-1]
+
+    for meal, amount in Counter(meals_only).most_common():
+        result = []
+        norm = round((amount-min)/(max-min), 2)
+        result.append(meal)
+        result.append(norm)
+        result.append(amount)
+        result_complete.append(result)
+
+    not15 = result_complete[16:len(result_complete)]
+    top15 = result_complete[0:15]
+
+    return top15, not15
 
 
 if __name__ == "__main__":

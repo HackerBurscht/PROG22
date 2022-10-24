@@ -3266,43 +3266,43 @@
         },
         {
             "17.10.2022": {
-                "content": "Ratatouille\u00a0",
+                "content": "Schweinsbratwurst",
                 "weekday": "mo"
             }
         },
         {
             "18.10.2022": {
-                "content": "Spaghetti al Tonno",
+                "content": "Thay",
                 "weekday": "di"
             }
         },
         {
             "19.10.2022": {
-                "content": "Hot-Dogs",
+                "content": "-",
                 "weekday": "mi"
             }
         },
         {
             "20.10.2022": {
-                "content": "Ger\u00f6stete Kichererbsen ",
+                "content": "Aglio nero",
                 "weekday": "do"
             }
         },
         {
             "21.10.2022": {
-                "content": "Pizza",
+                "content": "Hackbraten",
                 "weekday": "fr"
             }
         },
         {
             "22.10.2022": {
-                "content": "-",
+                "content": "Hamburger",
                 "weekday": "sa"
             }
         },
         {
             "23.10.2022": {
-                "content": "Fischst\u00e4bli",
+                "content": "Spaghetti neri all'acqua pazza",
                 "weekday": "so"
             }
         },
@@ -3314,32 +3314,44 @@
         },
         {
             "24.10.2022": {
-                "content": "-",
+                "content": "Kohl Stir Fry",
                 "weekday": "mo"
             }
         },
         {
             "25.10.2022": {
-                "content": "-",
+                "content": "Bratwurst mit Zwiebelsauce",
                 "weekday": "di"
             }
         },
         {
             "26.10.2022": {
-                "content": "-",
+                "content": "Couscous",
                 "weekday": "mi"
             }
         },
         {
             "27.10.2022": {
-                "content": "-",
+                "content": "Nudeln mit Tomatensauce",
                 "weekday": "do"
             }
         },
         {
             "28.10.2022": {
-                "content": "-",
+                "content": "Ofengem\u00fcse",
                 "weekday": "fr"
+            }
+        },
+        {
+            "29.10.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "30.10.2022": {
+                "content": "-",
+                "weekday": "so"
             }
         }
     ]

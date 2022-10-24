@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 
 {% block title %} - Dein Mampfverhalten {% endblock %}
+{% block head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/charts.css/dist/charts.min.css">
+{% endblock %}
+
 
 {% block body %}
 
@@ -49,22 +53,40 @@
 					<ul class="clst">
 						{% for meal in meal_data %}
 							<li> {{ meal }} </li>
-						{% endfor%}
+						{% endfor %}
 					</ul>
 				</div>
 			</div>
 		</div>
 		<div class="col-md-4">
             <div class="item-area">
-                <div class="item_area_header">Deine Lieblingsgerichte?</div>
-				<div class="item_content">
+                <div class="item_area_header">Deine Top 15?</div>
+				<div class="item_content" id="enable_scroll_middle">
+					<div class="item_area_title">Weisst du, was du am häufigsten isst? Dies sind deine Top 15:</div>
+					<table id="bars" class="charts-css bar data-spacing-1 show-5-secondary-axes show-labels
+					labels-align-start hide-data">
+						{% if not graph_visible %}
+						<p>Es scheint, als hättest du noch nicht genügend Daten erfasst, um ein Diagramm anzeigen zu lassen.</p>
+						{% endif %}
+						{% if graph_visible %}
+						{% for x,y,z in top15 %}
+						<tr>
+							<th scope="row">{{ x }}</th>
+							<td style="--size: {{ y }}">
+								<span class="data">{{ y }}</span>
+								<span class="tooltip"> Du hast {{ x }} ganze <br> {{ z }} mal gegessen.</span>
+							</td>
+						</tr>
+						{% endfor %}
+						{% endif %}
+					</table>
+<!--		Charts created with the CSS framework "chartcss". For more information visit: https://chartscss.org/	 -->
 				</div>
 			</div>
 		</div>
 		<div class="col-md-4">
 			<div class="item-area">
 				<div id="box">
-
 					<div class="item_area_header">
 						<a href="/refresh_f_meals"><i class="fi fi-rr-refresh" id="ico"></i></a>Erfahre noch mehr
 					</div>
