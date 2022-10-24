@@ -3338,7 +3338,7 @@
         },
         {
             "28.10.2022": {
-                "content": "Ofengem\u00fcse",
+                "content": "-",
                 "weekday": "fr"
             }
         },
@@ -3352,6 +3352,24 @@
             "30.10.2022": {
                 "content": "-",
                 "weekday": "so"
+            }
+        },
+        {
+            "01.11.2022": {
+                "content": "test",
+                "weekday": "di"
+            }
+        },
+        {
+            "31.10.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "02.11.2022": {
+                "content": "-",
+                "weekday": "mi"
             }
         }
     ]
