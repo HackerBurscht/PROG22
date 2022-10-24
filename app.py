@@ -114,22 +114,7 @@ def index():
 
     # Read the json files and extract the correct values:
     ####################################################################################################################
-    x_list = []
-    start = 0
     end = len([d][0]["content-file"])
-    test_date_dt = week_i1
-    for x in range(0, 7):
-        test_date = test_date_dt.strftime("%d.%m.%Y")
-        while start < end:
-            if test_date in d["content-file"][start]:
-                found_content = str(d["content-file"][start][test_date]["content"])
-                if found_content == "-":
-                    found_content = (". . . . . . . . . . . ")
-                x_list.append(found_content)
-            start += 1
-        start = 0
-        test_date_dt += timedelta(days=1)
-
     meal_and_date = []
     test_date_dt = week_i1
 
@@ -145,15 +130,19 @@ def index():
                     temp_lst.append(n_con)
         meal_and_date.append(temp_lst)
         test_date_dt += timedelta(days=1)
-    print(meal_and_date)
 
+    for i in range(0, 7):
+        if not meal_and_date[i]:
+            meal_and_date[i] = [". . . . . . . . . . . "]
 
-    while len(x_list) != 7:
-        x_list.append(". . . . . . . . . . . ")
+    clean_lst = []
+    for sublist in meal_and_date:
+        for meal in sublist:
+            clean_lst.append(meal)
 
     return render_template("index.html", week_start_display=week_start_display, week_end_display=week_end_display,
-                           return_mo=x_list[0], return_di=x_list[1], return_mi=x_list[2], return_do=x_list[3],
-                           return_fr=x_list[4], return_sa=x_list[5], return_so=x_list[6], max_meals=max_meals,
+                           return_mo=clean_lst[0], return_di=clean_lst[1], return_mi=clean_lst[2], return_do=clean_lst[3],
+                           return_fr=clean_lst[4], return_sa=clean_lst[5], return_so=clean_lst[6], max_meals=max_meals,
                            div_meals=div_meals, most_meal=most_meal, most_meal_amount=most_meal_amount, visible=visible)
 
 
@@ -613,7 +602,7 @@ def graph_data():
 
     for meal, amount in Counter(meals_only).most_common():
         result = []
-        norm = round((amount-min)/(max-min), 2)
+        norm = round((amount - min) / (max - min), 2)
         result.append(meal)
         result.append(norm)
         result.append(amount)

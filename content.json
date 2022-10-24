@@ -3344,7 +3344,7 @@
         },
         {
             "29.10.2022": {
-                "content": "Pilze",
+                "content": "-",
                 "weekday": "sa"
             }
         },
@@ -3356,20 +3356,38 @@
         },
         {
             "01.11.2022": {
-                "content": "test",
+                "content": "test2",
                 "weekday": "di"
             }
         },
         {
             "31.10.2022": {
-                "content": "-",
+                "content": "test",
                 "weekday": "mo"
             }
         },
         {
             "02.11.2022": {
-                "content": "-",
+                "content": "test3",
                 "weekday": "mi"
+            }
+        },
+        {
+            "05.11.2022": {
+                "content": "test6",
+                "weekday": "sa"
+            }
+        },
+        {
+            "04.11.2022": {
+                "content": "test5",
+                "weekday": "fr"
+            }
+        },
+        {
+            "06.11.2022": {
+                "content": "test7",
+                "weekday": "so"
             }
         }
     ]

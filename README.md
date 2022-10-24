@@ -4,7 +4,6 @@
 - ReadMe
 - Comments
 - Muster-Erkennung, Auto-Planer, Affinity analysis
-- Anzeigefehler mit zu wenig Input. Tage müssen der Reihe nach geplant werden. Kein Tag darf ausgelassen werden.
 - Responsive design and interface rework
 - Einstellungen?
 - Not15 auf stats zeigen mit anzahl
