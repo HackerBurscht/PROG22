@@ -9,11 +9,6 @@ from datetime import datetime, timedelta
 from collections import Counter
 from random import sample
 
-# graphs
-import plotly
-import plotly.express as px
-import matplotlib.pyplot as plt
-
 # init and necessary global values
 ####################################################################################################################
 app = Flask(__name__, static_url_path="/static")
