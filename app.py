@@ -130,6 +130,18 @@ def index():
         start = 0
         test_date_dt += timedelta(days=1)
 
+    meal_and_date = []
+    test_date_dt = week_i1
+    test_date = test_date_dt.strftime("%d.%m.%Y")
+    for i in range(0, end):
+        temp_lst = []
+        for key, value in d["content-file"][i].items():
+            n_con = str(d["content-file"][i][key]["content"])
+            if test_date == key:
+                temp_lst.append(n_con)
+    print(temp_lst)
+
+
     while len(x_list) != 7:
         x_list.append(". . . . . . . . . . . ")
 
