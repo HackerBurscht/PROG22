@@ -4,7 +4,6 @@
 - ReadMe
 - Comments
 - Muster-Erkennung, Auto-Planer, Affinity analysis
-- Responsive design and interface rework
 - Einstellungen?
 - Not15 auf stats zeigen mit anzahl
 
