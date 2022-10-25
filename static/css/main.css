@@ -273,11 +273,12 @@ input[type=text]{
 /* Styling for the graph*/
 
 #enable_scroll {
-     overflow-y: auto;
+    overflow-y: auto;
 }
 
 #enable_scroll_middle {
     overflow-y: auto;
+    max-height: 30em;
 }
 
 #bars {
@@ -405,4 +406,8 @@ th{
 	border: 1px solid #3D8DFD;
 	border-width: 2px 2px 0 0;
 	border-radius: 0 2px 0 0;
+}
+
+.col-md-4 {
+    padding-top: 2em;
 }

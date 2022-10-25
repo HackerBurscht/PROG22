@@ -3320,7 +3320,7 @@
         },
         {
             "25.10.2022": {
-                "content": "Bratwurst mit Zwiebelsauce",
+                "content": "Hot-Dogs",
                 "weekday": "di"
             }
         },
@@ -3332,13 +3332,13 @@
         },
         {
             "27.10.2022": {
-                "content": "Nudeln mit Tomatensauce",
+                "content": "Ofengem\u00fcse",
                 "weekday": "do"
             }
         },
         {
             "28.10.2022": {
-                "content": "-",
+                "content": "Nudeln mit Tomatensauce",
                 "weekday": "fr"
             }
         },
@@ -3355,39 +3355,27 @@
             }
         },
         {
-            "01.11.2022": {
-                "content": "test2",
-                "weekday": "di"
-            }
-        },
-        {
-            "31.10.2022": {
-                "content": "test",
+            "07.11.2022": {
+                "content": "-",
                 "weekday": "mo"
             }
         },
         {
-            "02.11.2022": {
-                "content": "test3",
-                "weekday": "mi"
+            "08.11.2022": {
+                "content": "-",
+                "weekday": "di"
             }
         },
         {
-            "05.11.2022": {
-                "content": "test6",
+            "10.11.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "12.11.2022": {
+                "content": "-",
                 "weekday": "sa"
-            }
-        },
-        {
-            "04.11.2022": {
-                "content": "test5",
-                "weekday": "fr"
-            }
-        },
-        {
-            "06.11.2022": {
-                "content": "test7",
-                "weekday": "so"
             }
         }
     ]
