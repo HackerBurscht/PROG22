@@ -3356,26 +3356,146 @@
         },
         {
             "07.11.2022": {
-                "content": "-",
+                "content": "Nudeln mit Tomatensauce",
                 "weekday": "mo"
             }
         },
         {
             "08.11.2022": {
-                "content": "-",
+                "content": "H\u00f6rnli mit Ghackets",
                 "weekday": "di"
             }
         },
         {
             "10.11.2022": {
-                "content": "-",
+                "content": "Pizza",
                 "weekday": "do"
             }
         },
         {
             "12.11.2022": {
+                "content": "Pizza",
+                "weekday": "sa"
+            }
+        },
+        {
+            "09.11.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "11.11.2022": {
+                "content": "Gyoza",
+                "weekday": "fr"
+            }
+        },
+        {
+            "13.11.2022": {
+                "content": "Lachs",
+                "weekday": "so"
+            }
+        },
+        {
+            "31.10.2022": {
+                "content": "Curry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "01.11.2022": {
+                "content": "Miso Suppe",
+                "weekday": "di"
+            }
+        },
+        {
+            "02.11.2022": {
+                "content": "Miso Suppe",
+                "weekday": "mi"
+            }
+        },
+        {
+            "03.11.2022": {
+                "content": "Pita",
+                "weekday": "do"
+            }
+        },
+        {
+            "04.11.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "14.11.2022": {
+                "content": "R\u00f6sti mit Speck und Ei",
+                "weekday": "mo"
+            }
+        },
+        {
+            "15.11.2022": {
+                "content": "Curry",
+                "weekday": "di"
+            }
+        },
+        {
+            "16.11.2022": {
+                "content": "Gyoza",
+                "weekday": "mi"
+            }
+        },
+        {
+            "17.11.2022": {
+                "content": "Miso Chicken",
+                "weekday": "do"
+            }
+        },
+        {
+            "18.11.2022": {
+                "content": "Kohl Pl\u00e4tzli",
+                "weekday": "fr"
+            }
+        },
+        {
+            "21.11.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "22.11.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "23.11.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "24.11.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "25.11.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "26.11.2022": {
                 "content": "-",
                 "weekday": "sa"
+            }
+        },
+        {
+            "27.11.2022": {
+                "content": "-",
+                "weekday": "so"
             }
         }
     ]
