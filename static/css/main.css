@@ -274,11 +274,17 @@ input[type=text]{
 
 #enable_scroll {
     overflow-y: auto;
+    min-width: auto;
 }
 
 #enable_scroll_middle {
+    min-width: auto;
     overflow-y: auto;
     max-height: 30em;
+}
+
+#box3 {
+    min-width: auto;
 }
 
 #bars {
@@ -337,15 +343,16 @@ th{
     text-align: left;
 }
 
-#box{
-    display:flex;
-    align-items: center;
+#headerbox_3{
+   display: grid;
+   grid-template-rows: ;
+   grid-template-columns: 1fr 1fr 1fr ;
+   gap: 0px;
+   justify-items: center;
+   align-items: center;
 }
 
 #ico{
-    position: absolute;
-    margin-left: -9em;
-    margin-top: 0.25em;
     color: black;
 }
 
