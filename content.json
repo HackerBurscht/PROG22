@@ -3428,74 +3428,110 @@
         },
         {
             "14.11.2022": {
-                "content": "R\u00f6sti mit Speck und Ei",
+                "content": "Curry",
                 "weekday": "mo"
             }
         },
         {
             "15.11.2022": {
-                "content": "Curry",
+                "content": "Gyoza",
                 "weekday": "di"
             }
         },
         {
             "16.11.2022": {
-                "content": "Gyoza",
+                "content": "Kohl Stir Fry",
                 "weekday": "mi"
             }
         },
         {
             "17.11.2022": {
-                "content": "Miso Chicken",
+                "content": "R\u00f6sti mit Speck und Ei",
                 "weekday": "do"
             }
         },
         {
             "18.11.2022": {
-                "content": "Kohl Pl\u00e4tzli",
+                "content": "Spaghetti",
                 "weekday": "fr"
             }
         },
         {
             "21.11.2022": {
-                "content": "-",
+                "content": "Verd\u00e4mpfti",
                 "weekday": "mo"
             }
         },
         {
             "22.11.2022": {
-                "content": "-",
+                "content": "Bratwurst mit Zwiebelsauce",
                 "weekday": "di"
             }
         },
         {
             "23.11.2022": {
-                "content": "-",
+                "content": "Slow braised lamb",
                 "weekday": "mi"
             }
         },
         {
             "24.11.2022": {
-                "content": "-",
+                "content": "Aglio nero",
                 "weekday": "do"
             }
         },
         {
             "25.11.2022": {
-                "content": "-",
+                "content": "Schweins Schnitzel",
                 "weekday": "fr"
             }
         },
         {
             "26.11.2022": {
-                "content": "-",
+                "content": "Pizza",
                 "weekday": "sa"
             }
         },
         {
             "27.11.2022": {
-                "content": "-",
+                "content": "Gerstensuppe",
                 "weekday": "so"
+            }
+        },
+        {
+            "19.11.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "20.11.2022": {
+                "content": "Miso Tofu",
+                "weekday": "so"
+            }
+        },
+        {
+            "28.11.2022": {
+                "content": "Rotkraut Tofu Bowl",
+                "weekday": "mo"
+            }
+        },
+        {
+            "29.11.2022": {
+                "content": "Nudeln mit Tomatensauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "30.11.2022": {
+                "content": "Gyoza",
+                "weekday": "mi"
+            }
+        },
+        {
+            "01.12.2022": {
+                "content": "Fried Rice",
+                "weekday": "do"
             }
         }
     ]

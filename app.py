@@ -54,6 +54,13 @@ weekday_long = {  # Is used in different functions to get easy access to the wee
 
 
 def get_data():
+    # Loads data from setting.json and removes the values which should be ignored.
+    with open('settings.json', "r") as s:
+        settings = json.load(s)
+    s.close()
+    ignore_keys = [settings][0]["settings"]["ignore"]
+    key_amount = len([settings][0]["settings"]["ignore"])
+
     # Get the data from the json-file and prepares it to be used in other functions.
     ####################################################################################################################
     with open('content.json', "r") as f:
@@ -64,15 +71,16 @@ def get_data():
     range_end = len([d][0]["content-file"])               # Gets the length of the json file
 
     for i in range(0, range_end):
-        temp_lst = []
         for key, value in d["content-file"][i].items():
             n_con = d["content-file"][i][key]["content"]
-            temp_lst.append(n_con)
             meals_only.append(n_con)
 
     meals_only = [value for value in meals_only if value != "-"]
     # removes the placeholder "-", as mentioned under "user commands"
     # https://www.delftstack.com/howto/python/python-list-remove-all/
+    for i in range(0, key_amount):
+        meals_only = [value for value in meals_only if value != ignore_keys[i]]
+    # removes all the keys, which should be ignored, from the settings-file.
 
     max_meals = len([d][0]["content-file"])
     div_meals = len(Counter(meals_only).keys())
@@ -245,6 +253,7 @@ def current_week():
     display_week = 0
     return redirect("/")
 
+
 # Opens stats page.
 ########################################################################################################################
 @app.route("/stats")
@@ -389,6 +398,17 @@ def get_lost_meals():
         # Removes duplicates from the "past_meals_only" list.
         past_meals_only = [*set(past_meals_only)]
 
+        # Loads data from setting.json and removes the values which should be ignored.
+        with open('settings.json', "r") as s:
+            settings = json.load(s)
+        s.close()
+        ignore_keys = [settings][0]["settings"]["ignore"]
+        key_amount = len([settings][0]["settings"]["ignore"])
+
+        for i in range(0, key_amount):
+            past_meals_only = [value for value in meals_only if value != ignore_keys[i]]
+        # removes all the keys, which should be ignored, from the settings-file.
+
         # Adds all elements from the past, which are not in the "recently-list", to a new list.
         for element in past_meals_only:
             if element not in recently:
@@ -513,14 +533,29 @@ def about():
     return render_template("about.html")
 
 
-# Loads contact page
+# Loads profil page
 ########################################################################################################################
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
+@app.route("/profil")
+def profil():
+    return render_template("profil.html")
 
 
-# ------------------
+# Saves values which should be ignored from the settings page into the settings.json file
+########################################################################################################################
+@app.route("/save_ignore", methods=["POST", "GET"])
+def save_ignore():
+    ignore_value = request.form.get("ignore")
+
+    with open("settings.json", "r+") as s:
+        settings = json.load(s)
+        [settings][0]["settings"]["ignore"].append(ignore_value)
+        s.seek(0)
+        json.dump(settings, s, indent=4)
+        s.close()
+    return redirect("/profil")
+
+
+# Reloads the stats page and displays new meal which haven't been prepared in a while.
 ########################################################################################################################
 @app.route("/refresh_f_meals")
 def refresh_f_meals():
@@ -623,7 +658,6 @@ def refresh_f_meals():
     #             temp.append(l)
     #             max_lst.append(temp)
     # print(max_lst)
-
 
 if __name__ == "__main__":
     app.run(debug=True)

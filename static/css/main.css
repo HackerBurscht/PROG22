@@ -1,7 +1,17 @@
 /* Styling for base.html*/
 /****************************************************************************/
+:root {
+  --lightblue: #CDE7FB;
+  --blue: #3D8DFD;
+  --pink: #E6CFFF;
+  --white: #ffffff;
+  --background: #F4F6FA;
+  --bordergrey: #EFF0F6;
+}
+
+
 body {
-    background-color: #F4F6FA;
+    background-color: var(--background);
     margin: 0;
     font-family: Poppins;
     color: rgb(56, 63, 80);
@@ -15,7 +25,7 @@ body {
 .hr_style{
     border: 0;
     border-top: 1px solid;
-    color: #EFF0F6
+    color: var(--bordergrey);
 }
 
 .navbar {
@@ -34,7 +44,7 @@ body {
 
 .navbar > a:hover {
     font-weight: 900;
-    color: #3D8DFD;
+    color: var(--blue);
 }
 
 
@@ -92,7 +102,7 @@ body {
 }
 
 .left:hover{
-	border: 1px solid #3D8DFD;
+	border: 1px solid var(--blue);
 	border-width: 2px 2px 0 0;
 	border-radius: 0 2px 0 0;
 }
@@ -107,7 +117,7 @@ body {
 }
 
 .right:hover{
-	border: 1px solid #3D8DFD;
+	border: 1px solid var(--blue);
 	border-width: 2px 2px 0 0;
 	border-radius: 0 2px 0 0;
 }
@@ -130,10 +140,10 @@ body {
     width:100%;
     margin: 0 auto;
     max-width: 30em;
-    background-color: #FFFFFF;
+    background-color: var(--white);
     border: 1px solid;
     border-radius: 5px;
-    border-color: #EFF0F6;
+    border-color: var(--bordergrey);
 }
 
 .item-group{
@@ -143,7 +153,7 @@ body {
     align-items: center;
     height: 4em;
     border-bottom: 1px solid;
-    border-color: #EFF0F6;
+    border-color: var(--bordergrey);
 }
 
 .day{
@@ -154,23 +164,15 @@ body {
     padding-right:8em;
 }
 
-input[type=text]{
-    outline: none;
-    border: 0px;
-}
-
 .content_input{
     outline:none;
     border: 0px;
     margin: 0;
-}
-
-.content_input{
     width: 15em;
 }
 
 .content_input:hover, focus, textarea:focus{
-    border: 1px solid #3D8DFD;
+    border: 1px solid var(--blue);
 }
 
 .form-group{
@@ -182,21 +184,21 @@ input[type=text]{
     display: block;
     height: 0.5em;
     width: 1.25em;
-    background: #E6CFFF;
+    background: var(--pink);
     border-radius: 1em;
 }
 .blob_two{
     display: block;
     height: 0.5em;
     width: 1.25em;
-    background: #CDE7FB;
+    background: var(--lightblue);
     border-radius: 1em;
 }
 .blob_three{
     display: block;
     height: 0.5em;
     width: 1.25em;
-    background: #3D8DFD;
+    background: var(--blue);
     border-radius: 1em;
 }
 
@@ -216,7 +218,7 @@ input[type=text]{
 
 .footer > a:hover {
     font-weight: 900;
-    color: #3D8DFD;
+    color: var(--blue);
 }
 
 .func{
@@ -235,7 +237,7 @@ input[type=text]{
 
 .func_link:hover {
     font-weight: 900;
-    color: #3D8DFD;
+    color: var(--blue);
 }
 
 #current_week_button {
@@ -253,7 +255,7 @@ input[type=text]{
     padding-top: 1em;
     padding-bottom: 1em;
     border-bottom: 1px solid;
-    border-color: #EFF0F6;
+    border-color: var(--bordergrey);
     font-weight: 650;
     font-size: 1em;
     width: 100%
@@ -290,7 +292,7 @@ input[type=text]{
 #bars {
     padding: 0 1em 0 1em;
     font-size: 0.7em;
-    --color: #3D8DFD;
+    --color: var(--blue);
     --labels-size: 14em;
 }
 
@@ -357,7 +359,7 @@ th{
 }
 
 #ico:hover{
-    color: #3D8DFD;
+    color: var(--blue);
 }
 
 .items_to_remember {
@@ -366,7 +368,7 @@ th{
     align-items: flex-start;
     justify-content: center;
     border-bottom: 1px solid;
-    border-color: #EFF0F6;
+    border-color: var(--bordergrey);
 }
 
 .remember_item {
@@ -381,7 +383,7 @@ th{
     margin-right: 0.5em;
     height: 0.5em;
     width: 0.5em;
-    background: #3D8DFD;
+    background: var(--blue);
     border-radius: 0.5em;
 }
 
@@ -410,11 +412,48 @@ th{
 }
 
 .left_combo:hover, .right_combo:hover{
-	border: 1px solid #3D8DFD;
+	border: 1px solid var(--blue);
 	border-width: 2px 2px 0 0;
 	border-radius: 0 2px 0 0;
 }
 
 .col-md-4 {
     padding-top: 2em;
+}
+
+/* Styling for profil.html*/
+/****************************************************************************/
+
+.settings_box {
+    margin-top: 1em;
+    margin-left: 3em;
+    text-align: left;
+}
+
+.settings_title{
+    font-weight:700;
+    font-size: 0.8em;
+    margin-bottom:0.5em;
+    margin-top:0.5em;
+}
+
+.settings_input{
+    margin: 0;
+    width: 15em;
+    height: 2em;
+    border: 1px  solid var(--bordergrey);
+}
+
+.delete_all_link{
+    margin-top: 12em;
+}
+
+.delete_all_link > a{
+    font-size: 0.8em;
+    color: #383F50;
+}
+
+.delete_all_link > a:hover {
+    font-weight: 900;
+    color: var(--blue);
 }

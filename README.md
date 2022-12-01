@@ -4,8 +4,8 @@
 - ReadMe
 - Comments
 - Muster-Erkennung, Auto-Planer, Affinity analysis
-- Einstellungen?
-- Not15 auf stats zeigen mit anzahl
+- Settings write and read
+- use settings in functions
 
 
 ## What is Mealy
