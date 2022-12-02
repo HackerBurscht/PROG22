@@ -1,0 +1,3544 @@
+{
+    "content-file": [
+        {
+            "20.04.2021": {
+                "content": "S\u00fcss-Sauer",
+                "weekday": "di"
+            }
+        },
+        {
+            "21.04.2021": {
+                "content": "Pizza",
+                "weekday": "mi"
+            }
+        },
+        {
+            "22.04.2021": {
+                "content": "Brock-Lee",
+                "weekday": "do"
+            }
+        },
+        {
+            "23.04.2021": {
+                "content": "Hot-Dogs",
+                "weekday": "fr"
+            }
+        },
+        {
+            "24.04.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "25.04.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "26.04.2021": {
+                "content": "Chili",
+                "weekday": "mo"
+            }
+        },
+        {
+            "27.04.2021": {
+                "content": "Fleischk\u00e4se + Ofengem\u00fcse",
+                "weekday": "di"
+            }
+        },
+        {
+            "28.04.2021": {
+                "content": "Grill",
+                "weekday": "mi"
+            }
+        },
+        {
+            "29.04.2021": {
+                "content": "Ris Casimir",
+                "weekday": "do"
+            }
+        },
+        {
+            "30.04.2021": {
+                "content": "Fr\u00fchlingsrollen",
+                "weekday": "fr"
+            }
+        },
+        {
+            "01.05.2021": {
+                "content": "Brot",
+                "weekday": "sa"
+            }
+        },
+        {
+            "02.05.2021": {
+                "content": "Schinkengipfeli",
+                "weekday": "so"
+            }
+        },
+        {
+            "03.05.2021": {
+                "content": "Dal Tapka",
+                "weekday": "mo"
+            }
+        },
+        {
+            "04.05.2021": {
+                "content": "Omletten",
+                "weekday": "di"
+            }
+        },
+        {
+            "05.05.2021": {
+                "content": "Curry",
+                "weekday": "mi"
+            }
+        },
+        {
+            "06.05.2021": {
+                "content": "Spaghetti",
+                "weekday": "do"
+            }
+        },
+        {
+            "07.05.2021": {
+                "content": "Poulet Grill",
+                "weekday": "fr"
+            }
+        },
+        {
+            "08.05.2021": {
+                "content": "Hot-Dogs",
+                "weekday": "sa"
+            }
+        },
+        {
+            "09.05.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "10.05.2021": {
+                "content": "Brot",
+                "weekday": "mo"
+            }
+        },
+        {
+            "11.05.2021": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "di"
+            }
+        },
+        {
+            "12.05.2021": {
+                "content": "Omletten",
+                "weekday": "mi"
+            }
+        },
+        {
+            "13.05.2021": {
+                "content": "Fr\u00fchlingsrollen",
+                "weekday": "do"
+            }
+        },
+        {
+            "14.05.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "15.05.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "16.05.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "17.05.2021": {
+                "content": "Brot",
+                "weekday": "mo"
+            }
+        },
+        {
+            "18.05.2021": {
+                "content": "S\u00fcss-Sauer",
+                "weekday": "di"
+            }
+        },
+        {
+            "19.05.2021": {
+                "content": "Aglio e Oglio",
+                "weekday": "mi"
+            }
+        },
+        {
+            "20.05.2021": {
+                "content": "Omletten",
+                "weekday": "do"
+            }
+        },
+        {
+            "21.05.2021": {
+                "content": "Brock-Lee",
+                "weekday": "fr"
+            }
+        },
+        {
+            "22.05.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "23.05.2021": {
+                "content": "Brot",
+                "weekday": "so"
+            }
+        },
+        {
+            "24.05.2021": {
+                "content": "Pizza",
+                "weekday": "mo"
+            }
+        },
+        {
+            "25.05.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "26.05.2021": {
+                "content": "Crostini Tapenade und Salat",
+                "weekday": "mi"
+            }
+        },
+        {
+            "27.05.2021": {
+                "content": "Dal Tapka",
+                "weekday": "do"
+            }
+        },
+        {
+            "28.05.2021": {
+                "content": "Ofengem\u00fcse mit Kroketten",
+                "weekday": "fr"
+            }
+        },
+        {
+            "29.05.2021": {
+                "content": "Fr\u00fchlingsrollen",
+                "weekday": "sa"
+            }
+        },
+        {
+            "30.05.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "31.05.2021": {
+                "content": "Ris Casimir",
+                "weekday": "mo"
+            }
+        },
+        {
+            "01.06.2021": {
+                "content": "Spaghetti al Tonno",
+                "weekday": "di"
+            }
+        },
+        {
+            "02.06.2021": {
+                "content": "Salat",
+                "weekday": "mi"
+            }
+        },
+        {
+            "03.06.2021": {
+                "content": "Pad Thai",
+                "weekday": "do"
+            }
+        },
+        {
+            "04.06.2021": {
+                "content": "Ger\u00f6stete Kichererbsen auf Salatbeet",
+                "weekday": "fr"
+            }
+        },
+        {
+            "05.06.2021": {
+                "content": "Appenzell",
+                "weekday": "sa"
+            }
+        },
+        {
+            "06.06.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "07.06.2021": {
+                "content": "Curry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "08.06.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "09.06.2021": {
+                "content": "Spaghetti",
+                "weekday": "mi"
+            }
+        },
+        {
+            "10.06.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "11.06.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "12.06.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "13.06.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "14.06.2021": {
+                "content": "Pad Thai",
+                "weekday": "mo"
+            }
+        },
+        {
+            "15.06.2021": {
+                "content": "Pizza",
+                "weekday": "di"
+            }
+        },
+        {
+            "16.06.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "17.06.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "18.06.2021": {
+                "content": "Fr\u00fchlingsrollen",
+                "weekday": "fr"
+            }
+        },
+        {
+            "19.06.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "20.06.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "21.06.2021": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "mo"
+            }
+        },
+        {
+            "22.06.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "23.06.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "24.06.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "25.06.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "26.06.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "27.06.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "28.06.2021": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "29.06.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "30.06.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "01.07.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "02.07.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "03.07.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "04.07.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "05.07.2021": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "06.07.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "07.07.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "08.07.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "09.07.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "10.07.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "11.07.2021": {
+                "content": "Fr\u00fchlingsrollen",
+                "weekday": "so"
+            }
+        },
+        {
+            "12.07.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "mo"
+            }
+        },
+        {
+            "13.07.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "14.07.2021": {
+                "content": "Ris Casimir",
+                "weekday": "mi"
+            }
+        },
+        {
+            "15.07.2021": {
+                "content": "Fried Rice",
+                "weekday": "do"
+            }
+        },
+        {
+            "16.07.2021": {
+                "content": "Pizza",
+                "weekday": "fr"
+            }
+        },
+        {
+            "17.07.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "18.07.2021": {
+                "content": "Kohlrabi Kim Chi Salat",
+                "weekday": "so"
+            }
+        },
+        {
+            "19.07.2021": {
+                "content": "Brock-Lee",
+                "weekday": "mo"
+            }
+        },
+        {
+            "20.07.2021": {
+                "content": "Poulet Grill",
+                "weekday": "di"
+            }
+        },
+        {
+            "21.07.2021": {
+                "content": "Salat",
+                "weekday": "mi"
+            }
+        },
+        {
+            "22.07.2021": {
+                "content": "Aglio e Oglio",
+                "weekday": "do"
+            }
+        },
+        {
+            "23.07.2021": {
+                "content": "Omletten",
+                "weekday": "fr"
+            }
+        },
+        {
+            "24.07.2021": {
+                "content": "Grill",
+                "weekday": "sa"
+            }
+        },
+        {
+            "25.07.2021": {
+                "content": "Schinkengipfeli",
+                "weekday": "so"
+            }
+        },
+        {
+            "26.07.2021": {
+                "content": "S\u00fcss-Sauer",
+                "weekday": "mo"
+            }
+        },
+        {
+            "27.07.2021": {
+                "content": "Fried Rice",
+                "weekday": "di"
+            }
+        },
+        {
+            "28.07.2021": {
+                "content": "Toast Sandwich",
+                "weekday": "mi"
+            }
+        },
+        {
+            "29.07.2021": {
+                "content": "Penne Tonno",
+                "weekday": "do"
+            }
+        },
+        {
+            "30.07.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "31.07.2021": {
+                "content": "Sandwich",
+                "weekday": "sa"
+            }
+        },
+        {
+            "01.08.2021": {
+                "content": "Brot",
+                "weekday": "so"
+            }
+        },
+        {
+            "02.08.2021": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "03.08.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "04.08.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "05.08.2021": {
+                "content": "Pizza",
+                "weekday": "do"
+            }
+        },
+        {
+            "06.08.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "07.08.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "08.08.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "09.08.2021": {
+                "content": "Chin Hachfleischb\u00e4llchen",
+                "weekday": "mo"
+            }
+        },
+        {
+            "10.08.2021": {
+                "content": "Spaghetti",
+                "weekday": "di"
+            }
+        },
+        {
+            "11.08.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "12.08.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "13.08.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "14.08.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "15.08.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "16.08.2021": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "17.08.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "18.08.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "19.08.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "20.08.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "21.08.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "22.08.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "23.08.2021": {
+                "content": "Linsen Pilaf",
+                "weekday": "mo"
+            }
+        },
+        {
+            "24.08.2021": {
+                "content": "Gef\u00fcllte Zucchini",
+                "weekday": "di"
+            }
+        },
+        {
+            "25.08.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "26.08.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "27.08.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "28.08.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "29.08.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "30.08.2021": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "31.08.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "01.09.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "02.09.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "03.09.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "04.09.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "05.09.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "06.09.2021": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "07.09.2021": {
+                "content": "Fried Rice",
+                "weekday": "di"
+            }
+        },
+        {
+            "08.09.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "09.09.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "10.09.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "11.09.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "12.09.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "13.09.2021": {
+                "content": "Cantonese Noodels",
+                "weekday": "mo"
+            }
+        },
+        {
+            "14.09.2021": {
+                "content": "Brot",
+                "weekday": "di"
+            }
+        },
+        {
+            "15.09.2021": {
+                "content": "Rotes Curry",
+                "weekday": "mi"
+            }
+        },
+        {
+            "16.09.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "17.09.2021": {
+                "content": "Mc Donalds",
+                "weekday": "fr"
+            }
+        },
+        {
+            "18.09.2021": {
+                "content": "Appenzell",
+                "weekday": "sa"
+            }
+        },
+        {
+            "19.09.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "20.09.2021": {
+                "content": "Rotes Curry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "21.09.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "22.09.2021": {
+                "content": "Brot",
+                "weekday": "mi"
+            }
+        },
+        {
+            "23.09.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "24.09.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "25.09.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "26.09.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "27.09.2021": {
+                "content": "Cantonese Noodels",
+                "weekday": "mo"
+            }
+        },
+        {
+            "28.09.2021": {
+                "content": "Fried Rice",
+                "weekday": "di"
+            }
+        },
+        {
+            "29.09.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "30.09.2021": {
+                "content": "Schinkengipfeli",
+                "weekday": "do"
+            }
+        },
+        {
+            "01.10.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "02.10.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "03.10.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "04.10.2021": {
+                "content": "Couscous",
+                "weekday": "mo"
+            }
+        },
+        {
+            "05.10.2021": {
+                "content": "Brock-Lee",
+                "weekday": "di"
+            }
+        },
+        {
+            "06.10.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "07.10.2021": {
+                "content": "Salat",
+                "weekday": "do"
+            }
+        },
+        {
+            "08.10.2021": {
+                "content": "Couscous",
+                "weekday": "fr"
+            }
+        },
+        {
+            "09.10.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "10.10.2021": {
+                "content": "Pizza",
+                "weekday": "so"
+            }
+        },
+        {
+            "11.10.2021": {
+                "content": "Chili",
+                "weekday": "mo"
+            }
+        },
+        {
+            "12.10.2021": {
+                "content": "Chili",
+                "weekday": "di"
+            }
+        },
+        {
+            "13.10.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "14.10.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "15.10.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "fr"
+            }
+        },
+        {
+            "16.10.2021": {
+                "content": "Giesacker 1",
+                "weekday": "sa"
+            }
+        },
+        {
+            "17.10.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "18.10.2021": {
+                "content": "S\u00fcss-Sauer",
+                "weekday": "mo"
+            }
+        },
+        {
+            "19.10.2021": {
+                "content": "Ofengem\u00fcse mit Kartoffeln",
+                "weekday": "di"
+            }
+        },
+        {
+            "20.10.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "21.10.2021": {
+                "content": "Verd\u00e4mpfti",
+                "weekday": "do"
+            }
+        },
+        {
+            "22.10.2021": {
+                "content": "Toast Sandwich",
+                "weekday": "fr"
+            }
+        },
+        {
+            "23.10.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "24.10.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "25.10.2021": {
+                "content": "Brot",
+                "weekday": "mo"
+            }
+        },
+        {
+            "26.10.2021": {
+                "content": "Spaghetti",
+                "weekday": "di"
+            }
+        },
+        {
+            "27.10.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "28.10.2021": {
+                "content": "Fried Rice",
+                "weekday": "do"
+            }
+        },
+        {
+            "29.10.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "30.10.2021": {
+                "content": "Chicken Wings und Pommes",
+                "weekday": "sa"
+            }
+        },
+        {
+            "31.10.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "01.11.2021": {
+                "content": "Brock-Lee",
+                "weekday": "mo"
+            }
+        },
+        {
+            "02.11.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "03.11.2021": {
+                "content": "Ris Casimir",
+                "weekday": "mi"
+            }
+        },
+        {
+            "04.11.2021": {
+                "content": "Falafel",
+                "weekday": "do"
+            }
+        },
+        {
+            "05.11.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "06.11.2021": {
+                "content": "Pizza",
+                "weekday": "sa"
+            }
+        },
+        {
+            "07.11.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "08.11.2021": {
+                "content": "Cantonese Noodels",
+                "weekday": "mo"
+            }
+        },
+        {
+            "09.11.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "10.11.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "11.11.2021": {
+                "content": "Fleischk\u00e4se + Ofengem\u00fcse",
+                "weekday": "do"
+            }
+        },
+        {
+            "12.11.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "13.11.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "14.11.2021": {
+                "content": "Pizza",
+                "weekday": "so"
+            }
+        },
+        {
+            "15.11.2021": {
+                "content": "Wienerli im Teig",
+                "weekday": "mo"
+            }
+        },
+        {
+            "16.11.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "17.11.2021": {
+                "content": "Omletten",
+                "weekday": "mi"
+            }
+        },
+        {
+            "18.11.2021": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "do"
+            }
+        },
+        {
+            "19.11.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "20.11.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "21.11.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "22.11.2021": {
+                "content": "Couscous",
+                "weekday": "mo"
+            }
+        },
+        {
+            "23.11.2021": {
+                "content": "Pizza",
+                "weekday": "di"
+            }
+        },
+        {
+            "24.11.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "25.11.2021": {
+                "content": "Ratatouille\u00a0",
+                "weekday": "do"
+            }
+        },
+        {
+            "26.11.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "27.11.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "28.11.2021": {
+                "content": "Chili",
+                "weekday": "so"
+            }
+        },
+        {
+            "29.11.2021": {
+                "content": "Chili",
+                "weekday": "mo"
+            }
+        },
+        {
+            "30.11.2021": {
+                "content": "Schinkengipfeli",
+                "weekday": "di"
+            }
+        },
+        {
+            "01.12.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "02.12.2021": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "03.12.2021": {
+                "content": "Omletten",
+                "weekday": "fr"
+            }
+        },
+        {
+            "04.12.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "05.12.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "06.12.2021": {
+                "content": "Cantonese Noodels",
+                "weekday": "mo"
+            }
+        },
+        {
+            "07.12.2021": {
+                "content": "Quadrel",
+                "weekday": "di"
+            }
+        },
+        {
+            "08.12.2021": {
+                "content": "Riz Casimir",
+                "weekday": "mi"
+            }
+        },
+        {
+            "09.12.2021": {
+                "content": "Ger\u00f6stete Kichererbsen ",
+                "weekday": "do"
+            }
+        },
+        {
+            "10.12.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "11.12.2021": {
+                "content": "Pizza",
+                "weekday": "sa"
+            }
+        },
+        {
+            "12.12.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "13.12.2021": {
+                "content": "Spaghetti",
+                "weekday": "mo"
+            }
+        },
+        {
+            "14.12.2021": {
+                "content": "Fleischk\u00e4se, Zwiebelsauce, R\u00f6sti",
+                "weekday": "di"
+            }
+        },
+        {
+            "15.12.2021": {
+                "content": "Wienerli im Teig",
+                "weekday": "mi"
+            }
+        },
+        {
+            "16.12.2021": {
+                "content": "Aglio e Oglio",
+                "weekday": "do"
+            }
+        },
+        {
+            "17.12.2021": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "18.12.2021": {
+                "content": "Hot-Dogs",
+                "weekday": "sa"
+            }
+        },
+        {
+            "19.12.2021": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "20.12.2021": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mo"
+            }
+        },
+        {
+            "21.12.2021": {
+                "content": "Brock-Lee",
+                "weekday": "di"
+            }
+        },
+        {
+            "22.12.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "23.12.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "24.12.2021": {
+                "content": "Giesacker 1",
+                "weekday": "fr"
+            }
+        },
+        {
+            "25.12.2021": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "26.12.2021": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "27.12.2021": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "28.12.2021": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "29.12.2021": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "30.12.2021": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "31.12.2021": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "01.01.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "02.01.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "03.01.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "04.01.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "05.01.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "06.01.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "07.01.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "08.01.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "09.01.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "10.01.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "11.01.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "12.01.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "13.01.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "14.01.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "15.01.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "16.01.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "17.01.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "18.01.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "19.01.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "20.01.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "21.01.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "22.01.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "23.01.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "24.01.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "25.01.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "26.01.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "27.01.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "28.01.2022": {
+                "content": "Pizza",
+                "weekday": "fr"
+            }
+        },
+        {
+            "29.01.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "30.01.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "31.01.2022": {
+                "content": "LO MEIN",
+                "weekday": "mo"
+            }
+        },
+        {
+            "01.02.2022": {
+                "content": "LO MEIN",
+                "weekday": "di"
+            }
+        },
+        {
+            "02.02.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "mi"
+            }
+        },
+        {
+            "03.02.2022": {
+                "content": "Spaghetti",
+                "weekday": "do"
+            }
+        },
+        {
+            "04.02.2022": {
+                "content": "Fleischk\u00e4se + Ofengem\u00fcse",
+                "weekday": "fr"
+            }
+        },
+        {
+            "05.02.2022": {
+                "content": "Gallis",
+                "weekday": "sa"
+            }
+        },
+        {
+            "06.02.2022": {
+                "content": "Appenzell",
+                "weekday": "so"
+            }
+        },
+        {
+            "07.02.2022": {
+                "content": "Chili",
+                "weekday": "mo"
+            }
+        },
+        {
+            "08.02.2022": {
+                "content": "Chili",
+                "weekday": "di"
+            }
+        },
+        {
+            "09.02.2022": {
+                "content": "Hot-Dogs",
+                "weekday": "mi"
+            }
+        },
+        {
+            "10.02.2022": {
+                "content": "Pizza",
+                "weekday": "do"
+            }
+        },
+        {
+            "11.02.2022": {
+                "content": "Ofengem\u00fcse",
+                "weekday": "fr"
+            }
+        },
+        {
+            "12.02.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "13.02.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "14.02.2022": {
+                "content": "Wienerli im Teig",
+                "weekday": "mo"
+            }
+        },
+        {
+            "15.02.2022": {
+                "content": "Naan Brot",
+                "weekday": "di"
+            }
+        },
+        {
+            "16.02.2022": {
+                "content": "S\u00fcss-Sauer",
+                "weekday": "mi"
+            }
+        },
+        {
+            "17.02.2022": {
+                "content": "Fried Rice",
+                "weekday": "do"
+            }
+        },
+        {
+            "18.02.2022": {
+                "content": "Hot-Dogs",
+                "weekday": "fr"
+            }
+        },
+        {
+            "19.02.2022": {
+                "content": "Dal",
+                "weekday": "sa"
+            }
+        },
+        {
+            "20.02.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "21.02.2022": {
+                "content": "Pizza",
+                "weekday": "mo"
+            }
+        },
+        {
+            "22.02.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "23.02.2022": {
+                "content": "Curry",
+                "weekday": "mi"
+            }
+        },
+        {
+            "24.02.2022": {
+                "content": "Hot-Dogs",
+                "weekday": "do"
+            }
+        },
+        {
+            "25.02.2022": {
+                "content": "Dal",
+                "weekday": "fr"
+            }
+        },
+        {
+            "26.02.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "27.02.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "28.02.2022": {
+                "content": "Brot",
+                "weekday": "mo"
+            }
+        },
+        {
+            "01.03.2022": {
+                "content": "Riz Casimir",
+                "weekday": "di"
+            }
+        },
+        {
+            "02.03.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "03.03.2022": {
+                "content": "Wienerli im Teig",
+                "weekday": "do"
+            }
+        },
+        {
+            "04.03.2022": {
+                "content": "Dal",
+                "weekday": "fr"
+            }
+        },
+        {
+            "05.03.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "06.03.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "07.03.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "mo"
+            }
+        },
+        {
+            "08.03.2022": {
+                "content": "Fried Rice",
+                "weekday": "di"
+            }
+        },
+        {
+            "09.03.2022": {
+                "content": "Burritos",
+                "weekday": "mi"
+            }
+        },
+        {
+            "10.03.2022": {
+                "content": "R\u00f6sti mit Speck und Ei",
+                "weekday": "do"
+            }
+        },
+        {
+            "11.03.2022": {
+                "content": "Aglio e Oglio",
+                "weekday": "fr"
+            }
+        },
+        {
+            "12.03.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "13.03.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "14.03.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "mo"
+            }
+        },
+        {
+            "15.03.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "16.03.2022": {
+                "content": "Pizza",
+                "weekday": "mi"
+            }
+        },
+        {
+            "17.03.2022": {
+                "content": "Pita-Taschen",
+                "weekday": "do"
+            }
+        },
+        {
+            "18.03.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "fr"
+            }
+        },
+        {
+            "19.03.2022": {
+                "content": "Naan Brot",
+                "weekday": "sa"
+            }
+        },
+        {
+            "20.03.2022": {
+                "content": "Pizza",
+                "weekday": "so"
+            }
+        },
+        {
+            "21.03.2022": {
+                "content": "Rotes Curry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "22.03.2022": {
+                "content": "R\u00f6sti mit Speck und Ei",
+                "weekday": "di"
+            }
+        },
+        {
+            "23.03.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "24.03.2022": {
+                "content": "Dal",
+                "weekday": "do"
+            }
+        },
+        {
+            "25.03.2022": {
+                "content": "Backhendel mit Kartoffeln",
+                "weekday": "fr"
+            }
+        },
+        {
+            "26.03.2022": {
+                "content": "Restaurant",
+                "weekday": "sa"
+            }
+        },
+        {
+            "27.03.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "28.03.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mo"
+            }
+        },
+        {
+            "29.03.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "30.03.2022": {
+                "content": "Ger\u00f6stete Kichererbsen ",
+                "weekday": "mi"
+            }
+        },
+        {
+            "31.03.2022": {
+                "content": "Ratatouille\u00a0",
+                "weekday": "do"
+            }
+        },
+        {
+            "01.04.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "02.04.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "03.04.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "04.04.2022": {
+                "content": "Couscous",
+                "weekday": "mo"
+            }
+        },
+        {
+            "05.04.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "06.04.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "mi"
+            }
+        },
+        {
+            "07.04.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "08.04.2022": {
+                "content": "Pita-Taschen",
+                "weekday": "fr"
+            }
+        },
+        {
+            "09.04.2022": {
+                "content": "Pizza",
+                "weekday": "sa"
+            }
+        },
+        {
+            "10.04.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "11.04.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "mo"
+            }
+        },
+        {
+            "12.04.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "di"
+            }
+        },
+        {
+            "13.04.2022": {
+                "content": "Dal",
+                "weekday": "mi"
+            }
+        },
+        {
+            "14.04.2022": {
+                "content": "Hamburger",
+                "weekday": "do"
+            }
+        },
+        {
+            "15.04.2022": {
+                "content": "Momo",
+                "weekday": "fr"
+            }
+        },
+        {
+            "16.04.2022": {
+                "content": "\u00d6pfek\u00fcachli",
+                "weekday": "sa"
+            }
+        },
+        {
+            "17.04.2022": {
+                "content": "Grill",
+                "weekday": "so"
+            }
+        },
+        {
+            "18.04.2022": {
+                "content": "Fleischk\u00e4se",
+                "weekday": "mo"
+            }
+        },
+        {
+            "19.04.2022": {
+                "content": "Riz Casimir",
+                "weekday": "di"
+            }
+        },
+        {
+            "20.04.2022": {
+                "content": "Poulet Grill",
+                "weekday": "mi"
+            }
+        },
+        {
+            "21.04.2022": {
+                "content": "Pizza",
+                "weekday": "do"
+            }
+        },
+        {
+            "22.04.2022": {
+                "content": "Pizzabrot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "23.04.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "24.04.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "25.04.2022": {
+                "content": "Mediterrane Pasta",
+                "weekday": "mo"
+            }
+        },
+        {
+            "26.04.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "27.04.2022": {
+                "content": "Brot",
+                "weekday": "mi"
+            }
+        },
+        {
+            "28.04.2022": {
+                "content": "Pizza",
+                "weekday": "do"
+            }
+        },
+        {
+            "29.04.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "fr"
+            }
+        },
+        {
+            "30.04.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "01.05.2022": {
+                "content": "Pizza",
+                "weekday": "so"
+            }
+        },
+        {
+            "02.05.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mo"
+            }
+        },
+        {
+            "03.05.2022": {
+                "content": "Pizzabrot",
+                "weekday": "di"
+            }
+        },
+        {
+            "04.05.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "mi"
+            }
+        },
+        {
+            "05.05.2022": {
+                "content": "Dal",
+                "weekday": "do"
+            }
+        },
+        {
+            "06.05.2022": {
+                "content": "Aglio e Oglio",
+                "weekday": "fr"
+            }
+        },
+        {
+            "07.05.2022": {
+                "content": "Grill",
+                "weekday": "sa"
+            }
+        },
+        {
+            "08.05.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "so"
+            }
+        },
+        {
+            "09.05.2022": {
+                "content": "Mediterrane Pasta",
+                "weekday": "mo"
+            }
+        },
+        {
+            "10.05.2022": {
+                "content": "Curry",
+                "weekday": "di"
+            }
+        },
+        {
+            "11.05.2022": {
+                "content": "Couscous",
+                "weekday": "mi"
+            }
+        },
+        {
+            "12.05.2022": {
+                "content": "Ofengem\u00fcse",
+                "weekday": "do"
+            }
+        },
+        {
+            "13.05.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "14.05.2022": {
+                "content": "Lamm",
+                "weekday": "sa"
+            }
+        },
+        {
+            "15.05.2022": {
+                "content": "Pizza",
+                "weekday": "so"
+            }
+        },
+        {
+            "16.05.2022": {
+                "content": "Spaghetti",
+                "weekday": "mo"
+            }
+        },
+        {
+            "17.05.2022": {
+                "content": "Pita",
+                "weekday": "di"
+            }
+        },
+        {
+            "18.05.2022": {
+                "content": "Fried Rice",
+                "weekday": "mi"
+            }
+        },
+        {
+            "19.05.2022": {
+                "content": "Couscous",
+                "weekday": "do"
+            }
+        },
+        {
+            "20.05.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "21.05.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "22.05.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "23.05.2022": {
+                "content": "Mediterrane Pasta",
+                "weekday": "mo"
+            }
+        },
+        {
+            "24.05.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "25.05.2022": {
+                "content": "Riz Casimir",
+                "weekday": "mi"
+            }
+        },
+        {
+            "26.05.2022": {
+                "content": "Fisch",
+                "weekday": "do"
+            }
+        },
+        {
+            "27.05.2022": {
+                "content": "Street-Food-Festival",
+                "weekday": "fr"
+            }
+        },
+        {
+            "28.05.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "29.05.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "30.05.2022": {
+                "content": "Omletten",
+                "weekday": "mo"
+            }
+        },
+        {
+            "31.05.2022": {
+                "content": "Spaghetti",
+                "weekday": "di"
+            }
+        },
+        {
+            "01.06.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "mi"
+            }
+        },
+        {
+            "02.06.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "03.06.2022": {
+                "content": "Pizza",
+                "weekday": "fr"
+            }
+        },
+        {
+            "04.06.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "05.06.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "06.06.2022": {
+                "content": "Pizza",
+                "weekday": "mo"
+            }
+        },
+        {
+            "07.06.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "di"
+            }
+        },
+        {
+            "08.06.2022": {
+                "content": "\u00d6pfek\u00fcachli",
+                "weekday": "mi"
+            }
+        },
+        {
+            "09.06.2022": {
+                "content": "Ofengem\u00fcse mit Kartoffeln",
+                "weekday": "do"
+            }
+        },
+        {
+            "10.06.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "11.06.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "12.06.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "13.06.2022": {
+                "content": "Aglio e Oglio",
+                "weekday": "mo"
+            }
+        },
+        {
+            "14.06.2022": {
+                "content": "Couscous",
+                "weekday": "di"
+            }
+        },
+        {
+            "15.06.2022": {
+                "content": "Spaghetti",
+                "weekday": "mi"
+            }
+        },
+        {
+            "16.06.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "17.06.2022": {
+                "content": "Lamm",
+                "weekday": "fr"
+            }
+        },
+        {
+            "18.06.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "19.06.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "20.06.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "21.06.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "22.06.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "23.06.2022": {
+                "content": "-",
+                "weekday": "do"
+            }
+        },
+        {
+            "24.06.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "25.06.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "26.06.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "27.06.2022": {
+                "content": "Pizza",
+                "weekday": "mo"
+            }
+        },
+        {
+            "28.06.2022": {
+                "content": "Sushi",
+                "weekday": "di"
+            }
+        },
+        {
+            "29.06.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "30.06.2022": {
+                "content": "Aglio e Oglio",
+                "weekday": "do"
+            }
+        },
+        {
+            "01.07.2022": {
+                "content": "Restaurant",
+                "weekday": "fr"
+            }
+        },
+        {
+            "02.07.2022": {
+                "content": "Grill",
+                "weekday": "sa"
+            }
+        },
+        {
+            "03.07.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "04.07.2022": {
+                "content": "Brot",
+                "weekday": "mo"
+            }
+        },
+        {
+            "05.07.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "di"
+            }
+        },
+        {
+            "06.07.2022": {
+                "content": "Aglio nero",
+                "weekday": "mi"
+            }
+        },
+        {
+            "07.07.2022": {
+                "content": "Kebab",
+                "weekday": "do"
+            }
+        },
+        {
+            "08.07.2022": {
+                "content": "Grill",
+                "weekday": "fr"
+            }
+        },
+        {
+            "09.07.2022": {
+                "content": "Gallis",
+                "weekday": "sa"
+            }
+        },
+        {
+            "10.07.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "11.07.2022": {
+                "content": "Gef\u00fcllte Peperoni",
+                "weekday": "mo"
+            }
+        },
+        {
+            "12.07.2022": {
+                "content": "Hot-Dogs",
+                "weekday": "di"
+            }
+        },
+        {
+            "13.07.2022": {
+                "content": "Schinkengipfeli",
+                "weekday": "mi"
+            }
+        },
+        {
+            "14.07.2022": {
+                "content": "Fleischk\u00e4se",
+                "weekday": "do"
+            }
+        },
+        {
+            "15.07.2022": {
+                "content": "Grill",
+                "weekday": "fr"
+            }
+        },
+        {
+            "16.07.2022": {
+                "content": "Grill",
+                "weekday": "sa"
+            }
+        },
+        {
+            "17.07.2022": {
+                "content": "Brot",
+                "weekday": "so"
+            }
+        },
+        {
+            "18.07.2022": {
+                "content": "Aglio nero",
+                "weekday": "mo"
+            }
+        },
+        {
+            "19.07.2022": {
+                "content": "Sandwich",
+                "weekday": "di"
+            }
+        },
+        {
+            "20.07.2022": {
+                "content": "R\u00f6sti mit Speck und Ei",
+                "weekday": "mi"
+            }
+        },
+        {
+            "21.07.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "do"
+            }
+        },
+        {
+            "22.07.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "23.07.2022": {
+                "content": "Kebab",
+                "weekday": "sa"
+            }
+        },
+        {
+            "24.07.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "25.07.2022": {
+                "content": "Spaghetti",
+                "weekday": "mo"
+            }
+        },
+        {
+            "26.07.2022": {
+                "content": "Pizza",
+                "weekday": "di"
+            }
+        },
+        {
+            "27.07.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "28.07.2022": {
+                "content": "Couscous",
+                "weekday": "do"
+            }
+        },
+        {
+            "29.07.2022": {
+                "content": "Hot-Dogs",
+                "weekday": "fr"
+            }
+        },
+        {
+            "30.07.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "31.07.2022": {
+                "content": "Grill",
+                "weekday": "so"
+            }
+        },
+        {
+            "01.08.2022": {
+                "content": "Kohl Stir Fry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "02.08.2022": {
+                "content": "Kohl Pl\u00e4tzli",
+                "weekday": "di"
+            }
+        },
+        {
+            "03.08.2022": {
+                "content": "Brot",
+                "weekday": "mi"
+            }
+        },
+        {
+            "04.08.2022": {
+                "content": "Pizza",
+                "weekday": "do"
+            }
+        },
+        {
+            "05.08.2022": {
+                "content": "Ofengem\u00fcse",
+                "weekday": "fr"
+            }
+        },
+        {
+            "06.08.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "07.08.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "so"
+            }
+        },
+        {
+            "08.08.2022": {
+                "content": "Aglio e Oglio",
+                "weekday": "mo"
+            }
+        },
+        {
+            "09.08.2022": {
+                "content": "Couscous",
+                "weekday": "di"
+            }
+        },
+        {
+            "10.08.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "11.08.2022": {
+                "content": "Fried Rice",
+                "weekday": "do"
+            }
+        },
+        {
+            "12.08.2022": {
+                "content": "Ofengem\u00fcse",
+                "weekday": "fr"
+            }
+        },
+        {
+            "13.08.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "14.08.2022": {
+                "content": "Appenzell",
+                "weekday": "so"
+            }
+        },
+        {
+            "15.08.2022": {
+                "content": "-",
+                "weekday": "mo"
+            }
+        },
+        {
+            "16.08.2022": {
+                "content": "Ferien",
+                "weekday": "di"
+            }
+        },
+        {
+            "17.08.2022": {
+                "content": "Ferien",
+                "weekday": "mi"
+            }
+        },
+        {
+            "18.08.2022": {
+                "content": "Ferien",
+                "weekday": "do"
+            }
+        },
+        {
+            "19.08.2022": {
+                "content": "Ferien",
+                "weekday": "fr"
+            }
+        },
+        {
+            "20.08.2022": {
+                "content": "Ferien",
+                "weekday": "sa"
+            }
+        },
+        {
+            "21.08.2022": {
+                "content": "Spaghetti",
+                "weekday": "so"
+            }
+        },
+        {
+            "22.08.2022": {
+                "content": "Pizza",
+                "weekday": "mo"
+            }
+        },
+        {
+            "23.08.2022": {
+                "content": "-",
+                "weekday": "di"
+            }
+        },
+        {
+            "24.08.2022": {
+                "content": "Pinsa",
+                "weekday": "mi"
+            }
+        },
+        {
+            "25.08.2022": {
+                "content": "Spiessli",
+                "weekday": "do"
+            }
+        },
+        {
+            "26.08.2022": {
+                "content": "Wokgem\u00fcse",
+                "weekday": "fr"
+            }
+        },
+        {
+            "27.08.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "28.08.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "29.08.2022": {
+                "content": "Gem\u00fcsepfanne",
+                "weekday": "mo"
+            }
+        },
+        {
+            "30.08.2022": {
+                "content": "Spaghetti neri all'acqua pazza",
+                "weekday": "di"
+            }
+        },
+        {
+            "31.08.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "mi"
+            }
+        },
+        {
+            "01.09.2022": {
+                "content": "R\u00f6sti mit Speck und Ei",
+                "weekday": "do"
+            }
+        },
+        {
+            "02.09.2022": {
+                "content": "Fleischk\u00e4se",
+                "weekday": "fr"
+            }
+        },
+        {
+            "03.09.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "04.09.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "05.09.2022": {
+                "content": "Mujadara",
+                "weekday": "mo"
+            }
+        },
+        {
+            "06.09.2022": {
+                "content": "Satay Poulet",
+                "weekday": "di"
+            }
+        },
+        {
+            "07.09.2022": {
+                "content": "Tabouli Salat",
+                "weekday": "mi"
+            }
+        },
+        {
+            "08.09.2022": {
+                "content": "Quadrel",
+                "weekday": "do"
+            }
+        },
+        {
+            "09.09.2022": {
+                "content": "Sandwich",
+                "weekday": "fr"
+            }
+        },
+        {
+            "10.09.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "11.09.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "12.09.2022": {
+                "content": "Fleischk\u00e4se",
+                "weekday": "mo"
+            }
+        },
+        {
+            "13.09.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "di"
+            }
+        },
+        {
+            "14.09.2022": {
+                "content": "S\u00fcss-Sauer",
+                "weekday": "mi"
+            }
+        },
+        {
+            "15.09.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "do"
+            }
+        },
+        {
+            "16.09.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        },
+        {
+            "17.09.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "18.09.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "19.09.2022": {
+                "content": "Fried Rice",
+                "weekday": "mo"
+            }
+        },
+        {
+            "20.09.2022": {
+                "content": "Omletten",
+                "weekday": "di"
+            }
+        },
+        {
+            "21.09.2022": {
+                "content": "R\u00f6sti mit Speck und Ei",
+                "weekday": "mi"
+            }
+        },
+        {
+            "22.09.2022": {
+                "content": "Pita",
+                "weekday": "do"
+            }
+        },
+        {
+            "23.09.2022": {
+                "content": "Aglio e Oglio",
+                "weekday": "fr"
+            }
+        },
+        {
+            "24.09.2022": {
+                "content": "Quadrel",
+                "weekday": "sa"
+            }
+        },
+        {
+            "25.09.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "26.09.2022": {
+                "content": "Nudel mit Tomatensauce",
+                "weekday": "mo"
+            }
+        },
+        {
+            "27.09.2022": {
+                "content": "Rajas Tacos",
+                "weekday": "di"
+            }
+        },
+        {
+            "28.09.2022": {
+                "content": "Fischst\u00e4bli",
+                "weekday": "mi"
+            }
+        },
+        {
+            "29.09.2022": {
+                "content": "Brot",
+                "weekday": "do"
+            }
+        },
+        {
+            "30.09.2022": {
+                "content": "Hackfleischb\u00e4llchen mit Couscous",
+                "weekday": "fr"
+            }
+        },
+        {
+            "01.10.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "02.10.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "03.10.2022": {
+                "content": "Mediterrane Pasta",
+                "weekday": "mo"
+            }
+        },
+        {
+            "04.10.2022": {
+                "content": "Mujadara",
+                "weekday": "di"
+            }
+        },
+        {
+            "05.10.2022": {
+                "content": "Pita",
+                "weekday": "mi"
+            }
+        },
+        {
+            "06.10.2022": {
+                "content": "Fleischk\u00e4se",
+                "weekday": "do"
+            }
+        },
+        {
+            "07.10.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "08.10.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "09.10.2022": {
+                "content": "Giesacker 1",
+                "weekday": "so"
+            }
+        },
+        {
+            "10.10.2022": {
+                "content": "Verd\u00e4mpfti",
+                "weekday": "mo"
+            }
+        },
+        {
+            "11.10.2022": {
+                "content": "Verd\u00e4mpfti",
+                "weekday": "di"
+            }
+        },
+        {
+            "12.10.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "13.10.2022": {
+                "content": "Wienerli im Teig",
+                "weekday": "do"
+            }
+        },
+        {
+            "14.10.2022": {
+                "content": "Fischst\u00e4bli",
+                "weekday": "fr"
+            }
+        },
+        {
+            "15.10.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "17.10.2022": {
+                "content": "Schweinsbratwurst",
+                "weekday": "mo"
+            }
+        },
+        {
+            "18.10.2022": {
+                "content": "Thay",
+                "weekday": "di"
+            }
+        },
+        {
+            "19.10.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "20.10.2022": {
+                "content": "Aglio nero",
+                "weekday": "do"
+            }
+        },
+        {
+            "21.10.2022": {
+                "content": "Hackbraten",
+                "weekday": "fr"
+            }
+        },
+        {
+            "22.10.2022": {
+                "content": "Hamburger",
+                "weekday": "sa"
+            }
+        },
+        {
+            "23.10.2022": {
+                "content": "Spaghetti neri all'acqua pazza",
+                "weekday": "so"
+            }
+        },
+        {
+            "16.10.2022": {
+                "content": "Zizers",
+                "weekday": "so"
+            }
+        },
+        {
+            "24.10.2022": {
+                "content": "Kohl Stir Fry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "25.10.2022": {
+                "content": "Hot-Dogs",
+                "weekday": "di"
+            }
+        },
+        {
+            "26.10.2022": {
+                "content": "Couscous",
+                "weekday": "mi"
+            }
+        },
+        {
+            "27.10.2022": {
+                "content": "Ofengem\u00fcse",
+                "weekday": "do"
+            }
+        },
+        {
+            "28.10.2022": {
+                "content": "Nudeln mit Tomatensauce",
+                "weekday": "fr"
+            }
+        },
+        {
+            "29.10.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "30.10.2022": {
+                "content": "-",
+                "weekday": "so"
+            }
+        },
+        {
+            "07.11.2022": {
+                "content": "Nudeln mit Tomatensauce",
+                "weekday": "mo"
+            }
+        },
+        {
+            "08.11.2022": {
+                "content": "H\u00f6rnli mit Ghackets",
+                "weekday": "di"
+            }
+        },
+        {
+            "10.11.2022": {
+                "content": "Pizza",
+                "weekday": "do"
+            }
+        },
+        {
+            "12.11.2022": {
+                "content": "Pizza",
+                "weekday": "sa"
+            }
+        },
+        {
+            "09.11.2022": {
+                "content": "-",
+                "weekday": "mi"
+            }
+        },
+        {
+            "11.11.2022": {
+                "content": "Gyoza",
+                "weekday": "fr"
+            }
+        },
+        {
+            "13.11.2022": {
+                "content": "Lachs",
+                "weekday": "so"
+            }
+        },
+        {
+            "31.10.2022": {
+                "content": "Curry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "01.11.2022": {
+                "content": "Miso Suppe",
+                "weekday": "di"
+            }
+        },
+        {
+            "02.11.2022": {
+                "content": "Miso Suppe",
+                "weekday": "mi"
+            }
+        },
+        {
+            "03.11.2022": {
+                "content": "Pita",
+                "weekday": "do"
+            }
+        },
+        {
+            "04.11.2022": {
+                "content": "Brot",
+                "weekday": "fr"
+            }
+        },
+        {
+            "14.11.2022": {
+                "content": "Curry",
+                "weekday": "mo"
+            }
+        },
+        {
+            "15.11.2022": {
+                "content": "Gyoza",
+                "weekday": "di"
+            }
+        },
+        {
+            "16.11.2022": {
+                "content": "Kohl Stir Fry",
+                "weekday": "mi"
+            }
+        },
+        {
+            "17.11.2022": {
+                "content": "R\u00f6sti mit Speck und Ei",
+                "weekday": "do"
+            }
+        },
+        {
+            "18.11.2022": {
+                "content": "Spaghetti",
+                "weekday": "fr"
+            }
+        },
+        {
+            "21.11.2022": {
+                "content": "Verd\u00e4mpfti",
+                "weekday": "mo"
+            }
+        },
+        {
+            "22.11.2022": {
+                "content": "Bratwurst mit Zwiebelsauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "23.11.2022": {
+                "content": "Slow braised lamb",
+                "weekday": "mi"
+            }
+        },
+        {
+            "24.11.2022": {
+                "content": "Aglio nero",
+                "weekday": "do"
+            }
+        },
+        {
+            "25.11.2022": {
+                "content": "Schweins Schnitzel",
+                "weekday": "fr"
+            }
+        },
+        {
+            "26.11.2022": {
+                "content": "Pizza",
+                "weekday": "sa"
+            }
+        },
+        {
+            "27.11.2022": {
+                "content": "Gerstensuppe",
+                "weekday": "so"
+            }
+        },
+        {
+            "19.11.2022": {
+                "content": "-",
+                "weekday": "sa"
+            }
+        },
+        {
+            "20.11.2022": {
+                "content": "Miso Tofu",
+                "weekday": "so"
+            }
+        },
+        {
+            "28.11.2022": {
+                "content": "Rotkraut Tofu Bowl",
+                "weekday": "mo"
+            }
+        },
+        {
+            "29.11.2022": {
+                "content": "Nudeln mit Tomatensauce",
+                "weekday": "di"
+            }
+        },
+        {
+            "30.11.2022": {
+                "content": "Gyoza",
+                "weekday": "mi"
+            }
+        },
+        {
+            "01.12.2022": {
+                "content": "Fried Rice",
+                "weekday": "do"
+            }
+        },
+        {
+            "02.12.2022": {
+                "content": "-",
+                "weekday": "fr"
+            }
+        }
+    ]
+}
