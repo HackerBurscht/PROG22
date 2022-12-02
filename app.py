@@ -3,6 +3,7 @@
 # general
 from flask import Flask, render_template, url_for, request, redirect
 import json
+import os
 
 # numbers and time
 from datetime import datetime, timedelta
@@ -13,9 +14,9 @@ from random import sample
 ####################################################################################################################
 app = Flask(__name__, static_url_path="/static")
 display_week = 0  # Changes the shown week on the index page. Set to 0 at the beginning to show the current week.
-display_day = 0   # Changes the shown day on the stats page. Set to 0 at the beginning to show the current day.
+display_day = 0  # Changes the shown day on the stats page. Set to 0 at the beginning to show the current day.
 forgotten_meals = []  # Contains all the meals, which haven't been prepared in a while
-max_lst = []      # Contains the most frequent meals and weekdays combinations.
+max_lst = []  # Contains the most frequent meals and weekdays combinations.
 weekday = {  # Is used in different functions to get easy access to the weekdays inside the lists or dict.
     "0": "mo",
     "1": "di",
@@ -34,6 +35,10 @@ weekday_long = {  # Is used in different functions to get easy access to the wee
     "5": "Samstag",
     "6": "Sonntag"
 }
+files = {  # Is used to check if the files are existing.
+    "0": "content.json",
+    "1": "settings.json"
+}
 
 
 # The most common used variables in this file
@@ -47,58 +52,116 @@ weekday_long = {  # Is used in different functions to get easy access to the wee
 # seasonal_meals = []            Contains all meals, from a season saved as a string.
 # not_in_last_two_weeks = []     Contains all meals, which haven't been prepared in the last two weeks.
 # max_meals = 0                  Contains all meals planned. One per day. As integer.
-#                                Used mostly to measure the length of the json.
 # div_meals = 0                  Contains all different meals without duplicates. As integer.
 # most_meal, most_meal_amount = 0, 0  Contains the meal which have been eaten  the most and the amount
 # meals_only_without_duplicates = []  Contains alls meals as string without duplicates.
 
 
+# Checks if the json files are present.
+########################################################################################################################
+def json_check(json_names):
+    # Answer from https://stackoverflow.com/questions/32991069/python-checking-for-json-files-and-creating-one-if-needed
+    if os.access(json_names, os.R_OK):
+        print(json_names, "exists and is readable")
+    else:
+        print(json_names, "is missing or is not readable")
+        with open(json_names, 'w') as file:
+            file.write(json.dumps({}))
+        if json_names == "settings.json":
+            with open("settings.json", "r+") as s:
+                x = {"settings": {"ignore": []}}
+                s.truncate(0)
+                json.dump(x, s)
+                s.close()
+        if json_names == "content.json":
+            with open("content.json", "r+") as f:
+                y = {"content-file": []}
+                f.truncate(0)
+                json.dump(y, f)
+                f.close()
+        print(json_names, "has been created")
+
+
+# Checks if the json files are present by calling the "json_check" function with the filenames from the dict.
+########################################################################################################################
+for i in range(0, len(files)):
+    print("Checking:", files.get(str(i)))
+    json_check(files.get(str(i)))
+
+
+# Get the data from the json-files and prepares it to be used in other functions.
+########################################################################################################################
 def get_data():
-    # Loads data from setting.json and removes the values which should be ignored.
+    data_set = {
+        "max_meals": "0",
+        "div_meals": "0",
+        "most_meal": "none",
+        "most_meal_amount": "0",
+        "meals_only": "none",
+        "meals_only_without_duplicates": "none",
+        "d": "empty",
+    }
+
+    # Loads data from setting.json
     with open('settings.json', "r") as s:
         settings = json.load(s)
     s.close()
     ignore_keys = [settings][0]["settings"]["ignore"]
     key_amount = len([settings][0]["settings"]["ignore"])
 
-    # Get the data from the json-file and prepares it to be used in other functions.
+    # Get the data from the content.json
     ####################################################################################################################
     with open('content.json', "r") as f:
         d = json.load(f)
     f.close()
 
-    meals_only = []                                       # Contains al meals as strings. With duplicates
-    range_end = len([d][0]["content-file"])               # Gets the length of the json file
+    meals_only = []  # Contains al meals as strings. With duplicates
+    range_end = len([d][0]["content-file"])  # Gets the length of the json file
 
     for i in range(0, range_end):
         for key, value in d["content-file"][i].items():
             n_con = d["content-file"][i][key]["content"]
             meals_only.append(n_con)
-
     meals_only = [value for value in meals_only if value != "-"]
     # removes the placeholder "-", as mentioned under "user commands"
     # https://www.delftstack.com/howto/python/python-list-remove-all/
     for i in range(0, key_amount):
         meals_only = [value for value in meals_only if value != ignore_keys[i]]
     # removes all the keys, which should be ignored, from the settings-file.
-
     max_meals = len([d][0]["content-file"])
     div_meals = len(Counter(meals_only).keys())
-    most_meal, most_meal_amount = Counter(meals_only).most_common(1)[0]
-    # Counter inspired by https://datagy.io/python-count-unique-values-list/
-    # most_common()-How-To from https://www.delftstack.com/howto/python/python-counter-most-common/
-    # delivers a tuple inside a dict
-
     meals_only_without_duplicates = [*set(meals_only)]
     # It first removes the duplicates by creating a set and returns a dictionary which has to be converted to list
     # From www.geeksforgeeks.org/python-ways-to-remove-duplicates-from-list/
 
-    return max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates
+    if len(d["content-file"]) >= 7:
+        most_meal, most_meal_amount = Counter(meals_only).most_common(1)[0]
+        # Counter inspired by https://datagy.io/python-count-unique-values-list/
+        # most_common()-How-To from https://www.delftstack.com/howto/python/python-counter-most-common/
+        # delivers a tuple inside a dict
+    else:
+        most_meal = "nichts"
+        most_meal_amount = "0"
+
+    data_set["max_meals"] = max_meals
+    data_set["div_meals"] = div_meals
+    data_set["most_meal"] = most_meal
+    data_set["most_meal_amount"] = most_meal_amount
+    data_set["meals_only"] = meals_only
+    data_set["meals_only_without_duplicates"] = meals_only_without_duplicates
+    data_set["d"] = d
+
+    return data_set
 
 
 @app.route("/", methods=["POST", "GET"])
 def index():
-    max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+    data_set = get_data()
+    max_meals = data_set["max_meals"]
+    div_meals = data_set["div_meals"]
+    most_meal = data_set["most_meal"]
+    most_meal_amount = data_set["most_meal_amount"]
+    d = data_set["d"]
 
     # Set the current or selected week and create values to return on the index page:
     ####################################################################################################################
@@ -114,9 +177,9 @@ def index():
 
     # Create necessary variables for this function.
     ####################################################################################################################
-    end = len([d][0]["content-file"])   # Used to determine the lenght of "d" and as a value for the "range"-function.
-    meal_and_date = []                  # Contains all the meals and date combos from "d".
-    test_date_dt = week_start           # Is used to loop trhough all the dates in "d"
+    end = len([d][0]["content-file"])  # Used to determine the lenght of "d" and as a value for the "range"-function.
+    meal_and_date = []  # Contains all the meals and date combos from "d".
+    test_date_dt = week_start  # Is used to loop trhough all the dates in "d"
 
     # Loops through all the items in "d". Looks for values which are the same as the desired weekday.
     # Saves the meal from "d":
@@ -146,7 +209,8 @@ def index():
             clean_lst.append(meal)
 
     return render_template("index.html", week_start_display=week_start_display, week_end_display=week_end_display,
-                           return_mo=clean_lst[0], return_di=clean_lst[1], return_mi=clean_lst[2], return_do=clean_lst[3],
+                           return_mo=clean_lst[0], return_di=clean_lst[1], return_mi=clean_lst[2],
+                           return_do=clean_lst[3],
                            return_fr=clean_lst[4], return_sa=clean_lst[5], return_so=clean_lst[6], max_meals=max_meals,
                            div_meals=div_meals, most_meal=most_meal, most_meal_amount=most_meal_amount, visible=visible)
 
@@ -161,7 +225,8 @@ def save_info(week_key, planned_date_key, content):
     if content == "":
         return redirect("/")
     if content == "r":
-        max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+        data_set = get_data()
+        meals_only_without_duplicates = data_set["meals_only_without_duplicates"]
         try:
             rng_content = sample(Counter(meals_only_without_duplicates).keys(), 1)
             content = rng_content[0]
@@ -258,7 +323,13 @@ def current_week():
 ########################################################################################################################
 @app.route("/stats")
 def stats():
-    max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+    data_set = get_data()
+    max_meals = data_set["max_meals"]
+    div_meals = data_set["div_meals"]
+    most_meal = data_set["most_meal"]
+    most_meal_amount = data_set["most_meal_amount"]
+    meals_only = data_set["meals_only"]
+
     visible_l = False  # Definiert ob Navigation-Buttons auf der Stats-Page angezeigt werden sollen. True=Yes
     visible_r = False  # Definiert ob Navigation-Buttons auf der Stats-Page angezeigt werden sollen. True=Yes
     meal_data = sorted(Counter(meals_only).keys())  # Used to return the values to a table inside the html file.
@@ -328,7 +399,9 @@ def stats():
 ########################################################################################################################
 @app.route("/rng_plan")
 def rng_plan():
-    max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+    data_set = get_data()
+    meals_only_without_duplicates = data_set["meals_only_without_duplicates"]
+
 
     try:
         subset = sample(Counter(meals_only_without_duplicates).keys(), 7)
@@ -370,7 +443,9 @@ def forgot():
 # Works only if there are more than 45 meals planned in the "content.json"-file
 ########################################################################################################################
 def get_lost_meals():
-    max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+    data_set = get_data()
+    meals_only = data_set["meals_only"]
+    d = data_set["d"]
 
     forgotten_meals.clear()  # Clears the list and creates a new one. In case some forgotten meals have been planned.
     week_end = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(
@@ -380,7 +455,7 @@ def get_lost_meals():
     not_used = []  # Contains al meals which have not been used in the last 37 days.
     past_meals_only = []  # Contains al meals as strings which are in the past. Without duplicates.
 
-    max_len = len([d][0]["content-file"])   # Determines the length of "d" and used for the "range"-function.
+    max_len = len([d][0]["content-file"])  # Determines the length of "d" and used for the "range"-function.
 
     if max_len >= 45:
         # Gets all meals.
@@ -431,50 +506,55 @@ def get_lost_meals():
 # Creates the necessary values, which are used to display the day-statistics on the stas-page.
 ########################################################################################################################
 def max_combo_weekly():
-    max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
 
-    clean_data = []                         # Empty list. Used to store values inside the function.
-    end = len([d][0]["content-file"])       # Determines the length of "d" and used for the "range"-function.
+    data_set = get_data()
+    meals_only = data_set["meals_only"]
+    d = data_set["d"]
 
-    # The meal and weekday values from "d" get saved inside "clean_data" as lists.
-    for i in range(0, end):
-        temp_lst_2 = []
-        for key, value in d["content-file"][i].items():
-            n_con = d["content-file"][i][key]["content"]
-            n_day = d["content-file"][i][key]["weekday"]
-            temp_lst_2.append(n_con)
-            temp_lst_2.append(n_day)
-            clean_data.append(temp_lst_2)
+    if len(meals_only) >= 7:
+        clean_data = []  # Empty list. Used to store values inside the function.
+        end = len([d][0]["content-file"])  # Determines the length of "d" and used for the "range"-function.
 
-    sum_clean_data = len(clean_data)        # Sum of all entries in the clean_data list
+        # The meal and weekday values from "d" get saved inside "clean_data" as lists.
+        for i in range(0, end):
+            temp_lst_2 = []
+            for key, value in d["content-file"][i].items():
+                n_con = d["content-file"][i][key]["content"]
+                n_day = d["content-file"][i][key]["weekday"]
+                temp_lst_2.append(n_con)
+                temp_lst_2.append(n_day)
+                clean_data.append(temp_lst_2)
 
-    # Checks which meal is most often prepared on each weekday. Uses "meals_only".
-    # -> Checks which "weekday"-"content"-combos occurs most often.
-    for i in range(7):
-        max_kombi = 0
-        max_kombi_meal = ""
-        y = weekday.get(str(i))
-        for j in range(len(meals_only)):
-            x = meals_only[j]
-            test_sum = sum([all(z in i for z in [x, y]) for i in clean_data])
-            if test_sum > max_kombi:
-                max_kombi = test_sum
-                max_kombi_meal = x
-                n = sum([x in a for a in clean_data])  # n equals the amount of x. eg: 17 times "pasta"
-                m = sum([y in a for a in clean_data])  # m equals the amount of y. eg: 4 times "Monday"
-        # Calculates the lift for the most frequent combinations.
-        meal_lift = round((max_kombi / sum_clean_data) / (n / sum_clean_data) / (m / sum_clean_data), 3)
+        sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
 
-        # Saves the amount of the meal, the most prepared meal, the amount of the combination appearing and the lift
-        # as a list inside the "max_lst" list.
-        temp = [y, max_kombi_meal, max_kombi, meal_lift]
-        max_lst.append(temp)
+        # Checks which meal is most often prepared on each weekday. Uses "meals_only".
+        # -> Checks which "weekday"-"content"-combos occurs most often.
+        for i in range(7):
+            max_kombi = 0
+            max_kombi_meal = ""
+            y = weekday.get(str(i))
+            for j in range(len(meals_only)):
+                x = meals_only[j]
+                test_sum = sum([all(z in i for z in [x, y]) for i in clean_data])
+                if test_sum > max_kombi:
+                    max_kombi = test_sum
+                    max_kombi_meal = x
+                    n = sum([x in a for a in clean_data])  # n equals the amount of x. eg: 17 times "pasta"
+                    m = sum([y in a for a in clean_data])  # m equals the amount of y. eg: 4 times "Monday"
+            # Calculates the lift for the most frequent combinations.
+            meal_lift = round((max_kombi / sum_clean_data) / (n / sum_clean_data) / (m / sum_clean_data), 3)
+
+            # Saves the amount of the meal, the most prepared meal, the amount of the combination appearing and the lift
+            # as a list inside the "max_lst" list.
+            temp = [y, max_kombi_meal, max_kombi, meal_lift]
+            max_lst.append(temp)
 
 
 # Creates the necessary values, which are used to display the horizontal bar chart on the stats-page.
 ########################################################################################################################
 def graph_data():
-    max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
+    data_set = get_data()
+    meals_only = data_set["meals_only"]
 
     # Creates three empty lists, which are used to temporarily save values from "d".
     data_x = []
@@ -490,10 +570,10 @@ def graph_data():
     max = data_y[0]
     min = data_y[-1]
 
-    # Saves the "meal", "amount and the standardised value as a list inside the list.
+    # Saves the "meal", the "amount" and the standardised value as a list inside the list.
     for meal, amount in Counter(meals_only).most_common():
         result = []
-        norm = round((amount - min) / (max - min), 2)   # Transforms the amount to a standardised value between 0 and 1.
+        norm = round((amount - min) / (max - min), 2)  # Transforms the amount to a standardised value between 0 and 1.
         result.append(meal)
         result.append(norm)
         result.append(amount)
@@ -564,6 +644,26 @@ def refresh_f_meals():
     return redirect("/stats")
 
 
+# Resets content.json and settings.json
+########################################################################################################################
+@app.route("/data_reset")
+def data_reset():
+    with open("settings.json", "r+") as s:
+        x = {"settings": {"ignore": []}}
+        s.truncate(0)
+        json.dump(x, s)
+        s.close()
+
+    with open("content.json", "r+") as f:
+        y = {"content-file": []}
+        print(y)
+        f.truncate(0)
+        json.dump(y, f)
+        f.close()
+
+    return render_template("profil.html")
+
+
 # def affinity_analysis():
 #     max_meals, div_meals, most_meal, most_meal_amount, meals_only, d, meals_only_without_duplicates = get_data()
 #
@@ -608,56 +708,56 @@ def refresh_f_meals():
 #     print("Anzahl Meals: ", len(meals_lst_as_int))
 #     print("Weekly meals: ", weekly_meals)
 
-    # Step 2:
-    # Calculate the total amount of each meal, weekday, and meal/weekday-combination.
-    ####################################################################################################################
+# Step 2:
+# Calculate the total amount of each meal, weekday, and meal/weekday-combination.
+####################################################################################################################
 
-    # Test example
-    # x = "Spaghetti"
-    # y = "mo"
+# Test example
+# x = "Spaghetti"
+# y = "mo"
 
-    # sum_x = sum([x in i for i in clean_data])  # Sum of x in clean_data
-    # sum_y = sum([y in i for i in clean_data])  # Sum of y in clean_data
-    # sum_xy = sum([all(z in i for z in [x, y]) for i in clean_data])  # Sum of the x and y combination
-    # sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
+# sum_x = sum([x in i for i in clean_data])  # Sum of x in clean_data
+# sum_y = sum([y in i for i in clean_data])  # Sum of y in clean_data
+# sum_xy = sum([all(z in i for z in [x, y]) for i in clean_data])  # Sum of the x and y combination
+# sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
 
-    # support = sum_xy / sum_clean_data
-    # confidence = support / (sum_x / sum_clean_data)
-    # lift = confidence / (sum_y / sum_clean_data)
-    # if confidence == 1:
-    #     conviction = 0
-    # else:
-    #     conviction = (1 - (sum_y / len(d))) / (1 - confidence)
-    # print("###############################################################################################")
-    # print("Testergebnisse:")
-    # print("Gesamtmenge von Items in clean_data: ", sum_clean_data)
-    # print(sum_x, "mal", x)
-    # print(sum_y, "mal", y)
-    # print("Kombi von", x, "und", y, ": ", sum_xy)
-    # print("Support = {}".format(round(support, 2)))
-    # print("Confidence = {}".format(round(confidence, 2)))
-    # print("Lift= {}".format(round(lift, 2)))
-    # print("Conviction={}".format(round(conviction, 2)))
-    # print("###############################################################################################")
+# support = sum_xy / sum_clean_data
+# confidence = support / (sum_x / sum_clean_data)
+# lift = confidence / (sum_y / sum_clean_data)
+# if confidence == 1:
+#     conviction = 0
+# else:
+#     conviction = (1 - (sum_y / len(d))) / (1 - confidence)
+# print("###############################################################################################")
+# print("Testergebnisse:")
+# print("Gesamtmenge von Items in clean_data: ", sum_clean_data)
+# print(sum_x, "mal", x)
+# print(sum_y, "mal", y)
+# print("Kombi von", x, "und", y, ": ", sum_xy)
+# print("Support = {}".format(round(support, 2)))
+# print("Confidence = {}".format(round(confidence, 2)))
+# print("Lift= {}".format(round(lift, 2)))
+# print("Conviction={}".format(round(conviction, 2)))
+# print("###############################################################################################")
 
-    # print()
-    # print("why?")
-    # max_lst = []
-    # for i in range(7):
-    #     y = weekday.get(str(i))
-    #     for j in range(len(meals_only)):
-    #         temp = []
-    #         x = meals_only[j]
-    #         max_kombi = sum([all(z in i for z in [x, y]) for i in clean_data])
-    #         n = sum([x in a for a in clean_data])  # n equals the amount of x. eg: 17 times "pasta"
-    #         m = sum([y in a for a in clean_data])  # m equals the amount of y. eg: 4 times "Monday"
-    #         l = round((max_kombi / sum_clean_data) / (n / sum_clean_data) / (m / sum_clean_data), 3)
-    #         if l > 1:
-    #             temp.append(x)
-    #             temp.append(y)
-    #             temp.append(l)
-    #             max_lst.append(temp)
-    # print(max_lst)
+# print()
+# print("why?")
+# max_lst = []
+# for i in range(7):
+#     y = weekday.get(str(i))
+#     for j in range(len(meals_only)):
+#         temp = []
+#         x = meals_only[j]
+#         max_kombi = sum([all(z in i for z in [x, y]) for i in clean_data])
+#         n = sum([x in a for a in clean_data])  # n equals the amount of x. eg: 17 times "pasta"
+#         m = sum([y in a for a in clean_data])  # m equals the amount of y. eg: 4 times "Monday"
+#         l = round((max_kombi / sum_clean_data) / (n / sum_clean_data) / (m / sum_clean_data), 3)
+#         if l > 1:
+#             temp.append(x)
+#             temp.append(y)
+#             temp.append(l)
+#             max_lst.append(temp)
+# print(max_lst)
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -204,7 +204,6 @@ body {
 
 
 .footer{
-    width: 25%;
     display:flex;
     justify-content: center;
 }
@@ -427,6 +426,7 @@ th{
 .settings_box {
     margin-top: 1em;
     margin-left: 3em;
+    margin-right: 3em;
     text-align: left;
 }
 
@@ -434,7 +434,7 @@ th{
     font-weight:700;
     font-size: 0.8em;
     margin-bottom:0.5em;
-    margin-top:0.5em;
+    margin-top: 1.5em;
 }
 
 .settings_input{
@@ -442,10 +442,6 @@ th{
     width: 15em;
     height: 2em;
     border: 1px  solid var(--bordergrey);
-}
-
-.delete_all_link{
-    margin-top: 12em;
 }
 
 .delete_all_link > a{
@@ -456,4 +452,11 @@ th{
 .delete_all_link > a:hover {
     font-weight: 900;
     color: var(--blue);
+}
+
+.item_area_title_settings{
+    padding-top: 0.5em;
+    padding-bottom: 1em;
+    font-size: 0.8em;
+    text-align: left;
 }

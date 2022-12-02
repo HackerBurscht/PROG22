@@ -10,28 +10,33 @@
         <div class="settings_box">
             <div class="setting_option">
                 <div class="settings_title">Ignore me</div>
+                <div class="item_area_title_settings">Füge die Werte ein, die nicht in den Statistiken beachtet werden sollen.</div>
                 <div class="form">
                     <form action="/save_ignore" method="POST">
                         <input type="text" class="settings_input" name="ignore" placeholder="z.B. Restaurant">
                     </form>
                 </div>
             </div>
+            <hr>
             <div class="setting_option">
                 <div class="settings_title">Ersetzen</div>
+                <div class="item_area_title_settings">Passe etwas an den Bezeichnungen deiner Gerichte an. Ersetze: </div>
                 <div class="form">
                     <form action="/save_settings" method="POST">
                         <input type="text" class="settings_input" name="change" placeholder="Chips?">
                     </form>
                 </div>
-                <br>
+                <div class="item_area_title_settings">Durch: </div>
                 <div class="form">
                     <form action="/save_settings" method="POST">
                         <input type="text" class="settings_input" name="change" placeholder="Pommes">
                     </form>
                 </div>
             </div>
+            <hr>
+            </div>
                 <div class="delete_all_link">
-                    <a href="#">Daten löschen</a>
+                    <a href="{{ url_for('data_reset') }}">Daten löschen</a>
                 </div>
             </div>
         </div>
