@@ -22,14 +22,14 @@
                 <div class="settings_title">Ersetzen</div>
                 <div class="item_area_title_settings">Passe etwas an den Bezeichnungen deiner Gerichte an. Ersetze: </div>
                 <div class="form">
-                    <form action="/save_settings" method="POST">
-                        <input type="text" class="settings_input" name="change" placeholder="Chips?">
+                    <form action="/change_key" method="POST">
+                        <input type="text" class="settings_input" name="change1" placeholder={{key_to_change}}>
                     </form>
                 </div>
                 <div class="item_area_title_settings">Durch: </div>
                 <div class="form">
-                    <form action="/save_settings" method="POST">
-                        <input type="text" class="settings_input" name="change" placeholder="Pommes">
+                    <form action="/change_key_to" method="POST">
+                        <input type="text" class="settings_input" name="change2" placeholder={{key_to_change_to}}>
                     </form>
                 </div>
             </div>

@@ -69,7 +69,7 @@ def json_check(json_names):
             file.write(json.dumps({}))
         if json_names == "settings.json":
             with open("settings.json", "r+") as s:
-                x = {"settings": {"ignore": []}}
+                x = {"settings": {"ignore": []}, "replace": []}
                 s.truncate(0)
                 json.dump(x, s)
                 s.close()
@@ -402,7 +402,6 @@ def rng_plan():
     data_set = get_data()
     meals_only_without_duplicates = data_set["meals_only_without_duplicates"]
 
-
     try:
         subset = sample(Counter(meals_only_without_duplicates).keys(), 7)
         # How-Two from machinelearningmastery.com/how-to-generate-random-numbers-in-python/
@@ -506,7 +505,6 @@ def get_lost_meals():
 # Creates the necessary values, which are used to display the day-statistics on the stas-page.
 ########################################################################################################################
 def max_combo_weekly():
-
     data_set = get_data()
     meals_only = data_set["meals_only"]
     d = data_set["d"]
@@ -617,7 +615,10 @@ def about():
 ########################################################################################################################
 @app.route("/profil")
 def profil():
-    return render_template("profil.html")
+    # Saves placeholder text for the forms.
+    key_to_change = "Chips"
+    key_to_change_to = "Pommes"
+    return render_template("profil.html", key_to_change=key_to_change, key_to_change_to=key_to_change_to)
 
 
 # Saves values which should be ignored from the settings page into the settings.json file
@@ -649,7 +650,7 @@ def refresh_f_meals():
 @app.route("/data_reset")
 def data_reset():
     with open("settings.json", "r+") as s:
-        x = {"settings": {"ignore": []}}
+        x = {"settings": {"ignore": []}, "replace": []}
         s.truncate(0)
         json.dump(x, s)
         s.close()
@@ -662,6 +663,74 @@ def data_reset():
         f.close()
 
     return render_template("profil.html")
+
+
+# Saves values which should be replaced in the settings.json
+########################################################################################################################
+@app.route("/change_key", methods=["POST", "GET"])
+def change_key():
+    # Get input from the user by accessing the value inside the form
+    key_to_change = request.form.get("change1")
+
+    # Opens the settings file and adds the value to the file
+    with open("settings.json", "r+") as s:
+        settings = json.load(s)
+        try:
+            [settings][0]["replace"].pop(0)
+        except:
+            pass
+        [settings][0]["replace"].append(key_to_change)
+        s.seek(0)
+        json.dump(settings, s, indent=4)
+        s.close()
+
+    return render_template("profil.html", key_to_change=key_to_change)
+
+
+# Gets the value which should replace the value from change_key() and changes this value in the "content.json" file.
+########################################################################################################################
+@app.route("/change_key_to", methods=["POST", "GET"])
+def change_key_to():
+    # Get input from the user by accessing the value inside the form
+    key_to_change_to = request.form.get("change2")
+
+    # Loads the settings file and gets the value which should be changed.
+    with open("settings.json", "r+") as s:
+        settings = json.load(s)
+        old_value = [settings][0]["replace"]
+        s.close()
+    old_value = str(old_value).strip("[]'")
+
+    # Loads the content file and replaced all the matching values inside.
+    with open("content.json", "r+") as f:
+        d = json.load(f)
+        end = len([d][0]["content-file"])
+        for j in range(0, end):
+            for key, value in d["content-file"][j].items():
+                if old_value == str(d["content-file"][j][key]["content"]):
+                    d["content-file"][j][key]["content"] = key_to_change_to
+        f.seek(0)
+        json.dump(d, f, indent=4)
+        f.truncate()
+        f.close()
+
+    # Loads the settings file again and deletes the value which has been replaced.
+    with open("settings.json", "r+") as s:
+        settings = json.load(s)
+        try:
+            [settings][0]["replace"].pop(0)
+            s.truncate(0)
+            s.seek(0)
+            json.dump(settings, s, indent=4)
+        except:
+            pass
+        s.close()
+
+    # Changes the placeholder back to normal
+    key_to_change = "Chips"
+    key_to_change_to = "Pommes"
+
+    return render_template("profil.html", key_to_change=key_to_change, key_to_change_to=key_to_change_to)
 
 
 # def affinity_analysis():
