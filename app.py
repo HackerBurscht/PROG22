@@ -10,8 +10,9 @@ from collections import Counter
 from random import sample
 
 # python files
-from data_management.data_handler import get_data
+from data_management.data_handler import get_data, get_lost_meals, save_info, rng_plan_task
 from data_management.settings import json_check_task, clear_all, save_ignore_task, change_key_task, change_key_to_task
+from data_management.graph import graph_data
 
 # init and necessary global values
 ####################################################################################################################
@@ -39,6 +40,7 @@ weekday_long = {  # Is used in different functions to get easy access to the wee
     "6": "Sonntag"
 }
 
+
 # The most common used variables in this file
 ########################################################################################################################
 # meals_only = []                Contains al meals as strings. With duplicates
@@ -52,7 +54,7 @@ weekday_long = {  # Is used in different functions to get easy access to the wee
 # max_meals = 0                  Contains all meals planned. One per day. As integer.
 # div_meals = 0                  Contains all different meals without duplicates. As integer.
 # most_meal, most_meal_amount = 0, 0  Contains the meal which have been eaten  the most and the amount
-# meals_only_without_duplicates = []  Contains alls meals as string without duplicates.
+# meals_only_without_duplicates = []  Contains all meals as string without duplicates.
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -116,78 +118,18 @@ def index():
                            div_meals=div_meals, most_meal=most_meal, most_meal_amount=most_meal_amount, visible=visible)
 
 
-def save_info(week_key, planned_date_key, content):
-    # Checks whether something is stored in the "content" variable.
-    # If its emtpy nothing happens, and the user is redirected.
-    # If the value is "r" a random meal from "meals_only_without_duplicates" gets generated
-    # and used as a value for "content".
-    # If the value is "f" the "get_lost_meals" function gets called and
-    # the first value of "forgotten_meals" used as a value for "content".
-    if content == "":
-        return redirect("/")
-    if content == "r":
-        data_set = get_data()
-        meals_only_without_duplicates = data_set["meals_only_without_duplicates"]
-        try:
-            rng_content = sample(Counter(meals_only_without_duplicates).keys(), 1)
-            content = rng_content[0]
-        except:
-            print("Dataset is too small, missing or corrupted.")
-    if content == "f":
-        forgotten_meals.clear()  # Clears the list and creates a new one. In case some forgotten meals have been planned.
-        get_lost_meals()
-        try:
-            content = forgotten_meals[0]
-        except:
-            print("Dataset is too small, missing or corrupted.")
-    if content is not None:
-        date = planned_date_key
-        temp_dic = {}
-        temp_dic[date] = {}
-        temp_dic[date]["content"] = content
-        temp_dic[date]["weekday"] = week_key
-        date_updated = 0
-
-        with open("content.json", "r+") as f:
-            file_data = json.load(f)
-            len_content_in_file_data = (len([file_data][0]["content-file"]))
-            i = 0
-            while i < len_content_in_file_data:
-                if date in [file_data][0]["content-file"][i]:
-                    [file_data][0]["content-file"][i].update(temp_dic)
-                    f.seek(0)
-                    json.dump(file_data, f, indent=4)
-                    f.truncate()
-                    # f.truncate fixes a bug, which appeared whenever a content-item was deleted,
-                    # which only appeared once in the json-file. Thanks to Klaus D. from :
-                    # https://stackoverflow.com/q/57408057/20071071
-                    date_updated = 1
-                i += 1
-
-        if date_updated == 0:
-            with open("content.json", "r+") as f:
-                file_data["content-file"].append(temp_dic)
-                f.seek(0)
-                json.dump(file_data, f, indent=4)
-
-    return redirect("/")
-
-
 @app.route("/save", methods=["POST", "GET"])
 def save():
     # Create the necessary variables and check if the data is correct.
     # Then the data is passed on to the "save_info" function.
     ####################################################################################################################
     for i in range(0, 7):
-        try:
-            week_key = weekday.get(str(i))
-            content = request.form.get(week_key)
-            planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=i)
-            planned_date_key = planned_date_key + timedelta(days=display_week * 7)
-            planned_date_key = planned_date_key.strftime("%d.%m.%Y")
-            save_info(week_key, planned_date_key, content)
-        except:
-            print("Func: save() - Error")
+        week_key = weekday.get(str(i))
+        content = request.form.get(week_key)
+        planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=i)
+        planned_date_key = planned_date_key + timedelta(days=display_week * 7)
+        planned_date_key = planned_date_key.strftime("%d.%m.%Y")
+        save_info(week_key, planned_date_key, content)
     return redirect("/")
 
 
@@ -238,17 +180,12 @@ def stats():
     ####################################################################################################################
 
     try:
+        forgotten_meals = get_lost_meals()
         remember_items = []
         for n in range(0, 3):
             remember_items.append(forgotten_meals[n])
     except:
-        try:
-            get_lost_meals()
-            remember_items = []
-            for n in range(0, 3):
-                remember_items.append(forgotten_meals[n])
-        except:
-            remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
+        remember_items = ["Du hast noch nicht genügend unterschiedliche Gerichte gekocht oder zu wenige geplant."]
 
     # Get Values to display the meals which haven't been prepared in the last 30 days.
     # By calling the "get_lost_meals" function and trying to display those. If not possible return a msg to the user.
@@ -280,6 +217,7 @@ def stats():
     # Tries to create values for the graph on the stats-page, by calling the "graph_data"-function.
     # Returns "graph_visible = False" if not possible.
     ####################################################################################################################
+
     try:
         top15, not15 = graph_data()
         graph_visible = True
@@ -298,21 +236,7 @@ def stats():
 ########################################################################################################################
 @app.route("/rng_plan")
 def rng_plan():
-    data_set = get_data()
-    meals_only_without_duplicates = data_set["meals_only_without_duplicates"]
-
-    try:
-        subset = sample(Counter(meals_only_without_duplicates).keys(), 7)
-        # How-Two from machinelearningmastery.com/how-to-generate-random-numbers-in-python/
-        for i in range(0, 7):
-            week_key = weekday.get(str(i))
-            content = subset[i]
-            planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=i)
-            planned_date_key = planned_date_key + timedelta(days=display_week * 7)
-            planned_date_key = planned_date_key.strftime("%d.%m.%Y")
-            save_info(week_key, planned_date_key, content)
-    except:
-        print("Dataset is too small, missing or corrupted.")
+    rng_plan_task(display_week)
     return redirect("/")
 
 
@@ -322,7 +246,7 @@ def rng_plan():
 ########################################################################################################################
 @app.route("/forgot")
 def forgot():
-    get_lost_meals()
+    forgotten_meals = get_lost_meals()
     try:
         for i in range(0, 7):
             week_key = weekday.get(str(i))
@@ -335,69 +259,6 @@ def forgot():
     except:
         print("Func: forgot() - Error while delivering the forgotten meals to the save function.")
     return redirect("/")
-
-
-# Get Values to display the meals which haven't been prepared in the last 30 days.
-# Works only if there are more than 45 meals planned in the "content.json"-file
-########################################################################################################################
-def get_lost_meals():
-    data_set = get_data()
-    meals_only = data_set["meals_only"]
-    d = data_set["d"]
-
-    forgotten_meals.clear()  # Clears the list and creates a new one. In case some forgotten meals have been planned.
-    week_end = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(
-        days=6)  # Last day of week.
-    past = week_end - timedelta(days=37)
-    recently = []  # Contains all meals which have been prepared in the last 37 days.
-    not_used = []  # Contains al meals which have not been used in the last 37 days.
-    past_meals_only = []  # Contains al meals as strings which are in the past. Without duplicates.
-
-    max_len = len([d][0]["content-file"])  # Determines the length of "d" and used for the "range"-function.
-
-    if max_len >= 45:
-        # Gets all meals.
-        # If the date is in the past, appends it to the "past_meals_only" list.
-        # If the date is between the past and the current weeks last day, appends it to the "recently" list.
-        for i in range(0, max_len):
-            for date, meal in d["content-file"][i].items():
-                n_con = d["content-file"][i][date]["content"]
-                date_checked = datetime.strptime(date, "%d.%m.%Y")
-                if date_checked <= week_end:
-                    past_meals_only.append(n_con)
-                if past <= date_checked <= week_end:
-                    recently.append(n_con)
-
-        # Removes duplicates from the "past_meals_only" list.
-        past_meals_only = [*set(past_meals_only)]
-
-        # Loads data from setting.json and removes the values which should be ignored.
-        with open('settings.json', "r") as s:
-            settings = json.load(s)
-        ignore_keys = [settings][0]["settings"]["ignore"]
-        key_amount = len([settings][0]["settings"]["ignore"])
-
-        for i in range(0, key_amount):
-            past_meals_only = [value for value in meals_only if value != ignore_keys[i]]
-        # removes all the keys, which should be ignored, from the settings-file.
-
-        # Adds all elements from the past, which are not in the "recently-list", to a new list.
-        for element in past_meals_only:
-            if element not in recently:
-                not_used.append(element)
-        # Thanks to www.geeksforgeeks.org/python-difference-two-lists/
-
-        # Takes 7 random values from the not used meals and adds them to a new list, which is used to return
-        # the meals to the user.
-        try:
-            subset = sample(not_used, 7)
-            for item in subset:
-                forgotten_meals.append(item)
-        except:
-            print("Error creating a subset with the forgotten meals. Possible cause: 'Amount of items < than 7' "
-                  "Fix: Add more different meals.")
-    if max_len < 45:
-        print("Not enough data available.")
 
 
 # Creates the necessary values, which are used to display the day-statistics on the stas-page.
@@ -444,42 +305,6 @@ def max_combo_weekly():
             # as a list inside the "max_lst" list.
             temp = [y, max_kombi_meal, max_kombi, meal_lift]
             max_lst.append(temp)
-
-
-# Creates the necessary values, which are used to display the horizontal bar chart on the stats-page.
-########################################################################################################################
-def graph_data():
-    data_set = get_data()
-    meals_only = data_set["meals_only"]
-
-    # Creates three empty lists, which are used to temporarily save values from "d".
-    data_x = []
-    data_y = []
-    result_complete = []
-
-    # Counts all the different meals in "meals_only" and appends the content to "data_x" and the amount to "data_y"
-    for meal, amount in Counter(meals_only).most_common():
-        data_x.append(meal)
-        data_y.append(amount)
-
-    # Get the min and max amount value by accessing the first and last value in "data_y"
-    max = data_y[0]
-    min = data_y[-1]
-
-    # Saves the "meal", the "amount" and the standardised value as a list inside the list.
-    for meal, amount in Counter(meals_only).most_common():
-        result = []
-        norm = round((amount - min) / (max - min), 2)  # Transforms the amount to a standardised value between 0 and 1.
-        result.append(meal)
-        result.append(norm)
-        result.append(amount)
-        result_complete.append(result)
-
-    # Turn the complete list in two. The first one contains only the first 15 entries and the second the rest.
-    not15 = result_complete[16:len(result_complete)]
-    top15 = result_complete[0:15]
-
-    return top15, not15
 
 
 # Subtracts 1 to the "display_day" variable. Which is used to determine the day shown on the stats page.
@@ -531,7 +356,7 @@ def save_ignore():
 ########################################################################################################################
 @app.route("/refresh_f_meals")
 def refresh_f_meals():
-    get_lost_meals()
+    forgotten_meals = get_lost_meals()
     max_combo_weekly()
     return redirect("/stats")
 

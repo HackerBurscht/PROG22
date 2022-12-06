@@ -3554,8 +3554,44 @@
         },
         {
             "05.12.2022": {
-                "content": "Satay Tofu",
+                "content": "Verd\u00e4mpfti",
                 "weekday": "mo"
+            }
+        },
+        {
+            "06.12.2022": {
+                "content": "Tabouli Salat",
+                "weekday": "di"
+            }
+        },
+        {
+            "07.12.2022": {
+                "content": "adsda",
+                "weekday": "mi"
+            }
+        },
+        {
+            "08.12.2022": {
+                "content": "Poulet Grill",
+                "weekday": "do"
+            }
+        },
+        {
+            "09.12.2022": {
+                "content": "Zizers",
+                "weekday": "fr"
+            }
+        },
+        {
+            "10.12.2022": {
+                "content": "Spaghetti al Tonno",
+                "weekday": "sa"
+            }
+        },
+        {
+            "11.12.2022": {
+                "content": "Ofengem\u00fcse",
+                "weekday": "so"
             }
         }
     ]

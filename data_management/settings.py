@@ -21,19 +21,19 @@ def json_check_task():
     }
     for i in range(0, len(files)):
         json_names = files.get(str(i))
-        if os.access(json_names, os.R_OK):
+        if os.access("json_files/", os.R_OK):
             print(json_names, "exists and is readable")
         else:
             print(json_names, "is missing or is not readable")
             with open(json_names, 'w') as file:
                 file.write(json.dumps({}))
             if json_names == "settings.json":
-                with open("settings.json", "r+") as s:
+                with open("json_files/settings.json", "r+") as s:
                     x = {"settings": {"ignore": []}, "replace": []}
                     s.truncate(0)
                     json.dump(x, s)
             if json_names == "content.json":
-                with open("content.json", "r+") as f:
+                with open("json_files/content.json", "r+") as f:
                     y = {"content-file": []}
                     f.truncate(0)
                     json.dump(y, f)
@@ -43,12 +43,12 @@ def json_check_task():
 # Resets content.json and settings.json
 ########################################################################################################################
 def clear_all():
-    with open("settings.json", "r+") as s:
+    with open("json_files/settings.json", "r+") as s:
         x = {"settings": {"ignore": []}, "replace": []}
         s.truncate(0)
         json.dump(x, s)
 
-    with open("content.json", "r+") as f:
+    with open("json_files/content.json", "r+") as f:
         y = {"content-file": []}
         print(y)
         f.truncate(0)
@@ -59,12 +59,11 @@ def clear_all():
 ########################################################################################################################
 def save_ignore_task():
     ignore_value = request.form.get("ignore")
-    with open("settings.json", "r+") as s:
+    with open("json_files/settings.json", "r+") as s:
         settings = json.load(s)
         [settings][0]["settings"]["ignore"].append(ignore_value)
         s.seek(0)
         json.dump(settings, s, indent=4)
-
 
 
 # Saves values which should be replaced in the settings.json
@@ -73,7 +72,7 @@ def change_key_task():
     # Get input from the user by accessing the value inside the form
     key_to_change = request.form.get("change1")
     # Opens the settings file and adds the value to the file
-    with open("settings.json", "r+") as s:
+    with open("json_files/settings.json", "r+") as s:
         settings = json.load(s)
         try:
             [settings][0]["replace"].pop(0)
@@ -93,13 +92,13 @@ def change_key_to_task():
     key_to_change_to = request.form.get("change2")
 
     # Loads the settings file and gets the value which should be changed.
-    with open("settings.json", "r+") as s:
+    with open("json_files/settings.json", "r+") as s:
         settings = json.load(s)
         old_value = [settings][0]["replace"]
     old_value = str(old_value).strip("[]'")
 
     # Loads the content file and replaced all the matching values inside.
-    with open("content.json", "r+") as f:
+    with open("json_files/content.json", "r+") as f:
         d = json.load(f)
         end = len([d][0]["content-file"])
         for j in range(0, end):
@@ -111,7 +110,7 @@ def change_key_to_task():
         f.truncate()
 
     # Loads the settings file again and deletes the value which has been replaced.
-    with open("settings.json", "r+") as s:
+    with open("json_files/settings.json", "r+") as s:
         settings = json.load(s)
         try:
             [settings][0]["replace"].pop(0)
