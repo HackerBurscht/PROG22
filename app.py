@@ -3,12 +3,15 @@
 # general
 from flask import Flask, render_template, url_for, request, redirect
 import json
-import os
 
 # numbers and time
 from datetime import datetime, timedelta
 from collections import Counter
 from random import sample
+
+# python files
+from data_management.data_handler import get_data
+from data_management.settings import json_check_task, clear_all, save_ignore_task, change_key_task, change_key_to_task
 
 # init and necessary global values
 ####################################################################################################################
@@ -35,11 +38,6 @@ weekday_long = {  # Is used in different functions to get easy access to the wee
     "5": "Samstag",
     "6": "Sonntag"
 }
-files = {  # Is used to check if the files are existing.
-    "0": "content.json",
-    "1": "settings.json"
-}
-
 
 # The most common used variables in this file
 ########################################################################################################################
@@ -55,103 +53,6 @@ files = {  # Is used to check if the files are existing.
 # div_meals = 0                  Contains all different meals without duplicates. As integer.
 # most_meal, most_meal_amount = 0, 0  Contains the meal which have been eaten  the most and the amount
 # meals_only_without_duplicates = []  Contains alls meals as string without duplicates.
-
-
-# Checks if the json files are present.
-########################################################################################################################
-def json_check(json_names):
-    # Answer from https://stackoverflow.com/questions/32991069/python-checking-for-json-files-and-creating-one-if-needed
-    if os.access(json_names, os.R_OK):
-        print(json_names, "exists and is readable")
-    else:
-        print(json_names, "is missing or is not readable")
-        with open(json_names, 'w') as file:
-            file.write(json.dumps({}))
-        if json_names == "settings.json":
-            with open("settings.json", "r+") as s:
-                x = {"settings": {"ignore": []}, "replace": []}
-                s.truncate(0)
-                json.dump(x, s)
-                s.close()
-        if json_names == "content.json":
-            with open("content.json", "r+") as f:
-                y = {"content-file": []}
-                f.truncate(0)
-                json.dump(y, f)
-                f.close()
-        print(json_names, "has been created")
-
-
-# Checks if the json files are present by calling the "json_check" function with the filenames from the dict.
-########################################################################################################################
-for i in range(0, len(files)):
-    print("Checking:", files.get(str(i)))
-    json_check(files.get(str(i)))
-
-
-# Get the data from the json-files and prepares it to be used in other functions.
-########################################################################################################################
-def get_data():
-    data_set = {
-        "max_meals": "0",
-        "div_meals": "0",
-        "most_meal": "none",
-        "most_meal_amount": "0",
-        "meals_only": "none",
-        "meals_only_without_duplicates": "none",
-        "d": "empty",
-    }
-
-    # Loads data from setting.json
-    with open('settings.json', "r") as s:
-        settings = json.load(s)
-    s.close()
-    ignore_keys = [settings][0]["settings"]["ignore"]
-    key_amount = len([settings][0]["settings"]["ignore"])
-
-    # Get the data from the content.json
-    ####################################################################################################################
-    with open('content.json', "r") as f:
-        d = json.load(f)
-    f.close()
-
-    meals_only = []  # Contains al meals as strings. With duplicates
-    range_end = len([d][0]["content-file"])  # Gets the length of the json file
-
-    for i in range(0, range_end):
-        for key, value in d["content-file"][i].items():
-            n_con = d["content-file"][i][key]["content"]
-            meals_only.append(n_con)
-    meals_only = [value for value in meals_only if value != "-"]
-    # removes the placeholder "-", as mentioned under "user commands"
-    # https://www.delftstack.com/howto/python/python-list-remove-all/
-    for i in range(0, key_amount):
-        meals_only = [value for value in meals_only if value != ignore_keys[i]]
-    # removes all the keys, which should be ignored, from the settings-file.
-    max_meals = len([d][0]["content-file"])
-    div_meals = len(Counter(meals_only).keys())
-    meals_only_without_duplicates = [*set(meals_only)]
-    # It first removes the duplicates by creating a set and returns a dictionary which has to be converted to list
-    # From www.geeksforgeeks.org/python-ways-to-remove-duplicates-from-list/
-
-    if len(d["content-file"]) >= 7:
-        most_meal, most_meal_amount = Counter(meals_only).most_common(1)[0]
-        # Counter inspired by https://datagy.io/python-count-unique-values-list/
-        # most_common()-How-To from https://www.delftstack.com/howto/python/python-counter-most-common/
-        # delivers a tuple inside a dict
-    else:
-        most_meal = "nichts"
-        most_meal_amount = "0"
-
-    data_set["max_meals"] = max_meals
-    data_set["div_meals"] = div_meals
-    data_set["most_meal"] = most_meal
-    data_set["most_meal_amount"] = most_meal_amount
-    data_set["meals_only"] = meals_only
-    data_set["meals_only_without_duplicates"] = meals_only_without_duplicates
-    data_set["d"] = d
-
-    return data_set
 
 
 @app.route("/", methods=["POST", "GET"])
@@ -192,7 +93,7 @@ def index():
                 n_con = str(d["content-file"][i][key]["content"])
                 if test_date == key:
                     if n_con == "-":
-                        n_con = (". . . . . . . . . . . ")
+                        n_con = ". . . . . . . . . . . "
                     temp_lst.append(n_con)
         meal_and_date.append(temp_lst)
         test_date_dt += timedelta(days=1)
@@ -262,14 +163,12 @@ def save_info(week_key, planned_date_key, content):
                     # https://stackoverflow.com/q/57408057/20071071
                     date_updated = 1
                 i += 1
-        f.close()
 
         if date_updated == 0:
             with open("content.json", "r+") as f:
                 file_data["content-file"].append(temp_dic)
                 f.seek(0)
                 json.dump(file_data, f, indent=4)
-            f.close()
 
     return redirect("/")
 
@@ -475,7 +374,6 @@ def get_lost_meals():
         # Loads data from setting.json and removes the values which should be ignored.
         with open('settings.json', "r") as s:
             settings = json.load(s)
-        s.close()
         ignore_keys = [settings][0]["settings"]["ignore"]
         key_amount = len([settings][0]["settings"]["ignore"])
 
@@ -625,14 +523,7 @@ def profil():
 ########################################################################################################################
 @app.route("/save_ignore", methods=["POST", "GET"])
 def save_ignore():
-    ignore_value = request.form.get("ignore")
-
-    with open("settings.json", "r+") as s:
-        settings = json.load(s)
-        [settings][0]["settings"]["ignore"].append(ignore_value)
-        s.seek(0)
-        json.dump(settings, s, indent=4)
-        s.close()
+    save_ignore_task()
     return redirect("/profil")
 
 
@@ -649,19 +540,7 @@ def refresh_f_meals():
 ########################################################################################################################
 @app.route("/data_reset")
 def data_reset():
-    with open("settings.json", "r+") as s:
-        x = {"settings": {"ignore": []}, "replace": []}
-        s.truncate(0)
-        json.dump(x, s)
-        s.close()
-
-    with open("content.json", "r+") as f:
-        y = {"content-file": []}
-        print(y)
-        f.truncate(0)
-        json.dump(y, f)
-        f.close()
-
+    clear_all()
     return render_template("profil.html")
 
 
@@ -669,21 +548,7 @@ def data_reset():
 ########################################################################################################################
 @app.route("/change_key", methods=["POST", "GET"])
 def change_key():
-    # Get input from the user by accessing the value inside the form
-    key_to_change = request.form.get("change1")
-
-    # Opens the settings file and adds the value to the file
-    with open("settings.json", "r+") as s:
-        settings = json.load(s)
-        try:
-            [settings][0]["replace"].pop(0)
-        except:
-            pass
-        [settings][0]["replace"].append(key_to_change)
-        s.seek(0)
-        json.dump(settings, s, indent=4)
-        s.close()
-
+    key_to_change = change_key_task()
     return render_template("profil.html", key_to_change=key_to_change)
 
 
@@ -691,45 +556,7 @@ def change_key():
 ########################################################################################################################
 @app.route("/change_key_to", methods=["POST", "GET"])
 def change_key_to():
-    # Get input from the user by accessing the value inside the form
-    key_to_change_to = request.form.get("change2")
-
-    # Loads the settings file and gets the value which should be changed.
-    with open("settings.json", "r+") as s:
-        settings = json.load(s)
-        old_value = [settings][0]["replace"]
-        s.close()
-    old_value = str(old_value).strip("[]'")
-
-    # Loads the content file and replaced all the matching values inside.
-    with open("content.json", "r+") as f:
-        d = json.load(f)
-        end = len([d][0]["content-file"])
-        for j in range(0, end):
-            for key, value in d["content-file"][j].items():
-                if old_value == str(d["content-file"][j][key]["content"]):
-                    d["content-file"][j][key]["content"] = key_to_change_to
-        f.seek(0)
-        json.dump(d, f, indent=4)
-        f.truncate()
-        f.close()
-
-    # Loads the settings file again and deletes the value which has been replaced.
-    with open("settings.json", "r+") as s:
-        settings = json.load(s)
-        try:
-            [settings][0]["replace"].pop(0)
-            s.truncate(0)
-            s.seek(0)
-            json.dump(settings, s, indent=4)
-        except:
-            pass
-        s.close()
-
-    # Changes the placeholder back to normal
-    key_to_change = "Chips"
-    key_to_change_to = "Pommes"
-
+    key_to_change, key_to_change_to = change_key_to_task()
     return render_template("profil.html", key_to_change=key_to_change, key_to_change_to=key_to_change_to)
 
 
@@ -829,4 +656,6 @@ def change_key_to():
 # print(max_lst)
 
 if __name__ == "__main__":
+    # Checks if the json files are present by calling the "json_check" function with the filenames from the dict.
+    json_check_task()
     app.run(debug=True)

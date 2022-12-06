@@ -1,9 +1,1 @@
-{
-    "settings": {
-        "ignore": [
-            "Giesacker 1",
-            "Zizers"
-        ]
-    },
-    "replace": []
-}
+{"settings": {"ignore": []}, "replace": []}
