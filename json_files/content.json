@@ -3554,44 +3554,72 @@
         },
         {
             "05.12.2022": {
-                "content": "Verd\u00e4mpfti",
-                "weekday": "mo"
+                "content": "Ferien"
             }
         },
         {
             "06.12.2022": {
-                "content": "Tabouli Salat",
-                "weekday": "di"
+                "content": "Brot"
             }
         },
         {
             "07.12.2022": {
-                "content": "adsda",
-                "weekday": "mi"
+                "content": "Brot"
             }
         },
         {
             "08.12.2022": {
-                "content": "Poulet Grill",
-                "weekday": "do"
+                "content": "Hot-Dogs"
             }
         },
         {
             "09.12.2022": {
-                "content": "Zizers",
-                "weekday": "fr"
+                "content": "Naan Brot"
             }
         },
         {
             "10.12.2022": {
-                "content": "Spaghetti al Tonno",
-                "weekday": "sa"
+                "content": "Gef\u00fcllte Peperoni"
             }
         },
         {
             "11.12.2022": {
-                "content": "Ofengem\u00fcse",
-                "weekday": "so"
+                "content": "Couscous"
+            }
+        },
+        {
+            "12.12.2022": {
+                "content": "R\u00f6sti mit Speck und Ei"
+            }
+        },
+        {
+            "13.12.2022": {
+                "content": "Fleischk\u00e4se + Ofengem\u00fcse"
+            }
+        },
+        {
+            "14.12.2022": {
+                "content": "Ratatouille\u00a0"
+            }
+        },
+        {
+            "15.12.2022": {
+                "content": "asdasd"
+            }
+        },
+        {
+            "16.12.2022": {
+                "content": "Gerstensuppe"
+            }
+        },
+        {
+            "17.12.2022": {
+                "content": "Pizza"
+            }
+        },
+        {
+            "18.12.2022": {
+                "content": "Hot-Dogs"
             }
         }
     ]

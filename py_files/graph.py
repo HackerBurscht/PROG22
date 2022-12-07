@@ -3,12 +3,20 @@
 # numbers and time
 from collections import Counter
 # python files
-from data_management.data_handler import get_data
+from py_files.data_handler import get_data
 
 
-# Creates the necessary values, which are used to display the horizontal bar chart on the stats-page.
-########################################################################################################################
 def graph_data():
+    ''' Creates the data to display the graph on stats.html.
+        Gets meals_only by calling get_data().
+        Stores the amount and the type of each meal/value in meals_only.
+        Calculates the standardised amount of each meal/value. (Necessary to use the charts.css framework.)
+
+        parameters:
+
+        return:
+        top15, not15
+    '''
     data_set = get_data()
     meals_only = data_set["meals_only"]
 

@@ -5,16 +5,19 @@ from flask import Flask, render_template, url_for, request, redirect
 import json
 import os
 
-# numbers and time
-from datetime import datetime, timedelta
-from collections import Counter
-from random import sample
 
-
-# Checks if the json files are present.
-# Adapted from https://stackoverflow.com/questions/32991069/python-checking-for-json-files-and-creating-one-if-needed
-########################################################################################################################
 def json_check_task():
+    ''' Checks if the json files are present.
+        Checks if the files exist in the path.
+        If not, creates the file and saves the json-template.
+        parameters:
+
+        return:
+        Returns to the last task.
+
+        Adapted from:
+        https://stackoverflow.com/questions/32991069/python-checking-for-json-files-and-creating-one-if-needed
+    '''
     files = {  # Is used to check if the files are existing.
         "0": "content.json",
         "1": "settings.json"
@@ -22,7 +25,7 @@ def json_check_task():
     for i in range(0, len(files)):
         json_names = files.get(str(i))
         if os.access("json_files/", os.R_OK):
-            print(json_names, "exists and is readable")
+            pass
         else:
             print(json_names, "is missing or is not readable")
             with open(json_names, 'w') as file:
@@ -40,9 +43,12 @@ def json_check_task():
             print(json_names, "has been created")
 
 
-# Resets content.json and settings.json
-########################################################################################################################
+
 def clear_all():
+    """ Resets both json files.
+        Opens both files and stores the json-template inside.
+        Returns to the last task.
+    """
     with open("json_files/settings.json", "r+") as s:
         x = {"settings": {"ignore": []}, "replace": []}
         s.truncate(0)
@@ -55,9 +61,11 @@ def clear_all():
         json.dump(y, f)
 
 
-# Saves values which should be ignored from the settings page into the settings.json file
-########################################################################################################################
 def save_ignore_task():
+    """ Store the values which should be ignored by other functions.
+        Gets the input data from the form and stores it inside settings.json.
+        Returns to the last task.
+    """
     ignore_value = request.form.get("ignore")
     with open("json_files/settings.json", "r+") as s:
         settings = json.load(s)
@@ -66,9 +74,12 @@ def save_ignore_task():
         json.dump(settings, s, indent=4)
 
 
-# Saves values which should be replaced in the settings.json
-########################################################################################################################
 def change_key_task():
+    """ Saves values which should be replaced in the settings.json
+        Gets the input data from the form and stores it inside settings.json.
+        Deletes an already existing value if it exists.
+        Returns the input value as a placeholder on the settings.html
+    """
     # Get input from the user by accessing the value inside the form
     key_to_change = request.form.get("change1")
     # Opens the settings file and adds the value to the file
@@ -85,9 +96,12 @@ def change_key_task():
     return key_to_change
 
 
-# Gets the value which should replace the value from change_key() and changes this value in the "content.json" file.
-########################################################################################################################
 def change_key_to_task():
+    """ Gets the value which should replace the value from change_key() and changes
+        this value in the "content.json" file.
+        Deletes the value from change_key() inside settings.json
+        Returns default placeholder values to be used on settings.html.
+    """
     # Get input from the user by accessing the value inside the form
     key_to_change_to = request.form.get("change2")
 

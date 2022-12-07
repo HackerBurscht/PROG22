@@ -1,1 +1,8 @@
-{"settings": {"ignore": []}, "replace": []}
+{
+    "settings": {
+        "ignore": [
+            "Giesacker 1"
+        ]
+    },
+    "replace": []
+}

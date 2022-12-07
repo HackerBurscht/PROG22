@@ -1,14 +1,13 @@
 # Python libraries
 ####################################################################################################################
 # general
-from flask import Flask, render_template, url_for, request, redirect
 import json
-import os
 
 # numbers and time
 from datetime import datetime, timedelta
 from collections import Counter
 from random import sample
+
 
 weekday = {  # Is used in different functions to get easy access to the weekdays inside the lists or dict.
     "0": "mo",
@@ -19,6 +18,7 @@ weekday = {  # Is used in different functions to get easy access to the weekdays
     "5": "sa",
     "6": "so"
 }
+
 
 # Get the data from the json-files and prepares it to be used in other functions.
 ########################################################################################################################
@@ -83,61 +83,6 @@ def get_data():
     return data_set
 
 
-def save_info(week_key, planned_date_key, content):
-    # Checks whether something is stored in the "content" variable.
-    # If its emtpy nothing happens, and the user is redirected.
-    # If the value is "r" a random meal from "meals_only_without_duplicates" gets generated
-    # and used as a value for "content".
-    # If the value is "f" the "get_lost_meals" function gets called and
-    # the first value of "forgotten_meals" used as a value for "content".
-    print(content,week_key,planned_date_key)
-    if content == "":
-        return redirect("/")
-    if content == "r":
-        data_set = get_data()
-        meals_only_without_duplicates = data_set["meals_only_without_duplicates"]
-        try:
-            rng_content = sample(Counter(meals_only_without_duplicates).keys(), 1)
-            content = rng_content[0]
-        except:
-            print("Dataset is too small, missing or corrupted.")
-    if content == "f":
-        forgotten_meals = get_lost_meals()
-        try:
-            content = forgotten_meals[0]
-        except:
-            print("Dataset is too small, missing or corrupted.")
-    if content is not None:
-        date = planned_date_key
-        temp_dic = {}
-        temp_dic[date] = {}
-        temp_dic[date]["content"] = content
-        temp_dic[date]["weekday"] = week_key
-        date_updated = 0
-
-        with open("json_files/content.json", "r+") as f:
-            file_data = json.load(f)
-            len_content_in_file_data = (len([file_data][0]["content-file"]))
-            i = 0
-            while i < len_content_in_file_data:
-                if date in [file_data][0]["content-file"][i]:
-                    [file_data][0]["content-file"][i].update(temp_dic)
-                    f.seek(0)
-                    json.dump(file_data, f, indent=4)
-                    f.truncate()
-                    # f.truncate fixes a bug, which appeared whenever a content-item was deleted,
-                    # which only appeared once in the json-file. Thanks to Klaus D. from :
-                    # https://stackoverflow.com/q/57408057/20071071
-                    date_updated = 1
-                i += 1
-
-        if date_updated == 0:
-            with open("json_files/content.json", "r+") as f:
-                file_data["content-file"].append(temp_dic)
-                f.seek(0)
-                json.dump(file_data, f, indent=4)
-
-
 # Get Values to display the meals which haven't been prepared in the last 30 days.
 # Works only if there are more than 45 meals planned in the "content.json"-file
 ########################################################################################################################
@@ -200,24 +145,58 @@ def get_lost_meals():
                   "Fix: Add more different meals.")
     if max_len < 45:
         print("Not enough data available.")
+        forgotten_meals.append("empty")
 
     return forgotten_meals
 
 
-# Chooses 7 random meals from "content.json" and delivers them to the save-function.
+# Creates the necessary values, which are used to display the day-statistics on the stas-page.
 ########################################################################################################################
-def rng_plan_task(display_week):
-    try:
-        data_set = get_data()
-        meals_only_without_duplicates = data_set["meals_only_without_duplicates"]
-        subset = sample(meals_only_without_duplicates, 7)
-        # How-Two from machinelearningmastery.com/how-to-generate-random-numbers-in-python/
-        for i in range(0, 7):
-            week_key = weekday.get(str(i))
-            content = subset[i]
-            planned_date_key = datetime.today() - timedelta(days=datetime.today().weekday() % 7) + timedelta(days=i)
-            planned_date_key = planned_date_key + timedelta(days=display_week * 7)
-            planned_date_key = planned_date_key.strftime("%d.%m.%Y")
-            save_info(week_key, planned_date_key, content)
-    except:
-        print("Dataset is too small, missing or corrupted.")
+def max_combo_weekly():
+    max_lst = []
+    data_set = get_data()
+    meals_only = data_set["meals_only"]
+    d = data_set["d"]
+
+    if len(meals_only) >= 7:
+        clean_data = []  # Empty list. Used to store values inside the function.
+        end = len([d][0]["content-file"])  # Determines the length of "d" and used for the "range"-function.
+
+        # The meal and weekday values from "d" get saved inside "clean_data" as lists.
+        for i in range(0, end):
+            temp_lst_2 = []
+
+            for key, value in d["content-file"][i].items():
+                n_con = d["content-file"][i][key]["content"]
+                dt_date_key = datetime.strptime(key, "%d.%M.%Y").date()
+                dt_weekday = dt_date_key.weekday()
+                n_day = weekday.get(str(dt_weekday))
+                temp_lst_2.append(n_con)
+                temp_lst_2.append(n_day)
+                clean_data.append(temp_lst_2)
+
+        sum_clean_data = len(clean_data)  # Sum of all entries in the clean_data list
+
+        # Checks which meal is most often prepared on each weekday. Uses "meals_only".
+        # -> Checks which "weekday"-"content"-combos occurs most often.
+        for i in range(7):
+            max_kombi = 0
+            max_kombi_meal = ""
+            y = weekday.get(str(i))
+            for j in range(len(meals_only)):
+                x = meals_only[j]
+                test_sum = sum([all(z in i for z in [x, y]) for i in clean_data])
+                if test_sum > max_kombi:
+                    max_kombi = test_sum
+                    max_kombi_meal = x
+                    n = sum([x in a for a in clean_data])  # n equals the amount of x. eg: 17 times "pasta"
+                    m = sum([y in a for a in clean_data])  # m equals the amount of y. eg: 4 times "Monday"
+            # Calculates the lift for the most frequent combinations.
+            meal_lift = round((max_kombi / sum_clean_data) / (n / sum_clean_data) / (m / sum_clean_data), 3)
+
+            # Saves the amount of the meal, the most prepared meal, the amount of the combination appearing and the lift
+            # as a list inside the "max_lst" list.
+            temp = [y, max_kombi_meal, max_kombi, meal_lift]
+            max_lst.append(temp)
+
+    return max_lst
