@@ -20,17 +20,27 @@ weekday = {  # Is used in different functions to get easy access to the weekdays
 }
 
 
-# Get the data from the json-files and prepares it to be used in other functions.
-########################################################################################################################
 def get_data():
+    ''' Loads data from content.json and calculates assigns this data to multiple variables. Which in return can
+        easily be used in other functions.
+        First creates an empty dictionary.
+        Afterwards reads values from settings.json and gets data from content.json.
+        Calculates all the different meals, ignores duplicates,  the amount of all meals,
+        the amount of all different meals, and the most occurring meal type including the amount
+
+        parameters:
+
+        return:
+        data_set(Dict containing multiple values)
+    '''
     data_set = {
-        "max_meals": "0",
-        "div_meals": "0",
-        "most_meal": "none",
-        "most_meal_amount": "0",
-        "meals_only": "none",
-        "meals_only_without_duplicates": "none",
-        "d": "empty",
+        "max_meals": "",
+        "div_meals": "",
+        "most_meal": "",
+        "most_meal_amount": "",
+        "meals_only": "",
+        "meals_only_without_duplicates": "",
+        "d": "",
     }
 
     # Loads data from setting.json
@@ -44,9 +54,9 @@ def get_data():
     with open("json_files/content.json", "r") as f:
         d = json.load(f)
 
+    # Create variable with only the different meals and without duplicates.
     meals_only = []  # Contains al meals as strings. With duplicates
     range_end = len([d][0]["content-file"])  # Gets the length of the json file
-
     for i in range(0, range_end):
         for key, value in d["content-file"][i].items():
             n_con = d["content-file"][i][key]["content"]
@@ -57,6 +67,7 @@ def get_data():
     for i in range(0, key_amount):
         meals_only = [value for value in meals_only if value != ignore_keys[i]]
     # removes all the keys, which should be ignored, from the settings-file.
+
     max_meals = len([d][0]["content-file"])
     div_meals = len(Counter(meals_only).keys())
     meals_only_without_duplicates = [*set(meals_only)]
@@ -83,10 +94,21 @@ def get_data():
     return data_set
 
 
-# Get Values to display the meals which haven't been prepared in the last 30 days.
-# Works only if there are more than 45 meals planned in the "content.json"-file
-########################################################################################################################
 def get_lost_meals():
+    ''' Calculates all the meals which haven't been prepared in the last 30 days. Works only if
+        there are more than 45 meals planned in the "content.json"-file
+        Firstly gets data, by calling get_data().
+        Checks if there are more than 45 entries in content.json by checking the length of "d".
+        Saves all meals which are in the past in a list.
+        Saves all meals which have recently been prepared in a list.
+        Removes the recent meals from the past meals.
+        Takes seven random entries from hte past meals and saves those in "forgotten_meals"
+
+        parameters:
+
+        return:
+        forgotten_meals (List containing multiple values)
+    '''
     forgotten_meals = []  # Contains all the meals, which haven't been prepared in a while
     data_set = get_data()
     meals_only = data_set["meals_only"]
@@ -151,8 +173,19 @@ def get_lost_meals():
 
 
 # Creates the necessary values, which are used to display the day-statistics on the stas-page.
-########################################################################################################################
 def max_combo_weekly():
+    ''' Creates all the necessary values, which are needed to display the day/meal combinations on stats.html.
+        Firstly gets data, by calling get_data().
+        Gets alls meals by "meals_only" and assigns each date the corresponding weekday.
+        Saves those values in a new list (clean_data).
+        Calculates the appearing combinations and their frequency.
+        (For more information check the readme or google "affinity analysis")
+
+        parameters:
+
+        return:
+        max_lst (List containing multiple values)
+    '''
     max_lst = []
     data_set = get_data()
     meals_only = data_set["meals_only"]
