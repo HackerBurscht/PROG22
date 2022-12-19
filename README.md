@@ -4,7 +4,6 @@
 - ReadMe
 - Comments
 - Muster-Erkennung, Auto-Planer, Affinity analysis
-- Setting: "Change"
 
 
 ## What is Mealy
@@ -24,7 +23,7 @@ To be more precise, the tool can do the following:
 - Allows the user to plan his weeks according to the analyses.
 
 ### But why?
-The inspiration behind the project comes from an old Excel file on my personal computer.
+The inspiration behind the project comes from an old Excel file on my PC.
 Today it is quite a long list, which I used every week before going out tu buy groceries or each day, to see
 what I planned to cook that evening. Quite often I checked the file for inspiration to get some ideas, because I simply
 didn't know what to buy or plan for the following week. But it had a problem, it simply could only return me information,
@@ -34,15 +33,20 @@ With this project I tried to reorganize my data and my tedious process into a mo
 programming skills and hopefully create a piece of code, which can take work away from me personally.
 
 ### How two use?
+To use the tool you just have to start the "app.py" and access port 5000 of localhost.
+The complete operation takes place in the browser.
+The program then directly checks if a file with the correct name already exists and if not, creates it.
+To use the program, simply insert the desired meal at the desired date or day of the week.
+To do this, click on the "......." placeholder. Then a value can be entered using the keyboard and this must be 
+confirmed by pressing the "Enter" key!
 
-Betrieb
- - Welche zusätzliche Pakete müssen bei Bedarf installiert werden. (Muss im Normalfall nicht beachtet werden. Python muss nicht erwähnt werden, da das bei einem Python Projekt impliziert ist.)
- - Was muss man bei der Ausführung beachten. Was muss eventuell davor noch gemacht werden.
- - Welch Datei muss ausgeführt werden
+The tool allows the user to display past weeks as well as weeks in the future by means of arrow navigation and thus 
+also to plan them. The selected period is always displayed. If the user navigates away from the current week, a button 
+is displayed that takes him back to the current date.
 
-Benutzung
-- Wie wird das Projekt benutzt
-- Welche Optionen oder auch Spezialitäten existieren
+Under the settings, the user will find the option to hide meals from the statistics and planning functions. 
+Thus, it is possible to record the restaurant visit, but also to exclude it. In this way, the user keeps track of the 
+meal, but the tool ignores this value and does not suggest going to the restaurant.
 
 #### User commands
 The following commands  can be used in the web app. They simply have to be entered as "meals" on the planning page.
