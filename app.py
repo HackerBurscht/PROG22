@@ -275,14 +275,6 @@ def next_day():
     return redirect("/stats")
 
 
-@app.route("/About")
-def about():
-    """
-    Returns about.html
-    """
-    return render_template("about.html")
-
-
 @app.route("/profil")
 def profil():
     """

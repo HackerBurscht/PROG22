@@ -55,8 +55,6 @@ The following commands  can be used in the web app. They simply have to be enter
 - "-" :   keeps the day unplanned.
 
 ### Architecture
-- Hier bei Bedarf eine kurze Beschreibung des Ablaufs des Programms auf Code Ebene z.B. als Ablaufdiagramm.
-
 ![Alt text](static/images/overview.png "The structure and interaction of the most important functions at a glance.")
 
 ### Current issues and possible features
@@ -69,8 +67,6 @@ if you use it like a normal person would. Eg: Do not enter "-"/"r"/"f" in the fo
 
 
 ### Special input: affinity analysis
-"The main idea behind this analysis is to achieve valuable insights by identifying which items are
-frequently purchased together." (Saygin, 2022)
 Since I wanted from the beginning to somehow show, if the user always eats a specific meal on a specific day,
 I spent quite some time thinking about a way to calculate exactly that.
 After some clueless googling I found on the website https://www.python-exemplarisch.ch/ some information about,
@@ -88,8 +84,3 @@ to check if two things are often bought together. But in our context it is used 
 Of course, as the amount of data increases, the analysis becomes more accurate.
 At the moment, the "support" value is particularly important. As it shows whether, for example, 
 "pasta" is always eaten on Mondays.
-
-
-### Sources
-Saygın, E. (2022, 31. Mai). Affinity Analysis (Market Basket Analysis) - Towards Data Science. Medium. 
-Abgerufen am 6. Oktober 2022, von https://towardsdatascience.com/affinity-analysis-market-basket-analysis-c8e7fcc61a21
