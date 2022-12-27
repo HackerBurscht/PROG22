@@ -1,6 +1,5 @@
 # Mealy
 
-## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 
 and to deliver in-depth information about your daily dinners.
 
