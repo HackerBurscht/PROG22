@@ -50,8 +50,7 @@ The following commands  can be used in the web app. They simply have to be enter
 ### Architecture
 ![Alt text](static/images/overview.png "The structure and interaction of the most important functions at a glance.")
 
-### Current issues
-Known-Bugs:
+### Current issues/Known-Bugs
  - Do not exclude all content entries with the ignore-function!!!
  - App gets funny, if there isn't enough content available for the different functions. But won’t/shouldn't crash,
 if you use it like a normal person would. Eg: Do not enter "-"/"r"/"f" in the forms, if the dataset is completely empty.
