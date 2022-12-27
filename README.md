@@ -1,10 +1,4 @@
 # Mealy
-## Todo:
-
-- ReadMe
-- Comments
-- Muster-Erkennung, Auto-Planer, Affinity analysis
-
 
 ## What is Mealy
 Mealy serves as a tool to organize your weekly meals, to inspire your planning, to plan "like" you would 
@@ -57,14 +51,18 @@ The following commands  can be used in the web app. They simply have to be enter
 ### Architecture
 ![Alt text](static/images/overview.png "The structure and interaction of the most important functions at a glance.")
 
-### Current issues and possible features
+### Current issues
 Known-Bugs:
  - Do not exclude all content entries with the ignore-function!!!
  - App gets funny, if there isn't enough content available for the different functions. But won’t/shouldn't crash,
 if you use it like a normal person would. Eg: Do not enter "-"/"r"/"f" in the forms, if the dataset is completely empty.
- - Was wurde nicht gelöst
- - Welche Verbesserungen könnten noch gemacht werden.
 
+### Possible features and improvements
+- It was planned from the beginning to include a feature that would schedule the coming weeks as I would have done as 
+a user. Which means, the tool should have analyzed the past weeks and then planned the next week from these findings. 
+Although I had found approaches for a solution, I decided to abandon this due to time constraints. 
+- One of the most important improvements, which should and could still be done, is to adjust the structure 
+of the data management.
 
 ### Special input: affinity analysis
 Since I wanted from the beginning to somehow show, if the user always eats a specific meal on a specific day,
@@ -79,7 +77,6 @@ Those two website include alot of background knowledge and coding examples in py
 
 As mentioned I was looking for a way to show if a weekday and a meal correlate. The affinity analyse is mostly used,
 to check if two things are often bought together. But in our context it is used to see if they simply "appear" together.
-
 
 Of course, as the amount of data increases, the analysis becomes more accurate.
 At the moment, the "support" value is particularly important. As it shows whether, for example, 
