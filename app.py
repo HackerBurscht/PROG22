@@ -341,4 +341,4 @@ def change_key_to():
 if __name__ == "__main__":
     # Checks if the json files are present by calling the "json_check" function with the filenames from the dict.
     json_check_task()
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

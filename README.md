@@ -26,7 +26,7 @@ With this project I tried to reorganize my data and my tedious process into a mo
 programming skills and hopefully create a piece of code, which can take work away from me personally.
 
 ### How to use?
-To use the tool you just have to start the "app.py" and access port 5000 of localhost.
+To use the tool you just have to start the "app.py" and access port 5001 of localhost.
 The complete operation takes place in the browser.
 The program then directly checks if a file with the correct name already exists and if not, creates it.
 To use the program, simply insert the desired meal at the desired date or day of the week.
