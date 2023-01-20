@@ -34,7 +34,8 @@ To do this, click on the "......." placeholder. Then a value can be entered usin
 confirmed by pressing the "Enter" key!
 
 It should be noted that an active Internet connection is required to use the tool. For example, Bootstrap, 
-Flaticons, Google Fonts and the Charts.css framework are loaded via CDN link.
+Flaticons, Google Fonts and the Charts.css framework are loaded via CDN link. The following Python modules are imported 
+for the function of the tool: Flask, DateTime, Counter, JSON, Collections and Random.
 
 The tool allows the user to display past weeks as well as weeks in the future by means of arrow navigation and thus 
 also to plan them. The selected period is always displayed. If the user navigates away from the current week, a button 
