@@ -25,7 +25,7 @@ which I put in and could not plan for me.
 With this project I tried to reorganize my data and my tedious process into a more user-friendly experience, advance my 
 programming skills and hopefully create a piece of code, which can take work away from me personally.
 
-### How two use?
+### How to use?
 To use the tool you just have to start the "app.py" and access port 5000 of localhost.
 The complete operation takes place in the browser.
 The program then directly checks if a file with the correct name already exists and if not, creates it.
